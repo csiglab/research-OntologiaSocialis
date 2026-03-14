@@ -1,11 +1,10 @@
-# Index of Social Actor Type
+# Ontologia Socialis
 
-> In this project we attempt to represent the abstract space of social actors at the planetary scale.
-The objective is to identify the most relevant actors across multiple categories—including individuals, firms, states, NGOs, and other organized entities.
-> By constructing this index, we aim to establish comparative metrics and analytical frameworks that allow systematic analysis of actors, their capacities, and their roles within global socio-economic systems.
+> This project aims to construct a Social Ontology Repository comprising actors (e.g., firms, individuals, states), together with processes, phenomena, and properties. These elements serve as ontic–conceptual building blocks for the systematic parsing and analysis of social reality.
 
 Goals:
 
+- We aim to establish comparative metrics and analytical frameworks that allow systematic analysis of actors, their capacities, and their roles within global socio-economic systems.
 - **Create a modeling template for each actor type**, specifying its structural components (state) and dynamical components (processes and behaviors).
 - **Represent individual actors** by applying the template derived from their actor type in order to produce a structured model of the actor.
 
@@ -15,3 +14,4 @@ Goals:
 - [Actor Space](https://www.bremontix.xyz/lab/ar/Locus-Instrumentorum/Toolset/Representation/Space/Actor/Actor/)
 - [Representation](https://www.bremontix.xyz/lab/ar/Locus-Instrumentorum/Toolset/Representation/)
 - [Interaction Unit](https://www.bremontix.xyz/lab/ar/Locus-Social-Realitatis/Onto/Guide/Unit/)
+- [Social Ontology](https://www.bremontix.xyz/lab/ar/Locus-Social-Realitatis/Onto/Guide/)
