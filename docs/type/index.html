@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planetary Actors · Index Typorum</title>
+  <title>Ontologia Socialia · Actor Index</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,6 @@
             accentDark: 'var(--accent-dark)',
             card: 'var(--card)',
             border: 'var(--border)',
-            navy: '#1B2838',
           },
           fontFamily: {
             display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
@@ -48,13 +47,12 @@
       --skeleton-to: #e2e8f0;
       --footer-bg: #0B1A2B;
       --footer-text: #B8C5D4;
-      --footer-text-light: #E8EDF3;
-      --footer-muted: #5A7089;
-      --status-active: #22c55e;
       --dropdown-shadow: rgba(0, 0, 0, 0.12);
       --card-shadow: rgba(0, 0, 0, 0.06);
       --tag-bg: rgba(30, 41, 59, 0.06);
       --tag-selected-border: #1E293B;
+      --nav-bg: rgba(250, 251, 252, 0.8);
+      --overlay-bg: rgba(0, 0, 0, 0.4);
     }
 
     .dark {
@@ -74,10 +72,12 @@
       --card-shadow: rgba(0, 0, 0, 0.3);
       --tag-bg: rgba(107, 155, 209, 0.12);
       --tag-selected-border: #6B9BD1;
+      --nav-bg: rgba(13, 25, 38, 0.85);
+      --overlay-bg: rgba(0, 0, 0, 0.6);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { height: 100%; }
+    html { height: 100%; scroll-behavior: smooth; }
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background-color: var(--bg);
@@ -92,38 +92,200 @@
     .main-content { flex: 1 0 auto; }
     .site-footer { flex-shrink: 0; }
 
+    /* Animations */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .animate-entrance { opacity: 0; animation: fadeInUp 250ms ease-out forwards; }
     .delay-1 { animation-delay: 0ms; }
     .delay-2 { animation-delay: 80ms; }
     .delay-3 { animation-delay: 150ms; }
-    .delay-4 { animation-delay: 250ms; }
-    .delay-5 { animation-delay: 350ms; }
-
     @media (prefers-reduced-motion: reduce) {
       .animate-entrance { animation: none; opacity: 1; }
     }
 
-    /* Theme Toggle */
-    .theme-toggle {
-      position: fixed; top: 1.5rem; right: 1.5rem; width: 44px; height: 44px;
-      border-radius: 10px; border: 1px solid var(--border); background: var(--card);
-      color: var(--muted); cursor: pointer; display: flex; align-items: center;
-      justify-content: center; transition: all 150ms ease-out; z-index: 100;
+    /* Navigation */
+    .nav-bar {
+      position: sticky; top: 0; z-index: 100;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-content {
+      max-width: 72rem; /* max-w-6xl */
+      margin: 0 auto; 
+      padding: 0 1.5rem;
+      height: 64px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--fg); }
+    .nav-brand img { height: 28px; width: auto; }
+    .nav-brand h1 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.02em; }
+    .nav-link { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase; }
+
+    /* === TOP CONTROLS (Positioned Below Nav) === */
+    .top-controls {
+      position: fixed;
+      /* 64px (Nav Height) + 16px (Margin) */
+      top: 80px; 
+      right: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 50; /* Lower than nav to slide under if scrolled weirdly, but above content */
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 150ms ease-out;
       box-shadow: 0 2px 8px var(--card-shadow);
     }
-    .theme-toggle:hover { border-color: var(--border-hover); color: var(--fg); transform: translateY(-1px); box-shadow: 0 4px 12px var(--card-shadow); }
-    .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .theme-toggle:active { transform: translateY(0); }
+    .icon-btn:hover { 
+      border-color: var(--border-hover); 
+      color: var(--fg); 
+      transform: translateY(-1px); 
+      box-shadow: 0 4px 12px var(--card-shadow);
+    }
+    .icon-btn:active { transform: translateY(0); }
+    .icon-btn.active { 
+      border-color: var(--accent); 
+      color: var(--accent); 
+      background: var(--tag-bg);
+    }
+
+    /* Theme Toggle Animation */
     .theme-toggle .icon-sun, .theme-toggle .icon-moon { position: absolute; transition: opacity 200ms ease-out, transform 200ms ease-out; }
     .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
     .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
     .dark .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
     .dark .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+
+    /* Toolbox Dropdown */
+    .toolbox-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 200px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 16px 48px -8px var(--dropdown-shadow), 0 4px 12px -4px var(--dropdown-shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.96);
+      transition: all 180ms ease-out;
+      overflow: hidden;
+    }
+    .toolbox-dropdown.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .toolbox-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: all 100ms ease-out;
+      border-bottom: 1px solid var(--border);
+    }
+    .toolbox-item:last-child { border-bottom: none; }
+    .toolbox-item:hover { background: var(--tag-bg); }
+    .toolbox-item:hover .toolbox-item-icon { color: var(--accent); }
+    .toolbox-item-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--tag-bg);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 100ms ease-out;
+    }
+    .toolbox-item-label { font-size: 13px; font-weight: 500; color: var(--fg); }
+    .toolbox-item-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--overlay-bg);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 200ms ease-out, visibility 200ms ease-out;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+
+    .modal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 24px 64px -12px var(--dropdown-shadow);
+      max-width: 640px;
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+      transform: scale(0.95) translateY(16px);
+      transition: transform 200ms ease-out;
+    }
+    .modal-overlay.open .modal-content { transform: scale(1) translateY(0); }
+
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--tag-bg) 0%, transparent 100%);
+    }
+    .modal-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 500; color: var(--fg); }
+    .modal-close {
+      width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--muted);
+      cursor: pointer; transition: all 100ms ease-out;
+    }
+    .modal-close:hover { border-color: var(--border-hover); color: var(--fg); }
+
+    .modal-body { padding: 20px; overflow-y: auto; max-height: calc(80vh - 60px); }
+
+    /* Help Content */
+    .help-section { margin-bottom: 20px; }
+    .help-section:last-child { margin-bottom: 0; }
+    .help-heading { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 16px; font-weight: 500; color: var(--fg); margin-bottom: 8px; }
+    .help-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .help-list { list-style: none; margin-top: 8px; }
+    .help-list li {
+      font-size: 13px; color: var(--muted); padding: 6px 0; padding-left: 16px;
+      position: relative; display: flex; justify-content: space-between; align-items: center;
+    }
+    .help-list li::before {
+      content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px; background: var(--accent); border-radius: 1px; opacity: 0.6;
+    }
+    .kbd {
+      display: inline-flex; align-items: center; justify-content: center; padding: 2px 6px;
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      background: var(--tag-bg); border: 1px solid var(--border); border-radius: 4px; color: var(--fg);
+    }
 
     /* Search Module */
     .search-module { position: relative; }
@@ -147,16 +309,15 @@
     }
     .tag-pill:hover:not(.selected) { color: var(--fg); border-color: var(--border-hover); background: var(--tag-bg); }
     .tag-pill.selected { color: var(--fg); background: var(--tag-bg); border-color: var(--tag-selected-border); font-weight: 500; }
-    .tag-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* Dropdown Panel */
     .search-dropdown {
-      position: relative; margin-top: 8px; background: var(--card);
+      position: absolute; top: 100%; left: 0; right: 0; margin-top: 8px; background: var(--card);
       border: 1px solid var(--border); border-radius: 8px;
       box-shadow: 0 12px 32px var(--dropdown-shadow);
       display: none; opacity: 0; transform: translateY(-8px);
       transition: opacity 150ms ease-out, transform 150ms ease-out;
-      overflow: hidden; max-height: 420px;
+      overflow: hidden; max-height: 420px; z-index: 50;
     }
     .search-dropdown.open { display: block; opacity: 1; transform: translateY(0); }
     .dropdown-results { max-height: 300px; overflow-y: auto; overscroll-behavior: contain; }
@@ -168,6 +329,8 @@
     .entity-card {
       transition: transform 150ms ease-out, box-shadow 150ms ease-out, background-color 200ms ease-out;
       background-color: var(--card); border-color: var(--border);
+      display: flex; flex-direction: column; height: 100%;
+      position: relative;
     }
     .entity-card::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
@@ -177,25 +340,47 @@
     .entity-card:hover::before { opacity: 1; }
     .entity-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -8px var(--dropdown-shadow); }
     .entity-card:hover .card-title { color: var(--accent); }
-    .card-tag { background: var(--tag-bg); color: var(--muted); }
+    
+    /* Card Link Icon */
+    .card-link-icon {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 32px; height: 32px; border-radius: 6px;
+      background: var(--tag-bg); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: all 150ms ease-out;
+      border: 1px solid var(--border);
+    }
+    .entity-card:hover .card-link-icon { opacity: 1; }
+    .card-link-icon:hover { 
+      background: var(--accent); color: white; border-color: var(--accent); 
+      transform: scale(1.05);
+    }
+    
+    /* Card Chips */
+    .card-category { background: var(--tag-bg); color: var(--muted); border: 1px solid transparent; }
+    .card-tag { background: transparent; color: var(--accent); border: 1px solid var(--accent); opacity: 0.8; }
 
-    /* Buttons & Pagination */
-    .btn-outline { transition: background-color 150ms ease-out, border-color 150ms ease-out; background-color: transparent; }
-    .btn-outline:hover { background-color: var(--tag-bg); border-color: var(--accent); }
-    .btn-outline:hover .btn-arrow { transform: translateX(3px); }
-    .btn-arrow { transition: transform 150ms ease-out; }
-    .view-cta { transition: color 150ms ease-out; color: var(--accent); }
-    .view-cta:hover { color: var(--accent-dark); }
-    .view-cta:hover .view-arrow { transform: translateX(3px); }
-    .view-arrow { transition: transform 150ms ease-out; }
-    .page-dot { transition: background-color 120ms ease-out; }
+    /* Pagination */
+    .page-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 32px; height: 32px; padding: 0 8px;
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      border-radius: 6px; border: 1px solid transparent;
+      transition: all 150ms ease-out; cursor: pointer;
+    }
+    .page-num:hover { background: var(--tag-bg); color: var(--fg); border-color: var(--border); }
+    .page-num.active { 
+      background: var(--accent); color: white; 
+      border-color: var(--accent); font-weight: 600;
+      box-shadow: 0 2px 8px rgba(74, 111, 165, 0.25);
+    }
+    .page-ellipsis { color: var(--muted); padding: 0 4px; user-select: none; }
     .pagination-btn { transition: color 120ms ease-out; }
     .pagination-btn:hover:not(:disabled) { color: var(--fg); }
     .pagination-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
     /* Focus & Accessibility */
     button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     
     /* Loading Skeleton */
     .loading-skeleton { background: linear-gradient(90deg, var(--skeleton-from) 25%, var(--skeleton-to) 50%, var(--skeleton-from) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
@@ -209,48 +394,135 @@
   </style>
 </head>
 <body>
-  
-  <!-- Theme Toggle -->
-  <button class="theme-toggle animate-entrance" id="themeToggle" aria-label="Toggle dark mode" type="button">
-    <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
-    </svg>
-    <svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0a3.75 3.75 0 017.5 0z"/>
-    </svg>
-  </button>
 
-  <div class="main-content">
-    <!-- Hero Layer -->
-    <header class="pt-12 pb-16 px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <div class="animate-entrance delay-1 mb-6">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full border border-border bg-card shadow-sm">
-             <svg class="w-8 h-8 text-accent opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-              </svg>
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-content">
+      <a href="#" class="nav-brand">
+        <img src="../logo.png" alt="Logo" onerror="this.style.display='none'">
+        <h1>Ontologia Socialia</h1>
+      </a>
+      <div class="flex items-center gap-6">
+        <span class="nav-link hidden sm:block">Laboratorium Arbitristrea</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top Right Controls (Below Nav) -->
+  <div class="top-controls animate-entrance">
+    <!-- Toolbox Button -->
+    <div style="position: relative;">
+      <button class="icon-btn toolbox-toggle" id="toolboxToggle" aria-label="Open toolbox" type="button" aria-expanded="false" aria-controls="toolboxDropdown">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-2.496-3.03A2.75 2.75 0 016.87 11.2a2.75 2.75 0 01.59-3.37l.01-.01A2.75 2.75 0 0111.2 6.87a2.75 2.75 0 013.37.59l.01.01a2.75 2.75 0 01-.59 3.37l-.01.01M11.42 15.17l-5.877 5.877A2.652 2.652 0 009.75 21l5.877-5.877m0 0l2.496-3.03c.317-.384.74-.626 1.208-.766"/>
+        </svg>
+      </button>
+      
+      <!-- Toolbox Dropdown -->
+      <div id="toolboxDropdown" class="toolbox-dropdown" role="menu">
+        <div class="toolbox-item" id="vizTool" role="menuitem" tabindex="0">
+          <div class="toolbox-item-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="toolbox-item-label">Visualize</div>
+            <div class="toolbox-item-desc">View data distribution</div>
           </div>
         </div>
-        <p class="animate-entrance delay-1 font-mono text-xs tracking-[0.2em] text-muted uppercase mb-6">EST. MMXXIV</p>
-        <h1 class="animate-entrance delay-2 font-display text-4xl font-medium tracking-tight text-fg mb-4">
-          ACTOR TYPE INDEX
+        
+        <div class="toolbox-item" id="helpTool" role="menuitem" tabindex="0">
+          <div class="toolbox-item-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="toolbox-item-label">Help</div>
+            <div class="toolbox-item-desc">Keyboard shortcuts & tips</div>
+          </div>
+        </div>
+        
+        <div class="toolbox-item" id="exportTool" role="menuitem" tabindex="0">
+          <div class="toolbox-item-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="toolbox-item-label">Export</div>
+            <div class="toolbox-item-desc">Download filtered data</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Theme Toggle -->
+    <button class="icon-btn theme-toggle relative" id="themeToggle" aria-label="Toggle dark mode" type="button">
+      <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+      </svg>
+      <svg class="icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0a3.75 3.75 0 017.5 0z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="helpModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="helpModalTitle">Help & Shortcuts</h2>
+        <button class="modal-close" aria-label="Close modal" type="button">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="help-section">
+          <h3 class="help-heading">Search & Filter</h3>
+          <p class="help-text">Use the search bar to find actors by name, description, or tags. Use the category pills to filter the list. Click the link icon on cards to view external resources.</p>
+        </div>
+        
+        <div class="help-section">
+          <h3 class="help-heading">Keyboard Shortcuts</h3>
+          <ul class="help-list">
+            <li><span>Focus search</span> <span><span class="kbd">Ctrl</span> + <span class="kbd">/</span></span></li>
+            <li><span>Toggle dark mode</span> <span><span class="kbd">Ctrl</span> + <span class="kbd">D</span></span></li>
+            <li><span>Open toolbox</span> <span><span class="kbd">Ctrl</span> + <span class="kbd">B</span></span></li>
+            <li><span>Open help</span> <span><span class="kbd">F1</span></span></li>
+            <li><span>Close modals</span> <span><span class="kbd">Esc</span></span></li>
+          </ul>
+        </div>
+        
+        <div class="help-section">
+          <h3 class="help-heading">About Ontologia Socialia</h3>
+          <p class="help-text">This index is part of the <strong>Laboratorium Arbitristrea</strong> initiative. It serves as a structured taxonomy of entity classifications operating within the geopolitical sphere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- Header Layer -->
+    <header class="pt-12 pb-12 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="animate-entrance delay-2 font-display text-4xl md:text-5xl font-medium tracking-tight text-fg mb-4">
+          Social Ontology Guide
         </h1>
-        <p class="animate-entrance delay-3 font-display text-xl md:text-2xl italic text-muted mb-6">
-          Planetary Actors
-        </p>
         <p class="animate-entrance delay-3 max-w-xl mx-auto text-muted leading-relaxed">
-          A structured taxonomy of entity classifications operating within the geopolitical sphere.
+          A structured repository of social actors, processes, phenomena, and properties designed to provide ontic–conceptual building blocks for the systematic analysis of social reality.
         </p>
       </div>
     </header>
 
     <!-- Inquiry Layer -->
     <section class="pb-8 px-6">
-      <div class="max-w-3xl mx-auto animate-entrance delay-4">
+      <div class="max-w-3xl mx-auto animate-entrance delay-3">
         <label for="searchInput" class="block font-mono text-xs tracking-[0.15em] text-muted uppercase mb-4 text-center">
-          Filter Typology
+          Search  Guide
         </label>
 
         <div class="search-module" id="searchModule">
@@ -260,7 +532,7 @@
                 type="text" 
                 id="searchInput"
                 class="search-input w-full h-14 px-5 pr-12 text-base bg-card border border-border rounded-lg shadow-sm"
-                placeholder="Search actor classifications..."
+                placeholder="Search elements ..."
                 autocomplete="off"
                 aria-label="Search types"
               >
@@ -293,26 +565,27 @@
     <!-- Entity Registry Grid -->
     <section class="pb-16 px-6">
       <div class="max-w-6xl mx-auto">
-        <div id="loadingSkeleton" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-card border border-border rounded-xl p-6"><div class="loading-skeleton h-6 w-24 rounded mb-4"></div><div class="loading-skeleton h-4 w-full rounded mb-2"></div><div class="loading-skeleton h-4 w-3/4 rounded"></div></div>
-          <div class="bg-card border border-border rounded-xl p-6 hidden md:block"><div class="loading-skeleton h-6 w-24 rounded mb-4"></div><div class="loading-skeleton h-4 w-full rounded mb-2"></div><div class="loading-skeleton h-4 w-3/4 rounded"></div></div>
+        <div id="loadingSkeleton" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-card border border-border rounded-xl p-6 h-48"><div class="loading-skeleton h-6 w-24 rounded mb-4"></div><div class="loading-skeleton h-4 w-full rounded mb-2"></div><div class="loading-skeleton h-4 w-3/4 rounded"></div></div>
+          <div class="bg-card border border-border rounded-xl p-6 h-48 hidden md:block"><div class="loading-skeleton h-6 w-24 rounded mb-4"></div><div class="loading-skeleton h-4 w-full rounded mb-2"></div><div class="loading-skeleton h-4 w-3/4 rounded"></div></div>
+          <div class="bg-card border border-border rounded-xl p-6 h-48 hidden lg:block"><div class="loading-skeleton h-6 w-24 rounded mb-4"></div><div class="loading-skeleton h-4 w-full rounded mb-2"></div><div class="loading-skeleton h-4 w-3/4 rounded"></div></div>
         </div>
 
-        <div id="entityGrid" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6" role="list"></div>
+        <div id="entityGrid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list"></div>
         <div id="emptyState" class="hidden py-20 text-center"><p class="text-muted">No matching types found.</p></div>
       </div>
     </section>
 
     <!-- Pagination Layer -->
     <section id="paginationSection" class="hidden pb-20 px-6">
-      <div class="max-w-6xl mx-auto flex items-center justify-center gap-6">
-        <button id="prevBtn" class="pagination-btn flex items-center gap-2 text-sm text-muted disabled:opacity-40" disabled>
+      <div class="max-w-6xl mx-auto flex items-center justify-center gap-4">
+        <button id="prevBtn" class="pagination-btn flex items-center gap-2 text-sm text-muted disabled:opacity-40 px-3 py-2" disabled>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          <span>Prev</span>
+          <span class="hidden sm:inline">Prev</span>
         </button>
-        <div id="pageIndicator" class="flex items-center gap-2" role="tablist"></div>
-        <button id="nextBtn" class="pagination-btn flex items-center gap-2 text-sm text-muted">
-          <span>Next</span>
+        <div id="pageIndicator" class="flex items-center gap-1" role="tablist"></div>
+        <button id="nextBtn" class="pagination-btn flex items-center gap-2 text-sm text-muted px-3 py-2">
+          <span class="hidden sm:inline">Next</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
@@ -329,36 +602,17 @@
 
   <script>
     // =============================================
-    // DATA SOURCE (JSON Structure)
+    // DATA SOURCE
     // =============================================
-    const DATA = {
-      actorTypes: [
-        { id: 1, name: "Sovereign State", category: "Political", desc: "A political entity with a permanent population, defined territory, and government.", icon: "🏛️" },
-        { id: 2, name: "Intergovernmental Org", category: "Institutional", desc: "Organization composed primarily of sovereign states, established by treaty.", icon: "🤝" },
-        { id: 3, name: "Multinational Corporation", category: "Economic", desc: "Corporate entity operating in multiple countries, often with significant influence.", icon: "🏢" },
-        { id: 4, name: "Non-Governmental Org", category: "Civil Society", desc: "Non-profit entities operating independently of government influence.", icon: "⚖️" },
-        { id: 5, name: "Insurgent Group", category: "Militant", desc: "Non-state armed group engaged in irregular warfare against established authority.", icon: "🔥" },
-        { id: 6, name: "Terrorist Network", category: "Militant", desc: "Decentralized groups employing asymmetric violence for ideological aims.", icon: "⚠️" },
-        { id: 7, name: "Supranational Union", category: "Institutional", desc: "An organization where member states transfer significant authority.", icon: "🇪🇺" },
-        { id: 8, name: "Autonomous Region", category: "Political", desc: "A subdivision of a state with limited self-governance.", icon: "🗺️" },
-        { id: 9, name: "Financial Institution", category: "Economic", desc: "Banks and funds influencing global capital flows and economic stability.", icon: "💹" },
-        { id: 10, name: "Religious Entity", category: "Civil Society", desc: "Organizations based on spiritual beliefs influencing social structures.", icon: "☸️" },
-        { id: 11, name: "Advocacy Network", category: "Civil Society", desc: "Transnational networks advocating for specific policy or social changes.", icon: "📢" },
-        { id: 12, name: "Private Military Co.", category: "Militant", desc: "Private companies providing armed combat or security services.", icon: "🛡️" },
-        { id: 13, name: "Criminal Syndicate", category: "Economic", desc: "Transnational organized crime groups operating illicit markets.", icon: "🎱" },
-        { id: 14, name: "Indigenous Governance", category: "Political", desc: "Self-governing bodies representing indigenous populations.", icon: "🌳" },
-        { id: 15, name: "Special Admin Region", category: "Political", desc: "Territories with distinct legal and economic systems from the mainland.", icon: "🏙️" }
-      ]
-    };
-
+    let entities = [];
+    
     // =============================================
     // STATE & DOM INIT
     // =============================================
-    let entities = DATA.actorTypes;
     let currentFilter = 'all';
     let currentPage = 1;
-    const itemsPerPage = 4; // As requested: 4 examples max
-    let filteredEntities = [...entities];
+    const itemsPerPage = 15; 
+    let filteredEntities = [];
 
     const searchInput = document.getElementById('searchInput');
     const searchDropdown = document.getElementById('searchDropdown');
@@ -371,6 +625,39 @@
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const tagContainer = document.getElementById('tagContainer');
+
+    // =============================================
+    // DATA HELPERS
+    // =============================================
+    const getCategories = (item) => item.categories || item.catetegories || [];
+    const getTags = (item) => item.tags || [];
+
+    // =============================================
+    // DATA FETCHING
+    // =============================================
+    async function loadData() {
+      try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        entities = data; 
+        
+        loadingSkeleton.classList.add('hidden');
+        entityGrid.classList.remove('hidden');
+        renderTags();
+        filterEntities();
+        
+      } catch (error) {
+        console.error('Error loading data:', error);
+        loadingSkeleton.innerHTML = `
+          <div class="col-span-full text-center py-10 text-red-400 border border-red-500/20 bg-red-500/5 rounded-xl">
+            <p class="font-mono text-sm">Failed to load data.json</p>
+            <p class="text-xs mt-2 opacity-60">Ensure file exists and is valid JSON.</p>
+          </div>
+        `;
+      }
+    }
 
     // =============================================
     // THEME MANAGEMENT
@@ -391,13 +678,97 @@
     initTheme();
 
     // =============================================
+    // TOOLBOX & MODALS
+    // =============================================
+    const toolboxToggle = document.getElementById('toolboxToggle');
+    const toolboxDropdown = document.getElementById('toolboxDropdown');
+    const helpModal = document.getElementById('helpModal');
+    let toolboxOpen = false;
+
+    function toggleToolbox() {
+      toolboxOpen = !toolboxOpen;
+      toolboxDropdown.classList.toggle('open', toolboxOpen);
+      toolboxToggle.classList.toggle('active', toolboxOpen);
+      toolboxToggle.setAttribute('aria-expanded', toolboxOpen);
+    }
+
+    function closeToolbox() {
+      toolboxOpen = false;
+      toolboxDropdown.classList.remove('open');
+      toolboxToggle.classList.remove('active');
+      toolboxToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function openModal(modal) {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.modal-close').focus();
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Event Listeners
+    toolboxToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleToolbox();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!toolboxDropdown.contains(e.target) && !toolboxToggle.contains(e.target)) {
+        closeToolbox();
+      }
+    });
+
+    helpModal.querySelectorAll('.modal-close').forEach(btn => {
+      btn.addEventListener('click', () => closeModal(helpModal));
+    });
+
+    helpModal.addEventListener('click', (e) => {
+      if (e.target === helpModal) closeModal(helpModal);
+    });
+
+    // Toolbox Tools Actions
+    document.getElementById('vizTool').addEventListener('click', () => {
+      closeToolbox();
+      window.location.href = 'visualize.html'; // Placeholder
+    });
+
+    document.getElementById('helpTool').addEventListener('click', () => {
+      closeToolbox();
+      openModal(helpModal);
+    });
+
+    document.getElementById('exportTool').addEventListener('click', () => {
+      closeToolbox();
+      exportData();
+    });
+
+    function exportData() {
+      const dataStr = JSON.stringify(filteredEntities, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ontologia-export.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // =============================================
     // TAG RENDERING
     // =============================================
     function renderTags() {
-      const categories = [...new Set(entities.map(e => e.category))];
+      const allCategories = entities.flatMap(e => getCategories(e));
+      const uniqueCategories = [...new Set(allCategories)];
+      
       tagContainer.innerHTML = '<button class="tag-pill selected" data-filter="all">All Categories</button>';
       
-      categories.forEach(cat => {
+      uniqueCategories.sort().forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'tag-pill';
         btn.dataset.filter = cat;
@@ -414,7 +785,7 @@
           tagContainer.querySelectorAll('.tag-pill').forEach(t => t.classList.remove('selected'));
           tag.classList.add('selected');
           currentFilter = tag.dataset.filter;
-          currentPage = 1; // Reset page on filter
+          currentPage = 1;
           filterEntities();
           closeDropdown();
         });
@@ -432,16 +803,18 @@
       
       const matches = entities.filter(e => 
         e.name.toLowerCase().includes(term) || 
-        e.category.toLowerCase().includes(term)
+        getCategories(e).some(c => c.toLowerCase().includes(term)) ||
+        getTags(e).some(t => t.toLowerCase().includes(term)) ||
+        (e.desc && e.desc.toLowerCase().includes(term))
       );
 
       if (matches.length === 0) {
         dropdownResults.innerHTML = '<div class="p-4 text-sm text-muted">No results</div>';
       } else {
-        dropdownResults.innerHTML = matches.map(e => `
+        dropdownResults.innerHTML = matches.slice(0, 10).map(e => `
           <div class="search-dropdown-item" data-id="${e.id}">
-            <span class="font-medium">${e.name}</span>
-            <span class="text-xs text-muted ml-2">${e.category}</span>
+            <span class="font-medium">${e.icon || ''} ${e.name}</span>
+            <span class="text-xs text-muted ml-2">${getCategories(e).join(', ')}</span>
           </div>
         `).join('');
       }
@@ -478,19 +851,46 @@
     // GRID RENDERING
     // =============================================
     function renderCard(entity) {
+      const cats = getCategories(entity);
+      const tags = getTags(entity);
+      const hasLink = entity.link && entity.link.trim() !== '';
+
+      const catsHtml = cats.map(c => 
+        `<span class="card-category inline-block px-2 py-0.5 text-xs font-mono tracking-wide rounded mr-1">${c}</span>`
+      ).join('');
+
+      const tagsHtml = tags.length > 0 ? `
+        <div class="mt-3 pt-3 border-t border-border/40">
+          <div class="flex flex-wrap gap-1">
+            ${tags.map(t => `<span class="card-tag inline-block px-2 py-0.5 text-[10px] font-mono tracking-wide rounded">${t}</span>`).join('')}
+          </div>
+        </div>
+      ` : '';
+
+      const linkHtml = hasLink ? `
+        <a href="${entity.link}" target="_blank" rel="noopener noreferrer" 
+           class="card-link-icon" title="View Source">
+           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+           </svg>
+        </a>
+      ` : '';
+
       return `
-        <article class="entity-card relative border rounded-xl p-6 shadow-sm" role="listitem">
-          <div class="flex items-start justify-between mb-4">
-            <div class="flex items-center gap-3">
-              <span class="text-2xl">${entity.icon}</span>
-              <span class="card-tag inline-block px-2 py-0.5 text-xs font-mono tracking-wide rounded">${entity.category}</span>
+        <article class="entity-card relative border rounded-xl p-5 shadow-sm" role="listitem">
+          ${linkHtml}
+          
+          <div class="flex items-start justify-between mb-3 pr-8">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-xl">${entity.icon || '📄'}</span>
+              ${catsHtml}
             </div>
           </div>
-          <h3 class="card-title font-display text-xl font-medium text-fg mb-2 transition-colors duration-150">${entity.name}</h3>
-          <p class="text-sm text-muted leading-relaxed mb-4">${entity.desc}</p>
-          <div class="flex items-center justify-end pt-4 border-t border-border">
-             <span class="font-mono text-xs text-muted/60">ID: ${entity.id.toString().padStart(3, '0')}</span>
-          </div>
+          
+          <h3 class="card-title font-display text-lg font-medium text-fg mb-1 transition-colors duration-150 leading-tight">${entity.name}</h3>
+          <p class="text-sm text-muted leading-relaxed flex-grow">${entity.desc || ''}</p>
+          
+          ${tagsHtml}
         </article>
       `;
     }
@@ -518,13 +918,49 @@
       }
     }
 
+    // =============================================
+    // PAGINATION
+    // =============================================
+    function getPaginationPages(totalPages, current) {
+      const delta = 1; 
+      const range = [];
+      const rangeWithDots = [];
+      let l;
+
+      for (let i = 1; i <= totalPages; i++) {
+          if (i === 1 || i === totalPages || (i >= current - delta && i <= current + delta)) {
+              range.push(i);
+          }
+      }
+
+      for (let i of range) {
+          if (l) {
+              if (i - l === 2) {
+                  rangeWithDots.push(l + 1);
+              } else if (i - l !== 1) {
+                  rangeWithDots.push('...');
+              }
+          }
+          rangeWithDots.push(i);
+          l = i;
+      }
+
+      return rangeWithDots;
+    }
+
     function renderPagination() {
       const totalPages = Math.ceil(filteredEntities.length / itemsPerPage);
-      let dots = '';
-      for(let i=1; i<=totalPages; i++) {
-        dots += `<button class="page-dot ${i === currentPage ? 'w-6 h-2' : 'w-2 h-2 bg-border'} rounded-full" style="${i === currentPage ? 'background-color: var(--accent);' : ''}" data-page="${i}"></button>`;
-      }
-      pageIndicator.innerHTML = dots;
+      const pages = getPaginationPages(totalPages, currentPage);
+
+      let html = pages.map(p => {
+        if (p === '...') {
+          return `<span class="page-ellipsis">...</span>`;
+        }
+        return `<button class="page-num ${p === currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
+      }).join('');
+
+      pageIndicator.innerHTML = html;
+      
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage === totalPages;
     }
@@ -532,10 +968,22 @@
     function filterEntities() {
       const term = searchInput.value.toLowerCase();
       filteredEntities = entities.filter(e => {
-        const matchFilter = currentFilter === 'all' || e.category === currentFilter;
-        const matchSearch = e.name.toLowerCase().includes(term) || e.desc.toLowerCase().includes(term) || e.category.toLowerCase().includes(term);
+        const cats = getCategories(e);
+        const tags = getTags(e);
+        
+        const matchFilter = currentFilter === 'all' || cats.includes(currentFilter);
+        const matchSearch = 
+          e.name.toLowerCase().includes(term) || 
+          (e.desc && e.desc.toLowerCase().includes(term)) || 
+          cats.some(c => c.toLowerCase().includes(term)) ||
+          tags.some(t => t.toLowerCase().includes(term));
+          
         return matchFilter && matchSearch;
       });
+      
+      const totalPages = Math.ceil(filteredEntities.length / itemsPerPage);
+      if (currentPage > totalPages) currentPage = 1;
+      
       renderGrid();
     }
 
@@ -559,14 +1007,46 @@
     });
 
     // =============================================
+    // KEYBOARD SHORTCUTS
+    // =============================================
+    document.addEventListener('keydown', (e) => {
+      const isMod = e.ctrlKey || e.metaKey;
+
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        if (e.key === 'Escape') {
+          closeDropdown();
+          closeModal(helpModal);
+        }
+        return;
+      }
+
+      if (e.key === 'F1') {
+        e.preventDefault();
+        openModal(helpModal);
+      }
+      else if (isMod && e.key.toLowerCase() === 'b') {
+        e.preventDefault();
+        toggleToolbox();
+      }
+      else if (isMod && e.key.toLowerCase() === 'd') {
+        e.preventDefault();
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      }
+      else if (isMod && e.key === '/' && !e.shiftKey) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      else if (e.key === 'Escape') {
+        closeToolbox();
+        closeModal(helpModal);
+      }
+    });
+
+    // =============================================
     // INITIALIZE
     // =============================================
-    setTimeout(() => {
-      loadingSkeleton.classList.add('hidden');
-      entityGrid.classList.remove('hidden');
-      renderTags();
-      filterEntities();
-    }, 500); // Simulate loading
+    loadData();
   </script>
 </body>
 </html>
