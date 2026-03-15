@@ -1,1368 +1,2437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firm Intelligence Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #0a0e14;
-            --bg-secondary: #12181f;
-            --bg-card: #181f28;
-            --bg-elevated: #1e2731;
-            --border: #2a3544;
-            --border-active: #3d4f63;
-            --text-primary: #e8edf4;
-            --text-secondary: #8b98a9;
-            --text-muted: #5a6a7d;
-            --accent-cyan: #00d4aa;
-            --accent-cyan-dim: rgba(0, 212, 170, 0.15);
-            --accent-amber: #f59e0b;
-            --accent-amber-dim: rgba(245, 158, 11, 0.15);
-            --accent-blue: #3b82f6;
-            --accent-rose: #f43f5e;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firm Intelligence Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0e14;
+      --bg-secondary: #111820;
+      --bg-card: rgba(20, 28, 38, 0.85);
+      --bg-card-hover: rgba(28, 38, 50, 0.95);
+      --border: rgba(60, 80, 100, 0.3);
+      --border-active: rgba(0, 212, 170, 0.5);
+      --text-primary: #e8edf4;
+      --text-secondary: #8b9cb3;
+      --text-muted: #5a6b7f;
+      --accent: #00d4aa;
+      --accent-dim: rgba(0, 212, 170, 0.15);
+      --accent-secondary: #f59e0b;
+      --accent-tertiary: #3b82f6;
+      --danger: #ef4444;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-        .mono {
-            font-family: 'IBM Plex Mono', monospace;
-        }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-active);
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
-        }
+    /* Background texture */
+    .bg-grid {
+      background-image: 
+        linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
 
-        /* Background pattern */
-        .bg-pattern {
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(0, 212, 170, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-                linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-        }
+    /* Glass panel effect */
+    .glass-panel {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
 
-        /* Grid overlay */
-        .grid-overlay {
-            background-image: 
-                linear-gradient(rgba(42, 53, 68, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(42, 53, 68, 0.3) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            opacity: 0.5;
-        }
+    .glass-panel:hover {
+      border-color: var(--border-active);
+    }
 
-        /* Glass card */
-        .glass-card {
-            background: linear-gradient(135deg, rgba(24, 31, 40, 0.9) 0%, rgba(30, 39, 49, 0.8) 100%);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-        }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+    ::-webkit-scrollbar-thumb {
+      background: var(--text-muted);
+      border-radius: 3px;
+    }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-secondary);
+    }
 
-        @keyframes progressGrow {
-            from { width: 0; }
-        }
+    /* Navigation tree styles */
+    .domain-tree {
+      list-style: none;
+    }
 
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
+    .domain-tree > li {
+      margin-bottom: 4px;
+    }
 
-        .animate-slide-in-left {
-            animation: slideInLeft 0.5s ease-out forwards;
-        }
+    .domain-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
 
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
+    .domain-header:hover {
+      background: rgba(0, 212, 170, 0.08);
+    }
 
-        @media (prefers-reduced-motion: reduce) {
-            .animate-fade-in-up,
-            .animate-slide-in-left {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
-        }
+    .domain-header.active {
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
 
-        /* Navigation tree */
-        .nav-tree-item {
-            transition: all 0.2s ease;
-        }
-        .nav-tree-item:hover {
-            background: var(--bg-elevated);
-        }
-        .nav-tree-item.active {
-            background: var(--accent-cyan-dim);
-            border-left: 2px solid var(--accent-cyan);
-        }
+    .domain-header .chevron {
+      transition: transform 0.2s ease;
+    }
 
-        /* Metric cards */
-        .metric-card {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .metric-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
+    .domain-header.expanded .chevron {
+      transform: rotate(90deg);
+    }
 
-        /* Timeline */
-        .timeline-event {
-            transition: all 0.3s ease;
-        }
-        .timeline-event:hover {
-            background: var(--bg-elevated);
-            transform: scale(1.02);
-        }
-        .timeline-event.active {
-            background: var(--accent-cyan-dim);
-            border-color: var(--accent-cyan);
-        }
+    .domain-children {
+      list-style: none;
+      margin-left: 20px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+    }
 
-        /* Progress bars */
-        .progress-bar {
-            animation: progressGrow 1s ease-out forwards;
-        }
+    .domain-children.expanded {
+      max-height: 500px;
+    }
 
-        /* Chart bars */
-        .chart-bar {
-            transition: height 0.5s ease;
-        }
+    .domain-children li {
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      position: relative;
+    }
 
-        /* Focus states */
-        button:focus-visible,
-        a:focus-visible,
-        select:focus-visible {
-            outline: 2px solid var(--accent-cyan);
-            outline-offset: 2px;
-        }
+    .domain-children li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.2s ease;
+    }
 
-        /* Button styles */
-        .btn-primary {
-            background: var(--accent-cyan);
-            color: var(--bg-primary);
-            transition: all 0.2s ease;
-        }
-        .btn-primary:hover {
-            background: #00e6b8;
-            transform: translateY(-1px);
-        }
-        .btn-primary:active {
-            transform: translateY(0);
-        }
+    .domain-children li:hover {
+      background: rgba(0, 212, 170, 0.05);
+      color: var(--text-primary);
+    }
 
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
-        }
-        .btn-secondary:hover {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
+    .domain-children li:hover::before {
+      height: 60%;
+    }
 
-        /* Nav link */
-        .nav-link {
-            position: relative;
-            transition: color 0.2s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-cyan);
-            transition: width 0.2s ease;
-        }
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        .nav-link.active {
-            color: var(--accent-cyan);
-        }
+    .domain-children li.active {
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
 
-        /* Tab button */
-        .tab-btn {
-            transition: all 0.2s ease;
-        }
-        .tab-btn.active {
-            background: var(--accent-cyan-dim);
-            color: var(--accent-cyan);
-            border-color: var(--accent-cyan);
-        }
+    .domain-children li.active::before {
+      height: 60%;
+    }
 
-        /* Evolution track */
-        .evolution-node {
-            transition: all 0.3s ease;
-        }
-        .evolution-node:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 212, 170, 0.3);
-        }
-    </style>
+    /* KPI Cards */
+    .kpi-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 42, 56, 0.7) 100%);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .kpi-card:hover::before {
+      opacity: 1;
+    }
+
+    .kpi-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .kpi-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .kpi-change.positive {
+      background: rgba(0, 212, 170, 0.15);
+      color: var(--accent);
+    }
+
+    .kpi-change.negative {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+    }
+
+    /* Module container */
+    .analysis-module {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button styles */
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-primary);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: #00eabb;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Tab styles */
+    .tab-group {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-secondary);
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab:hover {
+      color: var(--text-primary);
+    }
+
+    .tab.active {
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    /* Timeline */
+    .timeline-event {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: 47px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-event:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-year {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 40px;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      margin-top: 4px;
+    }
+
+    .timeline-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-content p {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* Chart containers */
+    .chart-container {
+      width: 100%;
+      height: 300px;
+    }
+
+    .chart-container-small {
+      width: 100%;
+      height: 200px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 64px;
+        bottom: 0;
+        width: 280px;
+        z-index: 50;
+        transition: left 0.3s ease;
+      }
+
+      .sidebar.open {
+        left: 0;
+      }
+
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+      }
+
+      .sidebar-overlay.open {
+        display: block;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Focus states */
+    button:focus-visible,
+    select:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Select styling */
+    select {
+      appearance: none;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 8px 32px 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b9cb3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+    }
+
+    select:hover {
+      border-color: var(--accent);
+    }
+  </style>
 </head>
-<body class="bi-platform bg-pattern">
-    <!-- Grid overlay -->
-    <div class="grid-overlay fixed inset-0 z-0"></div>
+<body class="bg-grid">
+  <!-- Platform Header -->
+  <header class="fixed top-0 left-0 right-0 h-16 bg-[var(--bg-secondary)] border-b border-[var(--border)] z-50 flex items-center px-4 gap-4">
+    <!-- Mobile menu button -->
+    <button id="menuToggle" class="lg:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--accent)]" aria-label="Toggle navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
 
-    <!-- Global Header -->
-    <header class="global-header fixed top-0 left-0 right-0 z-50 glass-card border-b border-[var(--border)]">
-        <div class="flex items-center justify-between px-6 h-16">
-            <!-- Logo -->
-            <div class="platform-logo flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-blue)] flex items-center justify-center">
-                    <svg class="w-5 h-5 text-[var(--bg-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                </div>
-                <span class="font-semibold text-lg tracking-tight">Firm Intelligence</span>
+    <!-- Brand -->
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded bg-[var(--accent-dim)] flex items-center justify-center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+      </div>
+      <span class="font-semibold text-lg tracking-tight hidden sm:block" style="font-family: 'Space Grotesk', sans-serif;">Firm Intelligence</span>
+    </div>
+
+    <!-- Firm Selector -->
+    <div class="ml-4 lg:ml-8">
+      <select id="firmSelector" class="min-w-[160px]">
+        <option value="toyota">Toyota Motor Corporation</option>
+        <option value="volkswagen">Volkswagen AG</option>
+        <option value="ford">Ford Motor Company</option>
+        <option value="hyundai">Hyundai Motor Company</option>
+      </select>
+    </div>
+
+    <!-- Domain Navigation -->
+    <nav class="hidden lg:flex items-center gap-1 ml-auto mr-4">
+      <button class="domain-nav-btn px-4 py-2 text-sm font-medium rounded-md transition-all text-[var(--accent)] bg-[var(--accent-dim)]" data-domain="structure">
+        Structure
+      </button>
+      <button class="domain-nav-btn px-4 py-2 text-sm font-medium rounded-md transition-all text-[var(--text-secondary)] hover:text-[var(--text-primary)]" data-domain="change">
+        Change
+      </button>
+      <button class="domain-nav-btn px-4 py-2 text-sm font-medium rounded-md transition-all text-[var(--text-secondary)] hover:text-[var(--text-primary)]" data-domain="outcomes">
+        Outcomes
+      </button>
+    </nav>
+
+    <!-- Global Actions -->
+    <div class="flex items-center gap-2 ml-auto lg:ml-0">
+      <button class="btn-secondary hidden sm:flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+        Compare
+      </button>
+      <button class="btn-primary flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Export
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar Overlay (Mobile) -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- Main Layout -->
+  <div class="flex pt-16 min-h-screen">
+    <!-- Domain Navigation Tree -->
+    <aside id="sidebar" class="sidebar w-64 bg-[var(--bg-secondary)] border-r border-[var(--border)] flex-shrink-0 overflow-y-auto lg:sticky lg:top-16 lg:h-[calc(100vh-64px)]">
+      <div class="p-4">
+        <div class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Analytical Domains</div>
+        
+        <ul class="domain-tree">
+          <!-- Firm State -->
+          <li>
+            <div class="domain-header expanded active" data-domain="firm-state">
+              <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>Firm State</span>
             </div>
+            <ul class="domain-children expanded">
+              <li class="active" data-module="overview">Overview</li>
+              <li data-module="genesis">Genesis</li>
+              <li data-module="technical-profile">Technical Profile</li>
+              <li data-module="product-catalog">Product Catalog</li>
+              <li data-module="organization">Organizational Structure</li>
+              <li data-module="capital">Capital Structure</li>
+              <li data-module="capabilities">Capability Profile</li>
+            </ul>
+          </li>
 
-            <!-- Firm Selector -->
-            <div class="firm-selector">
-                <select id="firmSelect" class="mono text-sm bg-[var(--bg-elevated)] border border-[var(--border)] rounded-lg px-4 py-2 text-[var(--text-primary)] cursor-pointer hover:border-[var(--accent-cyan)] transition-colors" aria-label="Select Firm">
-                    <option value="technova">TechNova Industries</option>
-                    <option value="globalchem">GlobalChem Corp</option>
-                    <option value="novatech">NovaTech Solutions</option>
-                </select>
+          <!-- Firm Evolution -->
+          <li>
+            <div class="domain-header" data-domain="firm-evolution">
+              <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>Firm Evolution</span>
             </div>
+            <ul class="domain-children">
+              <li data-module="technical-evolution">Technical Evolution</li>
+              <li data-module="product-evolution">Product Evolution</li>
+              <li data-module="organizational-evolution">Organizational Evolution</li>
+              <li data-module="capital-evolution">Capital Evolution</li>
+            </ul>
+          </li>
 
-            <!-- Global Navigation -->
-            <nav class="global-navigation flex items-center gap-8" role="navigation" aria-label="Main navigation">
-                <a href="#" class="nav-link active text-sm font-medium" data-section="firm">Firm</a>
-                <a href="#" class="nav-link text-sm font-medium text-[var(--text-secondary)]" data-section="environment">Environment</a>
-                <a href="#" class="nav-link text-sm font-medium text-[var(--text-secondary)]" data-section="interaction">Interaction</a>
-                <a href="#" class="nav-link text-sm font-medium text-[var(--text-secondary)]" data-section="comparative">Comparative</a>
-            </nav>
-
-            <!-- Actions -->
-            <div class="flex items-center gap-3">
-                <button class="p-2 rounded-lg hover:bg-[var(--bg-elevated)] transition-colors" aria-label="Notifications">
-                    <svg class="w-5 h-5 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
-                    </svg>
-                </button>
-                <button class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium">Export Report</button>
+          <!-- Environment State -->
+          <li>
+            <div class="domain-header" data-domain="environment-state">
+              <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>Environment State</span>
             </div>
-        </div>
-    </header>
+            <ul class="domain-children">
+              <li data-module="industry-profile">Industry Profile</li>
+              <li data-module="market-profile">Market Profile</li>
+              <li data-module="value-chain">Value Chain</li>
+              <li data-module="tech-landscape">Technological Landscape</li>
+              <li data-module="regulation">Regulation</li>
+              <li data-module="infrastructure">Infrastructure</li>
+            </ul>
+          </li>
 
-    <!-- Main Layout -->
-    <main class="analysis-layout pt-16 pb-24 min-h-screen flex relative z-10">
-        <!-- Domain Navigation -->
-        <aside class="domain-navigation w-64 fixed left-0 top-16 bottom-24 overflow-y-auto border-r border-[var(--border)] bg-[var(--bg-secondary)]">
-            <nav class="domain-tree p-4" role="navigation" aria-label="Domain navigation">
-                <ul class="space-y-1">
-                    <!-- Firm State -->
-                    <li class="domain">
-                        <button class="nav-tree-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-left" aria-expanded="true" data-domain="firm-state">
-                            <span class="font-medium text-sm">Firm State</span>
-                            <svg class="w-4 h-4 text-[var(--text-muted)] transition-transform domain-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <ul class="domain-children ml-3 mt-1 space-y-1" id="firm-state-children">
-                            <li><a href="#" class="nav-tree-item active block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="overview">Overview</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="genesis">Genesis</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="technical">Technical Profile</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="products">Product Catalog</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="organization">Organization</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="capital">Capital Structure</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="capabilities">Capabilities</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Firm Evolution -->
-                    <li class="domain">
-                        <button class="nav-tree-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-left" aria-expanded="false" data-domain="firm-evolution">
-                            <span class="font-medium text-sm">Firm Evolution</span>
-                            <svg class="w-4 h-4 text-[var(--text-muted)] transition-transform domain-chevron -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <ul class="domain-children ml-3 mt-1 space-y-1 hidden" id="firm-evolution-children">
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="tech-evolution">Technical Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="product-evolution">Product Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="org-evolution">Organizational Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="capital-evolution">Capital Evolution</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Environment -->
-                    <li class="domain">
-                        <button class="nav-tree-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-left" aria-expanded="false" data-domain="environment">
-                            <span class="font-medium text-sm">Environment</span>
-                            <svg class="w-4 h-4 text-[var(--text-muted)] transition-transform domain-chevron -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <ul class="domain-children ml-3 mt-1 space-y-1 hidden" id="environment-children">
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="industry">Industry Profile</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="market">Market Profile</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="value-chain">Value Chain</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="tech-landscape">Tech Landscape</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="regulatory">Regulatory</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="infrastructure">Infrastructure</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Environment Evolution -->
-                    <li class="domain">
-                        <button class="nav-tree-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-left" aria-expanded="false" data-domain="env-evolution">
-                            <span class="font-medium text-sm">Environment Evolution</span>
-                            <svg class="w-4 h-4 text-[var(--text-muted)] transition-transform domain-chevron -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <ul class="domain-children ml-3 mt-1 space-y-1 hidden" id="env-evolution-children">
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="market-evolution">Market Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="demand-evolution">Demand Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="regulatory-evolution">Regulatory Evolution</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Firm-Environment Interaction -->
-                    <li class="domain">
-                        <button class="nav-tree-item w-full flex items-center justify-between px-3 py-2 rounded-lg text-left" aria-expanded="false" data-domain="interaction">
-                            <span class="font-medium text-sm">Firm-Environment Interaction</span>
-                            <svg class="w-4 h-4 text-[var(--text-muted)] transition-transform domain-chevron -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <ul class="domain-children ml-3 mt-1 space-y-1 hidden" id="interaction-children">
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="sales">Sales Evolution</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="competitive">Competitive Position</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="market-share">Market Share</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="coverage">Market Coverage</a></li>
-                            <li><a href="#" class="nav-tree-item block px-3 py-2 rounded-lg text-sm text-[var(--text-secondary)]" data-module="profitability">Profitability</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- Analytical Workspace -->
-        <section class="analysis-workspace flex-1 ml-64 p-6">
-            <!-- Module: Overview -->
-            <div id="module-overview" class="module-content">
-                <!-- Header -->
-                <header class="module-header mb-8 animate-fade-in-up">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h1 class="text-2xl font-semibold mb-1">Firm Overview</h1>
-                            <p class="text-[var(--text-secondary)] text-sm">TechNova Industries - Industrial Technology Corporation</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                                </svg>
-                                Compare
-                            </button>
-                            <button class="btn-primary px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                </svg>
-                                Export
-                            </button>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- Key Metrics -->
-                <div class="module-metrics grid grid-cols-4 gap-4 mb-8">
-                    <div class="metric-card glass-card rounded-xl p-5 animate-fade-in-up stagger-1">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">Founded</span>
-                            <div class="w-8 h-8 rounded-lg bg-[var(--accent-cyan-dim)] flex items-center justify-center">
-                                <svg class="w-4 h-4 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="mono text-3xl font-semibold text-[var(--accent-cyan)]">1998</div>
-                        <div class="text-xs text-[var(--text-muted)] mt-1">26 years operational</div>
-                    </div>
-
-                    <div class="metric-card glass-card rounded-xl p-5 animate-fade-in-up stagger-2">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">Revenue</span>
-                            <div class="w-8 h-8 rounded-lg bg-[var(--accent-amber-dim)] flex items-center justify-center">
-                                <svg class="w-4 h-4 text-[var(--accent-amber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="mono text-3xl font-semibold">$4.2B</div>
-                        <div class="text-xs text-[var(--accent-cyan)] mt-1 flex items-center gap-1">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-                            </svg>
-                            +12.4% YoY
-                        </div>
-                    </div>
-
-                    <div class="metric-card glass-card rounded-xl p-5 animate-fade-in-up stagger-3">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">Employees</span>
-                            <div class="w-8 h-8 rounded-lg bg-blue-500/15 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-[var(--accent-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="mono text-3xl font-semibold">12,400</div>
-                        <div class="text-xs text-[var(--text-muted)] mt-1">Across 18 countries</div>
-                    </div>
-
-                    <div class="metric-card glass-card rounded-xl p-5 animate-fade-in-up stagger-4">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider">Market Share</span>
-                            <div class="w-8 h-8 rounded-lg bg-rose-500/15 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-[var(--accent-rose)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="mono text-3xl font-semibold">18.3%</div>
-                        <div class="text-xs text-[var(--text-muted)] mt-1">Industry leader</div>
-                    </div>
-                </div>
-
-                <!-- Main Content Grid -->
-                <div class="grid grid-cols-3 gap-6 mb-8">
-                    <!-- Firm Description -->
-                    <div class="col-span-2 glass-card rounded-xl p-6 animate-fade-in-up stagger-3">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-cyan)] rounded-full"></div>
-                            Strategic Description
-                        </h3>
-                        <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
-                            TechNova Industries is a global industrial technology corporation specializing in advanced manufacturing systems, automation solutions, and industrial IoT platforms. The firm operates across three primary business segments: Industrial Automation (45% of revenue), Smart Manufacturing Systems (35%), and Industrial Software & Services (20%).
-                        </p>
-                        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
-                            With headquarters in Stuttgart, Germany, TechNova maintains operational presence across 18 countries with primary manufacturing facilities in Germany, China, and the United States. The firm is recognized as an industry leader in Industry 4.0 solutions, serving automotive, aerospace, and general manufacturing sectors.
-                        </p>
-                        
-                        <div class="mt-6 pt-6 border-t border-[var(--border)]">
-                            <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Legal & Classification</h4>
-                            <div class="grid grid-cols-3 gap-4">
-                                <div>
-                                    <div class="text-xs text-[var(--text-muted)]">Legal Form</div>
-                                    <div class="text-sm font-medium mt-1">AG (Public Limited)</div>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-[var(--text-muted)]">Industry</div>
-                                    <div class="text-sm font-medium mt-1">Industrial Technology</div>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-[var(--text-muted)]">Headquarters</div>
-                                    <div class="text-sm font-medium mt-1">Stuttgart, Germany</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Operational Regions -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-4">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-amber)] rounded-full"></div>
-                            Operational Regions
-                        </h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm">Europe</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-24 h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                        <div class="progress-bar h-full bg-[var(--accent-cyan)] rounded-full" style="width: 45%"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--text-muted)]">45%</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm">North America</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-24 h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                        <div class="progress-bar h-full bg-[var(--accent-amber)] rounded-full" style="width: 28%"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--text-muted)]">28%</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm">Asia Pacific</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-24 h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                        <div class="progress-bar h-full bg-[var(--accent-blue)] rounded-full" style="width: 22%"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--text-muted)]">22%</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm">Other</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-24 h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                        <div class="progress-bar h-full bg-[var(--text-muted)] rounded-full" style="width: 5%"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--text-muted)]">5%</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 pt-4 border-t border-[var(--border)]">
-                            <div class="flex items-center gap-4 text-xs text-[var(--text-muted)]">
-                                <div class="flex items-center gap-1">
-                                    <div class="w-2 h-2 rounded-full bg-[var(--accent-cyan)]"></div>
-                                    <span>18 countries</span>
-                                </div>
-                                <div class="flex items-center gap-1">
-                                    <div class="w-2 h-2 rounded-full bg-[var(--accent-amber)]"></div>
-                                    <span>42 facilities</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Capabilities & Performance -->
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- Capability Radar -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-4">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-blue)] rounded-full"></div>
-                            Capability Profile
-                        </h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">R&D Intensity</span>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">92%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-cyan)] rounded-full" style="width: 92%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">Manufacturing</span>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">88%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-cyan)] rounded-full" style="width: 88%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">Logistics</span>
-                                    <span class="mono text-xs text-[var(--accent-amber)]">76%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-amber)] rounded-full" style="width: 76%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">Marketing</span>
-                                    <span class="mono text-xs text-[var(--accent-amber)]">71%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-amber)] rounded-full" style="width: 71%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">Digital</span>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">95%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-cyan)] rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs text-[var(--text-secondary)]">Supply Chain</span>
-                                    <span class="mono text-xs text-[var(--accent-amber)]">82%</span>
-                                </div>
-                                <div class="h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-amber)] rounded-full" style="width: 82%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Revenue Chart -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-5">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-cyan)] rounded-full"></div>
-                            Revenue Evolution
-                        </h3>
-                        <div class="flex items-end gap-2 h-32 mb-4" id="revenueChart">
-                            <!-- Bars rendered by JS -->
-                        </div>
-                        <div class="flex justify-between text-xs text-[var(--text-muted)] mono">
-                            <span>2019</span>
-                            <span>2020</span>
-                            <span>2021</span>
-                            <span>2022</span>
-                            <span>2023</span>
-                            <span>2024</span>
-                        </div>
-                    </div>
-                </div>
+          <!-- Environment Evolution -->
+          <li>
+            <div class="domain-header" data-domain="environment-evolution">
+              <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>Environment Evolution</span>
             </div>
+            <ul class="domain-children">
+              <li data-module="market-evolution">Market Evolution</li>
+              <li data-module="technology-evolution">Technology Evolution</li>
+              <li data-module="demand-evolution">Demand Evolution</li>
+              <li data-module="regulatory-evolution">Regulatory Evolution</li>
+              <li data-module="infrastructure-evolution">Infrastructure Evolution</li>
+            </ul>
+          </li>
 
-            <!-- Module: Technical Profile -->
-            <div id="module-technical" class="module-content hidden">
-                <header class="module-header mb-8 animate-fade-in-up">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h1 class="text-2xl font-semibold mb-1">Technical Profile</h1>
-                            <p class="text-[var(--text-secondary)] text-sm">Technological base and production systems</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="btn-secondary px-4 py-2 rounded-lg text-sm font-medium">View Evolution</button>
-                            <button class="btn-primary px-4 py-2 rounded-lg text-sm font-medium">Export</button>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- Technical Stack -->
-                <div class="grid grid-cols-3 gap-6 mb-8">
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-1">
-                        <div class="w-10 h-10 rounded-lg bg-[var(--accent-cyan-dim)] flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-semibold mb-2">Core Technologies</h3>
-                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></div>
-                                CNC Precision Manufacturing
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></div>
-                                Robotic Assembly Systems
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></div>
-                                Industrial IoT Platforms
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></div>
-                                AI-assisted Quality Control
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-2">
-                        <div class="w-10 h-10 rounded-lg bg-[var(--accent-amber-dim)] flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5 text-[var(--accent-amber)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-semibold mb-2">R&D Focus Areas</h3>
-                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-amber)]"></div>
-                                Autonomous Manufacturing
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-amber)]"></div>
-                                Digital Twin Technology
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-amber)]"></div>
-                                Edge Computing Systems
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <div class="w-1.5 h-1.5 rounded-full bg-[var(--accent-amber)]"></div>
-                                Sustainable Manufacturing
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-3">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/15 flex items-center justify-center mb-4">
-                            <svg class="w-5 h-5 text-[var(--accent-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-semibold mb-2">IP Portfolio</h3>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-[var(--text-secondary)]">Active Patents</span>
-                                <span class="mono text-sm font-medium">1,247</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-[var(--text-secondary)]">Pending Applications</span>
-                                <span class="mono text-sm font-medium">186</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-[var(--text-secondary)]">Trade Secrets</span>
-                                <span class="mono text-sm font-medium">340+</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technical Evolution Timeline -->
-                <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-4">
-                    <h3 class="text-sm font-semibold mb-6 flex items-center gap-2">
-                        <div class="w-1 h-4 bg-[var(--accent-cyan)] rounded-full"></div>
-                        Technical Stack Evolution
-                    </h3>
-                    <div class="evolution-layers space-y-6">
-                        <div class="evolution-layer">
-                            <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Production Technology</h4>
-                            <div class="evolution-track flex items-center gap-4">
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--text-muted)]">1998</div>
-                                    <div class="text-sm mt-1">Analog Systems</div>
-                                </div>
-                                <svg class="w-6 h-6 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--text-muted)]">2005</div>
-                                    <div class="text-sm mt-1">Digital Manufacturing</div>
-                                </div>
-                                <svg class="w-6 h-6 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--text-muted)]">2012</div>
-                                    <div class="text-sm mt-1">Automated Production</div>
-                                </div>
-                                <svg class="w-6 h-6 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--accent-cyan-dim)] border border-[var(--accent-cyan)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--accent-cyan)]">2020</div>
-                                    <div class="text-sm mt-1">AI-Assisted Operations</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="evolution-layer">
-                            <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">R&D Capabilities</h4>
-                            <div class="evolution-track flex items-center gap-4">
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--text-muted)]">1998</div>
-                                    <div class="text-sm mt-1">Process Engineering</div>
-                                </div>
-                                <svg class="w-6 h-6 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--text-muted)]">2008</div>
-                                    <div class="text-sm mt-1">Systems Integration</div>
-                                </div>
-                                <svg class="w-6 h-6 text-[var(--border)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                </svg>
-                                <div class="evolution-node flex-shrink-0 px-4 py-2 rounded-lg bg-[var(--accent-cyan-dim)] border border-[var(--accent-cyan)] cursor-pointer">
-                                    <div class="mono text-xs text-[var(--accent-cyan)]">2018</div>
-                                    <div class="text-sm mt-1">AI Research Lab</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- Firm-Environment Interaction -->
+          <li>
+            <div class="domain-header" data-domain="interaction">
+              <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              <span>Firm-Environment Interaction</span>
             </div>
+            <ul class="domain-children">
+              <li data-module="sales-evolution">Sales Evolution</li>
+              <li data-module="competitive-position">Competitive Position</li>
+              <li data-module="market-share">Market Share</li>
+              <li data-module="market-coverage">Market Coverage</li>
+              <li data-module="profitability">Profitability</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </aside>
 
-            <!-- Module: Interaction Dashboard -->
-            <div id="module-interaction" class="module-content hidden">
-                <header class="module-header mb-8 animate-fade-in-up">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h1 class="text-2xl font-semibold mb-1">Firm-Environment Interaction</h1>
-                            <p class="text-[var(--text-secondary)] text-sm">Observable results of market and competitive dynamics</p>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- KPI Dashboard -->
-                <div class="interaction-dashboard grid grid-cols-3 gap-4 mb-8">
-                    <div class="metric-card glass-card rounded-xl p-6 animate-fade-in-up stagger-1">
-                        <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Revenue</h4>
-                        <div class="mono text-3xl font-semibold mb-4">$4.2B</div>
-                        <div class="h-16 flex items-end gap-1" id="revenueSparkline"></div>
-                    </div>
-
-                    <div class="metric-card glass-card rounded-xl p-6 animate-fade-in-up stagger-2">
-                        <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Market Share</h4>
-                        <div class="mono text-3xl font-semibold mb-4">18.3%</div>
-                        <div class="relative h-16">
-                            <svg viewBox="0 0 100 50" class="w-full h-full">
-                                <circle cx="50" cy="25" r="20" fill="none" stroke="var(--bg-primary)" stroke-width="6"/>
-                                <circle cx="50" cy="25" r="20" fill="none" stroke="var(--accent-cyan)" stroke-width="6" stroke-dasharray="23 126" stroke-linecap="round" transform="rotate(-90 50 25)"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="metric-card glass-card rounded-xl p-6 animate-fade-in-up stagger-3">
-                        <h4 class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">Profitability</h4>
-                        <div class="mono text-3xl font-semibold mb-4">14.2%</div>
-                        <div class="flex items-center gap-2 text-sm text-[var(--accent-cyan)]">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                            </svg>
-                            +2.1 pp vs industry
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Detailed Metrics -->
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- Revenue by Segment -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-4">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-amber)] rounded-full"></div>
-                            Revenue by Segment
-                        </h3>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-sm">Industrial Automation</span>
-                                    <span class="mono text-sm">$1.89B (45%)</span>
-                                </div>
-                                <div class="h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-cyan)] rounded-full" style="width: 45%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-sm">Smart Manufacturing</span>
-                                    <span class="mono text-sm">$1.47B (35%)</span>
-                                </div>
-                                <div class="h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-amber)] rounded-full" style="width: 35%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="text-sm">Software & Services</span>
-                                    <span class="mono text-sm">$0.84B (20%)</span>
-                                </div>
-                                <div class="h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
-                                    <div class="progress-bar h-full bg-[var(--accent-blue)] rounded-full" style="width: 20%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Competitive Position -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-5">
-                        <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
-                            <div class="w-1 h-4 bg-[var(--accent-blue)] rounded-full"></div>
-                            Competitive Position
-                        </h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-3 rounded-lg bg-[var(--bg-primary)]">
-                                <span class="text-sm">Relative Scale</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex gap-0.5">
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--border)]"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">4/5</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between p-3 rounded-lg bg-[var(--bg-primary)]">
-                                <span class="text-sm">Cost Position</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex gap-0.5">
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-amber)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-amber)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-amber)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--border)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--border)]"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--accent-amber)]">3/5</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between p-3 rounded-lg bg-[var(--bg-primary)]">
-                                <span class="text-sm">Innovation Position</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex gap-0.5">
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">5/5</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between p-3 rounded-lg bg-[var(--bg-primary)]">
-                                <span class="text-sm">Differentiation</span>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex gap-0.5">
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--accent-cyan)]"></div>
-                                        <div class="w-2 h-4 rounded-sm bg-[var(--border)]"></div>
-                                    </div>
-                                    <span class="mono text-xs text-[var(--accent-cyan)]">4/5</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Module: Comparative Analysis -->
-            <div id="module-comparative" class="module-content hidden">
-                <header class="module-header mb-8 animate-fade-in-up">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h1 class="text-2xl font-semibold mb-1">Comparative Analysis</h1>
-                            <p class="text-[var(--text-secondary)] text-sm">Cross-firm intelligence comparison</p>
-                        </div>
-                    </div>
-                </header>
-
-                <!-- Comparison Controls -->
-                <div class="comparison-engine">
-                    <div class="glass-card rounded-xl p-6 mb-6 animate-fade-in-up stagger-1">
-                        <div class="flex items-center gap-8">
-                            <div class="flex-1">
-                                <label class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2 block">Firm A</label>
-                                <select class="w-full bg-[var(--bg-primary)] border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:border-[var(--accent-cyan)] outline-none">
-                                    <option>TechNova Industries</option>
-                                    <option>GlobalChem Corp</option>
-                                    <option>NovaTech Solutions</option>
-                                </select>
-                            </div>
-                            <div class="text-[var(--text-muted)] mt-6">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-                                </svg>
-                            </div>
-                            <div class="flex-1">
-                                <label class="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-2 block">Firm B</label>
-                                <select class="w-full bg-[var(--bg-primary)] border border-[var(--border)] rounded-lg px-4 py-3 text-sm focus:border-[var(--accent-cyan)] outline-none">
-                                    <option>Competitor Alpha</option>
-                                    <option>Competitor Beta</option>
-                                    <option>Competitor Gamma</option>
-                                </select>
-                            </div>
-                            <button class="btn-primary px-6 py-3 rounded-lg text-sm font-medium mt-6">Compare</button>
-                        </div>
-                    </div>
-
-                    <!-- Comparison Visualization -->
-                    <div class="glass-card rounded-xl p-6 animate-fade-in-up stagger-2">
-                        <h3 class="text-sm font-semibold mb-6">Comparison Results</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-32 text-sm text-[var(--text-secondary)]">Revenue</div>
-                                <div class="flex-1 h-8 bg-[var(--bg-primary)] rounded-lg relative overflow-hidden">
-                                    <div class="absolute left-0 top-0 h-full bg-[var(--accent-cyan)] rounded-l-lg" style="width: 75%">
-                                        <span class="absolute right-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">$4.2B</span>
-                                    </div>
-                                    <div class="absolute right-0 top-0 h-full bg-[var(--accent-amber)] rounded-r-lg" style="width: 55%">
-                                        <span class="absolute left-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">$3.1B</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-32 text-sm text-[var(--text-secondary)]">Employees</div>
-                                <div class="flex-1 h-8 bg-[var(--bg-primary)] rounded-lg relative overflow-hidden">
-                                    <div class="absolute left-0 top-0 h-full bg-[var(--accent-cyan)] rounded-l-lg" style="width: 62%">
-                                        <span class="absolute right-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">12.4K</span>
-                                    </div>
-                                    <div class="absolute right-0 top-0 h-full bg-[var(--accent-amber)] rounded-r-lg" style="width: 78%">
-                                        <span class="absolute left-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">15.6K</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-32 text-sm text-[var(--text-secondary)]">R&D Intensity</div>
-                                <div class="flex-1 h-8 bg-[var(--bg-primary)] rounded-lg relative overflow-hidden">
-                                    <div class="absolute left-0 top-0 h-full bg-[var(--accent-cyan)] rounded-l-lg" style="width: 85%">
-                                        <span class="absolute right-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">8.5%</span>
-                                    </div>
-                                    <div class="absolute right-0 top-0 h-full bg-[var(--accent-amber)] rounded-r-lg" style="width: 52%">
-                                        <span class="absolute left-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">5.2%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-32 text-sm text-[var(--text-secondary)]">Market Share</div>
-                                <div class="flex-1 h-8 bg-[var(--bg-primary)] rounded-lg relative overflow-hidden">
-                                    <div class="absolute left-0 top-0 h-full bg-[var(--accent-cyan)] rounded-l-lg" style="width: 73%">
-                                        <span class="absolute right-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">18.3%</span>
-                                    </div>
-                                    <div class="absolute right-0 top-0 h-full bg-[var(--accent-amber)] rounded-r-lg" style="width: 56%">
-                                        <span class="absolute left-2 top-1/2 -translate-y-1/2 mono text-xs text-[var(--bg-primary)] font-medium">14.1%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-6 mt-6 pt-4 border-t border-[var(--border)]">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded bg-[var(--accent-cyan)]"></div>
-                                <span class="text-xs text-[var(--text-muted)]">TechNova Industries</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 rounded bg-[var(--accent-amber)]"></div>
-                                <span class="text-xs text-[var(--text-muted)]">Competitor Alpha</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Analytical Workspace -->
+    <main class="flex-1 p-4 lg:p-6 overflow-x-hidden">
+      <div id="workspace" class="max-w-7xl mx-auto">
+        <!-- Module content renders here -->
+      </div>
     </main>
+  </div>
 
-    <!-- Temporal Navigation Footer -->
-    <footer class="temporal-navigation fixed bottom-0 left-0 right-0 z-40 glass-card border-t border-[var(--border)] ml-64">
-        <div class="evolution-timeline p-4">
-            <div class="flex items-center justify-between mb-3">
-                <h3 class="text-sm font-semibold">Evolution Timeline</h3>
-                <div class="timeline-controls flex items-center gap-2">
-                    <button class="p-1.5 rounded hover:bg-[var(--bg-elevated)] transition-colors" aria-label="Zoom out">
-                        <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
-                        </svg>
-                    </button>
-                    <button class="p-1.5 rounded hover:bg-[var(--bg-elevated)] transition-colors" aria-label="Zoom in">
-                        <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
-                        </svg>
-                    </button>
-                    <button class="p-1.5 rounded hover:bg-[var(--bg-elevated)] transition-colors" aria-label="Filter">
-                        <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
-                        </svg>
-                    </button>
-                </div>
+  <script>
+    // ===============================
+    // DATA LAYER
+    // ===============================
+    const firmData = {
+      toyota: {
+        name: 'Toyota Motor Corporation',
+        founded: 1937,
+        headquarters: 'Toyota City, Japan',
+        industry: 'Automotive Manufacturing',
+        employees: 375235,
+        marketCap: 287.4,
+        revenue: 275.3,
+        revenueGrowth: 7.2,
+        operatingMargin: 10.8,
+        roic: 12.4,
+        regions: ['Japan', 'North America', 'Europe', 'Asia Pacific', 'Latin America'],
+        products: [
+          { name: 'Passenger Cars', revenue: 98.2, share: 35.7 },
+          { name: 'SUVs & Crossovers', revenue: 82.5, share: 30.0 },
+          { name: 'Trucks & Vans', revenue: 49.6, share: 18.0 },
+          { name: 'Luxury (Lexus)', revenue: 33.0, share: 12.0 },
+          { name: 'Hybrids/EVs', revenue: 12.0, share: 4.3 }
+        ],
+        competitors: ['Volkswagen', 'Ford', 'Hyundai', 'GM', 'Honda'],
+        marketShare: 11.2,
+        timeline: [
+          { year: 1937, event: 'Founded by Kiichiro Toyoda', type: 'genesis' },
+          { year: 1957, event: 'First exports to United States', type: 'expansion' },
+          { year: 1966, event: 'Corolla launched - becomes best-selling model', type: 'product' },
+          { year: 1989, event: 'Lexus luxury brand established', type: 'expansion' },
+          { year: 1997, event: 'Prius launched - first mass-produced hybrid', type: 'innovation' },
+          { year: 2008, event: 'Becomes world\'s largest automaker', type: 'milestone' },
+          { year: 2016, event: 'Investment in autonomous driving technology', type: 'innovation' },
+          { year: 2021, event: 'e-TNGA EV platform announced', type: 'innovation' }
+        ],
+        technicalCapabilities: {
+          'Manufacturing Excellence': 95,
+          'Quality Systems': 92,
+          'Hybrid Technology': 98,
+          'Battery Technology': 75,
+          'Autonomous Driving': 68,
+          'Connected Vehicles': 72,
+          'Supply Chain': 88
+        },
+        orgStructure: {
+          ceo: 'Koji Sato',
+          sectors: [
+            { name: 'Lexus International', head: 'Koji Sato' },
+            { name: 'Toyota No. 1', head: 'Masahiko Maeda' },
+            { name: 'Toyota No. 2', head: 'Kazuki Takagi' },
+            { name: 'Unit Center', head: 'Masayuki Kai' },
+            { name: 'Engine', head: 'Takahiro Suzuki' }
+          ]
+        },
+        yearlyData: {
+          revenue: [248, 256, 265, 252, 260, 270, 275],
+          profit: [18.2, 19.5, 21.0, 16.8, 20.1, 22.5, 24.8],
+          marketShare: [10.8, 10.9, 11.0, 10.8, 10.9, 11.0, 11.2],
+          years: ['2018', '2019', '2020', '2021', '2022', '2023', '2024']
+        },
+        regionalRevenue: [
+          { region: 'Japan', value: 58.2, share: 21.1 },
+          { region: 'North America', value: 82.6, share: 30.0 },
+          { region: 'Europe', value: 41.3, share: 15.0 },
+          { region: 'Asia Pacific', value: 68.8, share: 25.0 },
+          { region: 'Other', value: 24.4, share: 8.9 }
+        ]
+      },
+      volkswagen: {
+        name: 'Volkswagen AG',
+        founded: 1937,
+        headquarters: 'Wolfsburg, Germany',
+        industry: 'Automotive Manufacturing',
+        employees: 676000,
+        marketCap: 62.1,
+        revenue: 252.6,
+        revenueGrowth: 5.1,
+        operatingMargin: 7.2,
+        roic: 8.6,
+        regions: ['Europe', 'China', 'North America', 'South America', 'Asia Pacific'],
+        products: [
+          { name: 'Volkswagen Brand', revenue: 88.4, share: 35.0 },
+          { name: 'Audi', revenue: 55.6, share: 22.0 },
+          { name: 'Skoda', revenue: 25.3, share: 10.0 },
+          { name: 'Porsche', revenue: 37.9, share: 15.0 },
+          { name: 'Commercial Vehicles', revenue: 45.4, share: 18.0 }
+        ],
+        competitors: ['Toyota', 'BMW', 'Mercedes-Benz', 'Ford', 'Hyundai'],
+        marketShare: 10.8,
+        timeline: [
+          { year: 1937, event: 'Founded by German Labour Front', type: 'genesis' },
+          { year: 1945, event: 'Factory restarted under British supervision', type: 'recovery' },
+          { year: 1960, event: 'Privatized with 60% stock offered to public', type: 'expansion' },
+          { year: 1986, event: 'Acquisition of SEAT', type: 'expansion' },
+          { year: 1991, event: 'Acquisition of Skoda', type: 'expansion' },
+          { year: 2012, event: 'Porsche fully integrated', type: 'expansion' },
+          { year: 2015, event: 'Diesel emissions scandal', type: 'crisis' },
+          { year: 2020, event: 'ID.3 EV launched', type: 'innovation' }
+        ],
+        technicalCapabilities: {
+          'Manufacturing Excellence': 88,
+          'Quality Systems': 82,
+          'Hybrid Technology': 72,
+          'Battery Technology': 78,
+          'Autonomous Driving': 75,
+          'Connected Vehicles': 80,
+          'Supply Chain': 85
+        },
+        orgStructure: {
+          ceo: 'Oliver Blume',
+          sectors: [
+            { name: 'Volkswagen Brand', head: 'Thomas Schaefer' },
+            { name: 'Audi', head: 'Gernot Doellner' },
+            { name: 'Porsche', head: 'Oliver Blume' },
+            { name: 'Skoda', head: 'Klaus Zellmer' }
+          ]
+        },
+        yearlyData: {
+          revenue: [235, 242, 248, 246, 250, 255, 252],
+          profit: [14.2, 15.8, 12.4, 13.6, 16.2, 18.1, 15.6],
+          marketShare: [11.2, 11.0, 10.9, 10.7, 10.8, 10.9, 10.8],
+          years: ['2018', '2019', '2020', '2021', '2022', '2023', '2024']
+        },
+        regionalRevenue: [
+          { region: 'Europe', value: 88.4, share: 35.0 },
+          { region: 'China', value: 75.8, share: 30.0 },
+          { region: 'North America', value: 40.4, share: 16.0 },
+          { region: 'South America', value: 15.2, share: 6.0 },
+          { region: 'Other', value: 32.8, share: 13.0 }
+        ]
+      },
+      ford: {
+        name: 'Ford Motor Company',
+        founded: 1903,
+        headquarters: 'Dearborn, Michigan',
+        industry: 'Automotive Manufacturing',
+        employees: 173000,
+        marketCap: 48.2,
+        revenue: 176.2,
+        revenueGrowth: 4.8,
+        operatingMargin: 6.4,
+        roic: 7.2,
+        regions: ['North America', 'Europe', 'China', 'South America'],
+        products: [
+          { name: 'F-Series Trucks', revenue: 52.9, share: 30.0 },
+          { name: 'SUVs & Crossovers', revenue: 49.3, share: 28.0 },
+          { name: 'Passenger Cars', revenue: 26.4, share: 15.0 },
+          { name: 'Commercial Vehicles', revenue: 35.2, share: 20.0 },
+          { name: 'Lincoln', revenue: 12.4, share: 7.0 }
+        ],
+        competitors: ['GM', 'Toyota', 'Ram', 'Chevrolet', 'Tesla'],
+        marketShare: 5.4,
+        timeline: [
+          { year: 1903, event: 'Founded by Henry Ford', type: 'genesis' },
+          { year: 1908, event: 'Model T introduced', type: 'product' },
+          { year: 1913, event: 'Moving assembly line developed', type: 'innovation' },
+          { year: 1941, event: 'Begins production for WWII effort', type: 'pivot' },
+          { year: 1964, event: 'Mustang launched', type: 'product' },
+          { year: 1986, event: 'Acquires Jaguar', type: 'expansion' },
+          { year: 2008, event: 'Avoids bankruptcy during financial crisis', type: 'milestone' },
+          { year: 2021, event: 'F-150 Lightning EV launched', type: 'innovation' }
+        ],
+        technicalCapabilities: {
+          'Manufacturing Excellence': 85,
+          'Quality Systems': 78,
+          'Hybrid Technology': 70,
+          'Battery Technology': 72,
+          'Autonomous Driving': 74,
+          'Connected Vehicles': 82,
+          'Supply Chain': 80
+        },
+        orgStructure: {
+          ceo: 'James Farley',
+          sectors: [
+            { name: 'Ford Blue', head: 'Kumar Galhotra' },
+            { name: 'Ford Model e', head: 'Marin Gjaja' },
+            { name: 'Ford Pro', head: 'Ted Cannis' },
+            { name: 'Lincoln', head: 'Dianne Craig' }
+          ]
+        },
+        yearlyData: {
+          revenue: [160, 166, 172, 168, 170, 175, 176],
+          profit: [8.2, 7.6, 4.8, 6.2, 7.8, 8.4, 9.2],
+          marketShare: [5.6, 5.5, 5.4, 5.2, 5.3, 5.3, 5.4],
+          years: ['2018', '2019', '2020', '2021', '2022', '2023', '2024']
+        },
+        regionalRevenue: [
+          { region: 'North America', value: 114.5, share: 65.0 },
+          { region: 'Europe', value: 35.2, share: 20.0 },
+          { region: 'China', value: 14.1, share: 8.0 },
+          { region: 'Other', value: 12.4, share: 7.0 }
+        ]
+      },
+      hyundai: {
+        name: 'Hyundai Motor Company',
+        founded: 1967,
+        headquarters: 'Seoul, South Korea',
+        industry: 'Automotive Manufacturing',
+        employees: 120000,
+        marketCap: 42.8,
+        revenue: 142.5,
+        revenueGrowth: 8.6,
+        operatingMargin: 9.2,
+        roic: 10.8,
+        regions: ['South Korea', 'North America', 'Europe', 'China', 'India'],
+        products: [
+          { name: 'Hyundai Brand', revenue: 99.8, share: 70.0 },
+          { name: 'Genesis', revenue: 21.4, share: 15.0 },
+          { name: 'Commercial Vehicles', revenue: 14.3, share: 10.0 },
+          { name: 'EVs (IONIQ)', revenue: 7.0, share: 5.0 }
+        ],
+        competitors: ['Kia', 'Toyota', 'Honda', 'Volkswagen', 'Ford'],
+        marketShare: 6.2,
+        timeline: [
+          { year: 1967, event: 'Founded by Chung Ju-yung', type: 'genesis' },
+          { year: 1975, event: 'First independently developed vehicle', type: 'product' },
+          { year: 1986, event: 'Enters US market with Excel', type: 'expansion' },
+          { year: 1998, event: 'Acquires Kia Motors', type: 'expansion' },
+          { year: 2008, event: 'Genesis luxury brand introduced', type: 'expansion' },
+          { year: 2016, event: 'IONIQ hybrid/EV platform launched', type: 'innovation' },
+          { year: 2021, event: 'IONIQ 5 EV wins Car of the Year', type: 'milestone' },
+          { year: 2024, event: 'Metaplant Georgia begins production', type: 'expansion' }
+        ],
+        technicalCapabilities: {
+          'Manufacturing Excellence': 90,
+          'Quality Systems': 88,
+          'Hybrid Technology': 82,
+          'Battery Technology': 85,
+          'Autonomous Driving': 76,
+          'Connected Vehicles': 84,
+          'Supply Chain': 86
+        },
+        orgStructure: {
+          ceo: 'Jaehoon Chang',
+          sectors: [
+            { name: 'Hyundai Domestic', head: 'Yongwoo Lee' },
+            { name: 'Hyundai Overseas', head: 'Michael Cole' },
+            { name: 'Genesis', head: 'Mark Del Rosso' },
+            { name: 'Commercial Vehicles', head: 'Johan van Zyl' }
+          ]
+        },
+        yearlyData: {
+          revenue: [115, 122, 130, 125, 132, 138, 142],
+          profit: [7.8, 8.5, 7.2, 8.8, 10.2, 11.6, 12.8],
+          marketShare: [5.4, 5.6, 5.8, 5.9, 6.0, 6.1, 6.2],
+          years: ['2018', '2019', '2020', '2021', '2022', '2023', '2024']
+        },
+        regionalRevenue: [
+          { region: 'South Korea', value: 35.6, share: 25.0 },
+          { region: 'North America', value: 42.8, share: 30.0 },
+          { region: 'Europe', value: 28.5, share: 20.0 },
+          { region: 'China', value: 14.3, share: 10.0 },
+          { region: 'India', value: 14.3, share: 10.0 },
+          { region: 'Other', value: 7.0, share: 5.0 }
+        ]
+      }
+    };
+
+    // ===============================
+    // CHART INSTANCES
+    // ===============================
+    const chartInstances = {};
+
+    // ===============================
+    // DOM ELEMENTS
+    // ===============================
+    const workspace = document.getElementById('workspace');
+    const firmSelector = document.getElementById('firmSelector');
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    // ===============================
+    // STATE
+    // ===============================
+    let currentFirm = 'toyota';
+    let currentModule = 'overview';
+
+    // ===============================
+    // UTILITIES
+    // ===============================
+    function formatCurrency(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 1
+      }).format(value) + 'B';
+    }
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat('en-US').format(value);
+    }
+
+    function disposeCharts() {
+      Object.keys(chartInstances).forEach(key => {
+        if (chartInstances[key]) {
+          chartInstances[key].dispose();
+          delete chartInstances[key];
+        }
+      });
+    }
+
+    // ===============================
+    // CHART CONFIGURATIONS
+    // ===============================
+    const chartTheme = {
+      backgroundColor: 'transparent',
+      textStyle: {
+        fontFamily: 'IBM Plex Sans',
+        color: '#8b9cb3'
+      },
+      title: {
+        textStyle: {
+          fontFamily: 'Space Grotesk',
+          color: '#e8edf4',
+          fontSize: 14,
+          fontWeight: 600
+        }
+      },
+      legend: {
+        textStyle: {
+          color: '#8b9cb3'
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        top: '15%',
+        containLabel: true
+      },
+      tooltip: {
+        backgroundColor: 'rgba(17, 24, 32, 0.95)',
+        borderColor: 'rgba(60, 80, 100, 0.3)',
+        textStyle: {
+          color: '#e8edf4'
+        }
+      }
+    };
+
+    // ===============================
+    // MODULE RENDERERS
+    // ===============================
+    const moduleRenderers = {
+      overview: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-2xl font-bold mb-1">${firm.name}</h1>
+              <p class="text-[var(--text-secondary)] text-sm">${firm.industry} | Founded ${firm.founded}</p>
             </div>
-            
-            <div class="timeline-track relative overflow-x-auto pb-2">
-                <div class="flex items-center gap-2 min-w-max px-2">
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="1998">
-                        <span class="mono text-xs text-[var(--accent-cyan)]">1998</span>
-                        <span class="text-sm ml-2">Firm Founded</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2003">
-                        <span class="mono text-xs text-[var(--text-muted)]">2003</span>
-                        <span class="text-sm ml-2">European Expansion</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2005">
-                        <span class="mono text-xs text-[var(--text-muted)]">2005</span>
-                        <span class="text-sm ml-2">Digital Manufacturing</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2010">
-                        <span class="mono text-xs text-[var(--text-muted)]">2010</span>
-                        <span class="text-sm ml-2">IPO</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2012">
-                        <span class="mono text-xs text-[var(--text-muted)]">2012</span>
-                        <span class="text-sm ml-2">Automated Production</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2015">
-                        <span class="mono text-xs text-[var(--text-muted)]">2015</span>
-                        <span class="text-sm ml-2">Asia Pacific Entry</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2018">
-                        <span class="mono text-xs text-[var(--text-muted)]">2018</span>
-                        <span class="text-sm ml-2">AI Research Lab</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event active flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2020">
-                        <span class="mono text-xs text-[var(--accent-cyan)]">2020</span>
-                        <span class="text-sm ml-2">AI-Assisted Operations</span>
-                    </div>
-                    <div class="w-8 h-px bg-[var(--border)]"></div>
-                    <div class="timeline-event flex-shrink-0 px-4 py-2 rounded-lg border border-[var(--border)] cursor-pointer" data-year="2024">
-                        <span class="mono text-xs text-[var(--text-muted)]">2024</span>
-                        <span class="text-sm ml-2">Sustainability Initiative</span>
-                    </div>
-                </div>
+            <div class="flex gap-2">
+              <button class="btn-secondary">View History</button>
+              <button class="btn-primary">Full Analysis</button>
             </div>
-        </div>
-    </footer>
+          </header>
 
-    <!-- References Footer -->
-    <footer class="references fixed bottom-24 left-64 right-0 z-30 px-6 py-2 flex items-center justify-between text-xs text-[var(--text-muted)]">
-        <div>
-            <span>Firm Intelligence Platform v2.1</span>
-            <span class="mx-2">|</span>
-            <span>Last updated: 2024-12-15</span>
-        </div>
-        <a href="https://www.bremontix.xyz/lab/pro/Firm/" target="_blank" rel="noopener" class="hover:text-[var(--accent-cyan)] transition-colors underline underline-offset-2">
-            Firm Conceptual Framework
-        </a>
-    </footer>
+          <!-- KPI Cards -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Market Cap</p>
+              <p class="kpi-value">$${firm.marketCap}B</p>
+              <span class="kpi-change positive mt-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                +12.4%
+              </span>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Annual Revenue</p>
+              <p class="kpi-value">${formatCurrency(firm.revenue)}</p>
+              <span class="kpi-change positive mt-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                +${firm.revenueGrowth}%
+              </span>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Operating Margin</p>
+              <p class="kpi-value">${firm.operatingMargin}%</p>
+              <span class="kpi-change positive mt-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                +1.2pp
+              </span>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">ROIC</p>
+              <p class="kpi-value">${firm.roic}%</p>
+              <span class="kpi-change positive mt-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+                +0.8pp
+              </span>
+            </div>
+          </div>
 
-    <script>
-        // Data
-        const revenueData = [2.1, 2.4, 2.8, 3.2, 3.8, 4.2];
-        const sparklineData = [3.2, 3.4, 3.3, 3.6, 3.8, 3.7, 3.9, 4.0, 4.1, 4.2, 4.0, 4.2];
+          <!-- Charts Row -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Revenue Trend</h3>
+              <div id="revenueChart" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Regional Distribution</h3>
+              <div id="regionalChart" class="chart-container"></div>
+            </div>
+          </div>
 
-        // DOM Ready
-        document.addEventListener('DOMContentLoaded', function() {
-            initRevenueChart();
-            initSparkline();
-            initNavigation();
-            initTimeline();
-            initScrollReveal();
-            initAnimatedCounters();
+          <!-- Firm Identity Card -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Key Facts</h3>
+              <ul class="space-y-3">
+                <li class="flex justify-between text-sm">
+                  <span class="text-[var(--text-muted)]">Headquarters</span>
+                  <span>${firm.headquarters}</span>
+                </li>
+                <li class="flex justify-between text-sm">
+                  <span class="text-[var(--text-muted)]">Employees</span>
+                  <span>${formatNumber(firm.employees)}</span>
+                </li>
+                <li class="flex justify-between text-sm">
+                  <span class="text-[var(--text-muted)]">Market Share</span>
+                  <span>${firm.marketShare}%</span>
+                </li>
+                <li class="flex justify-between text-sm">
+                  <span class="text-[var(--text-muted)]">Operating Regions</span>
+                  <span>${firm.regions.length}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="glass-panel p-4 lg:col-span-2">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Corporate Timeline</h3>
+              <div class="overflow-y-auto max-h-64 pr-2">
+                ${firm.timeline.slice(-5).map(t => `
+                  <div class="timeline-event">
+                    <span class="timeline-year">${t.year}</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h4>${t.event}</h4>
+                      <p>${t.type.charAt(0).toUpperCase() + t.type.slice(1)}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </section>
+      `,
+
+      technicalProfile: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Technical Profile</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Core technological capabilities and infrastructure</p>
+            </div>
+            <div class="tab-group">
+              <button class="tab active">Capabilities</button>
+              <button class="tab">Infrastructure</button>
+              <button class="tab">R&D</button>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Capability Radar</h3>
+              <div id="capabilityRadar" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Technical Investments</h3>
+              <div id="techInvestment" class="chart-container"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Capability Assessment</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${Object.entries(firm.technicalCapabilities).map(([name, score]) => `
+                <div class="bg-[var(--bg-secondary)] rounded-lg p-4">
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium">${name}</span>
+                    <span class="text-sm text-[var(--accent)]">${score}%</span>
+                  </div>
+                  <div class="h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
+                    <div class="h-full bg-[var(--accent)] rounded-full transition-all duration-1000" style="width: ${score}%"></div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      `,
+
+      productCatalog: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Product Catalog</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Product lines and revenue contribution</p>
+            </div>
+            <button class="btn-secondary">View All Products</button>
+          </header>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Revenue by Product Line</h3>
+              <div id="productRevenue" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Product Mix Evolution</h3>
+              <div id="productMix" class="chart-container"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Product Portfolio</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-[var(--border)]">
+                    <th class="text-left py-3 px-4 text-[var(--text-muted)] font-medium">Product Line</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Revenue</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Share</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${firm.products.map(p => `
+                    <tr class="border-b border-[var(--border)] hover:bg-[var(--bg-secondary)] transition-colors">
+                      <td class="py-3 px-4 font-medium">${p.name}</td>
+                      <td class="py-3 px-4 text-right">${formatCurrency(p.revenue)}</td>
+                      <td class="py-3 px-4 text-right">${p.share}%</td>
+                      <td class="py-3 px-4 text-right">
+                        <span class="kpi-change positive">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                          </svg>
+                          ${(Math.random() * 10 + 1).toFixed(1)}%
+                        </span>
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      `,
+
+      organization: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Organizational Structure</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Leadership and business unit organization</p>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+            <div class="glass-panel p-4 lg:col-span-2">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Organization Network</h3>
+              <div id="orgNetwork" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Leadership</h3>
+              <div class="mb-4 pb-4 border-b border-[var(--border)]">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-12 h-12 rounded-full bg-[var(--accent-dim)] flex items-center justify-center text-[var(--accent)] font-semibold">
+                    ${firm.orgStructure.ceo.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <p class="font-semibold">${firm.orgStructure.ceo}</p>
+                    <p class="text-xs text-[var(--text-muted)]">Chief Executive Officer</p>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-3">Business Units</h4>
+              <ul class="space-y-3">
+                ${firm.orgStructure.sectors.map(s => `
+                  <li class="text-sm">
+                    <p class="font-medium">${s.name}</p>
+                    <p class="text-[var(--text-muted)]">${s.head}</p>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Workforce Distribution</h3>
+            <div id="workforceChart" class="chart-container-small"></div>
+          </div>
+        </section>
+      `,
+
+      salesEvolution: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Sales Evolution</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Revenue trajectory and growth dynamics</p>
+            </div>
+            <div class="flex gap-2">
+              <select class="text-sm">
+                <option>Last 7 Years</option>
+                <option>Last 5 Years</option>
+                <option>Last 3 Years</option>
+              </select>
+            </div>
+          </header>
+
+          <!-- KPI Cards -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Total Revenue</p>
+              <p class="kpi-value">${formatCurrency(firm.revenue)}</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">CAGR</p>
+              <p class="kpi-value">5.2%</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Peak Revenue</p>
+              <p class="kpi-value">${formatCurrency(Math.max(...firm.yearlyData.revenue))}</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Growth Rate</p>
+              <p class="kpi-value">+${firm.revenueGrowth}%</p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4 mb-6">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Revenue Time Series</h3>
+            <div id="salesTimeSeries" class="chart-container"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Revenue by Region</h3>
+              <div id="regionalRevenueChart" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Growth Rate Trend</h3>
+              <div id="growthRateChart" class="chart-container"></div>
+            </div>
+          </div>
+        </section>
+      `,
+
+      competitivePosition: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Competitive Position</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Industry positioning and competitive analysis</p>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Competitive Radar</h3>
+              <div id="competitiveRadar" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Industry Positioning</h3>
+              <div id="positioningChart" class="chart-container"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Competitor Comparison</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-[var(--border)]">
+                    <th class="text-left py-3 px-4 text-[var(--text-muted)] font-medium">Company</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Revenue</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Market Share</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">Op. Margin</th>
+                    <th class="text-right py-3 px-4 text-[var(--text-muted)] font-medium">ROIC</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[var(--border)] bg-[var(--accent-dim)]">
+                    <td class="py-3 px-4 font-medium text-[var(--accent)]">${firm.name.split(' ')[0]} (Selected)</td>
+                    <td class="py-3 px-4 text-right">${formatCurrency(firm.revenue)}</td>
+                    <td class="py-3 px-4 text-right">${firm.marketShare}%</td>
+                    <td class="py-3 px-4 text-right">${firm.operatingMargin}%</td>
+                    <td class="py-3 px-4 text-right">${firm.roic}%</td>
+                  </tr>
+                  ${firm.competitors.slice(0, 4).map(c => {
+                    const compData = firmData[c.toLowerCase()];
+                    if (!compData) return '';
+                    return `
+                      <tr class="border-b border-[var(--border)] hover:bg-[var(--bg-secondary)] transition-colors">
+                        <td class="py-3 px-4 font-medium">${c}</td>
+                        <td class="py-3 px-4 text-right">${formatCurrency(compData.revenue)}</td>
+                        <td class="py-3 px-4 text-right">${compData.marketShare}%</td>
+                        <td class="py-3 px-4 text-right">${compData.operatingMargin}%</td>
+                        <td class="py-3 px-4 text-right">${compData.roic}%</td>
+                      </tr>
+                    `;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      `,
+
+      marketEvolution: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Market Evolution</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Industry market size and growth dynamics</p>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Global Market Size</p>
+              <p class="kpi-value">$2.8T</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Market Growth</p>
+              <p class="kpi-value">4.8%</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">EV Segment</p>
+              <p class="kpi-value">$412B</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">EV Growth</p>
+              <p class="kpi-value">28.4%</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Market Size Evolution</h3>
+              <div id="marketSizeChart" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Segment Growth</h3>
+              <div id="segmentGrowthChart" class="chart-container"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Market Share Evolution</h3>
+            <div id="marketShareEvolution" class="chart-container"></div>
+          </div>
+        </section>
+      `,
+
+      profitability: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Profitability Analysis</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Profit margins and capital efficiency</p>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Operating Profit</p>
+              <p class="kpi-value">${formatCurrency(firm.yearlyData.profit[firm.yearlyData.profit.length - 1])}</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Net Margin</p>
+              <p class="kpi-value">9.0%</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">ROIC</p>
+              <p class="kpi-value">${firm.roic}%</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">ROE</p>
+              <p class="kpi-value">14.2%</p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4 mb-6">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Profit Trend</h3>
+            <div id="profitTrendChart" class="chart-container"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Margin Evolution</h3>
+              <div id="marginEvolutionChart" class="chart-container"></div>
+            </div>
+            <div class="glass-panel p-4">
+              <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Return Metrics</h3>
+              <div id="returnMetricsChart" class="chart-container"></div>
+            </div>
+          </div>
+        </section>
+      `,
+
+      marketShare: (firm) => `
+        <section class="analysis-module" style="animation-delay: 0s;">
+          <header class="flex items-center justify-between mb-6">
+            <div>
+              <h1 class="text-xl font-bold mb-1">Market Share Analysis</h1>
+              <p class="text-[var(--text-secondary)] text-sm">Competitive market position over time</p>
+            </div>
+          </header>
+
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Current Share</p>
+              <p class="kpi-value">${firm.marketShare}%</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">YoY Change</p>
+              <p class="kpi-value">+0.2pp</p>
+            </div>
+            <div class="kpi-card">
+              <p class="text-xs text-[var(--text-muted)] uppercase tracking-wider mb-2">Rank</p>
+              <p class="kpi-value">#1</p>
+            </div>
+          </div>
+
+          <div class="glass-panel p-4 mb-6">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Market Share Trend</h3>
+            <div id="shareTrendChart" class="chart-container"></div>
+          </div>
+
+          <div class="glass-panel p-4">
+            <h3 class="text-sm font-semibold mb-4 text-[var(--text-secondary)]">Market Share Distribution</h3>
+            <div id="shareDistributionChart" class="chart-container"></div>
+          </div>
+        </section>
+      `
+    };
+
+    // ===============================
+    // CHART INITIALIZERS
+    // ===============================
+    const chartInitializers = {
+      overview: (firm) => {
+        // Revenue Chart
+        const revenueChart = echarts.init(document.getElementById('revenueChart'));
+        chartInstances.revenueChart = revenueChart;
+        revenueChart.setOption({
+          ...chartTheme,
+          tooltip: {
+            ...chartTheme.tooltip,
+            trigger: 'axis'
+          },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+          },
+          series: [{
+            type: 'line',
+            data: firm.yearlyData.revenue,
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 8,
+            lineStyle: { color: '#00d4aa', width: 3 },
+            itemStyle: { color: '#00d4aa' },
+            areaStyle: {
+              color: {
+                type: 'linear',
+                x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: 'rgba(0, 212, 170, 0.3)' },
+                  { offset: 1, color: 'rgba(0, 212, 170, 0.02)' }
+                ]
+              }
+            }
+          }]
         });
 
-        // Revenue Chart
-        function initRevenueChart() {
-            const container = document.getElementById('revenueChart');
-            if (!container) return;
-            
-            const maxRevenue = Math.max(...revenueData);
-            const colors = ['var(--text-muted)', 'var(--text-muted)', 'var(--accent-amber)', 'var(--accent-amber)', 'var(--accent-cyan)', 'var(--accent-cyan)'];
-            
-            container.innerHTML = revenueData.map((val, i) => {
-                const height = Math.max(10, (val / maxRevenue) * 100);
-                return `
-                    <div class="flex-1 flex flex-col items-center gap-1">
-                        <div class="mono text-xs text-[var(--text-muted)]">$${val}B</div>
-                        <div class="w-full bg-[var(--bg-primary)] rounded-t overflow-hidden flex-1 flex items-end">
-                            <div class="chart-bar w-full rounded-t transition-all duration-500" style="height: ${height}%; background: ${colors[i]}"></div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+        // Regional Chart
+        const regionalChart = echarts.init(document.getElementById('regionalChart'));
+        chartInstances.regionalChart = regionalChart;
+        regionalChart.setOption({
+          ...chartTheme,
+          tooltip: {
+            ...chartTheme.tooltip,
+            trigger: 'item',
+            formatter: '{b}: ${c}B ({d}%)'
+          },
+          series: [{
+            type: 'pie',
+            radius: ['45%', '75%'],
+            center: ['50%', '50%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 4,
+              borderColor: 'var(--bg-primary)',
+              borderWidth: 2
+            },
+            label: {
+              show: true,
+              color: '#8b9cb3',
+              fontSize: 11
+            },
+            labelLine: {
+              lineStyle: { color: 'rgba(60, 80, 100, 0.5)' }
+            },
+            data: firm.regionalRevenue.map((r, i) => ({
+              value: r.value,
+              name: r.region,
+              itemStyle: {
+                color: ['#00d4aa', '#3b82f6', '#f59e0b', '#8b5cf6', '#ec4899'][i % 5]
+              }
+            }))
+          }]
+        });
+      },
+
+      technicalProfile: (firm) => {
+        const capabilityRadar = echarts.init(document.getElementById('capabilityRadar'));
+        chartInstances.capabilityRadar = capabilityRadar;
+        capabilityRadar.setOption({
+          ...chartTheme,
+          radar: {
+            indicator: Object.entries(firm.technicalCapabilities).map(([name, value]) => ({
+              name,
+              max: 100
+            })),
+            shape: 'polygon',
+            splitNumber: 4,
+            axisName: {
+              color: '#8b9cb3',
+              fontSize: 10
+            },
+            splitLine: {
+              lineStyle: { color: 'rgba(60, 80, 100, 0.3)' }
+            },
+            splitArea: {
+              areaStyle: { color: ['rgba(0, 212, 170, 0.02)', 'rgba(0, 212, 170, 0.05)'] }
+            },
+            axisLine: {
+              lineStyle: { color: 'rgba(60, 80, 100, 0.3)' }
+            }
+          },
+          series: [{
+            type: 'radar',
+            data: [{
+              value: Object.values(firm.technicalCapabilities),
+              name: 'Capabilities',
+              areaStyle: { color: 'rgba(0, 212, 170, 0.25)' },
+              lineStyle: { color: '#00d4aa', width: 2 },
+              itemStyle: { color: '#00d4aa' }
+            }]
+          }]
+        });
+
+        const techInvestment = echarts.init(document.getElementById('techInvestment'));
+        chartInstances.techInvestment = techInvestment;
+        techInvestment.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          xAxis: {
+            type: 'category',
+            data: ['2019', '2020', '2021', '2022', '2023', '2024'],
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+          },
+          series: [{
+            type: 'bar',
+            data: [8.2, 9.1, 10.4, 11.2, 12.8, 14.5],
+            itemStyle: {
+              color: {
+                type: 'linear',
+                x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: '#00d4aa' },
+                  { offset: 1, color: 'rgba(0, 212, 170, 0.3)' }
+                ]
+              },
+              borderRadius: [4, 4, 0, 0]
+            },
+            barWidth: '50%'
+          }]
+        });
+      },
+
+      productCatalog: (firm) => {
+        const productRevenue = echarts.init(document.getElementById('productRevenue'));
+        chartInstances.productRevenue = productRevenue;
+        productRevenue.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'item', formatter: '{b}: ${c}B' },
+          xAxis: {
+            type: 'category',
+            data: firm.products.map(p => p.name),
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3', fontSize: 10, rotate: 20 }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+          },
+          series: [{
+            type: 'bar',
+            data: firm.products.map((p, i) => ({
+              value: p.revenue,
+              itemStyle: {
+                color: ['#00d4aa', '#3b82f6', '#f59e0b', '#8b5cf6', '#ec4899'][i % 5],
+                borderRadius: [4, 4, 0, 0]
+              }
+            })),
+            barWidth: '60%'
+          }]
+        });
+
+        const productMix = echarts.init(document.getElementById('productMix'));
+        chartInstances.productMix = productMix;
+        productMix.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'item' },
+          legend: {
+            ...chartTheme.legend,
+            bottom: 0,
+            itemWidth: 10,
+            itemHeight: 10,
+            textStyle: { fontSize: 10 }
+          },
+          series: [{
+            type: 'pie',
+            radius: ['35%', '65%'],
+            center: ['50%', '45%'],
+            roseType: 'radius',
+            itemStyle: { borderRadius: 4 },
+            label: { show: false },
+            data: firm.products.map((p, i) => ({
+              value: p.share,
+              name: p.name,
+              itemStyle: {
+                color: ['#00d4aa', '#3b82f6', '#f59e0b', '#8b5cf6', '#ec4899'][i % 5]
+              }
+            }))
+          }]
+        });
+      },
+
+      organization: (firm) => {
+        const orgNetwork = echarts.init(document.getElementById('orgNetwork'));
+        chartInstances.orgNetwork = orgNetwork;
+        
+        const nodes = [
+          { name: firm.name.split(' ')[0], x: 300, y: 50, symbolSize: 40, category: 0 },
+          ...firm.orgStructure.sectors.map((s, i) => ({
+            name: s.name,
+            x: 100 + i * 150,
+            y: 180,
+            symbolSize: 25,
+            category: 1
+          }))
+        ];
+        
+        const links = firm.orgStructure.sectors.map((s, i) => ({
+          source: 0,
+          target: i + 1
+        }));
+        
+        orgNetwork.setOption({
+          ...chartTheme,
+          series: [{
+            type: 'graph',
+            layout: 'none',
+            symbolSize: 30,
+            roam: true,
+            label: {
+              show: true,
+              color: '#e8edf4',
+              fontSize: 11
+            },
+            edgeSymbol: ['none', 'arrow'],
+            edgeSymbolSize: [0, 8],
+            lineStyle: {
+              color: 'rgba(0, 212, 170, 0.4)',
+              curveness: 0.1
+            },
+            categories: [
+              { name: 'HQ', itemStyle: { color: '#00d4aa' } },
+              { name: 'Division', itemStyle: { color: '#3b82f6' } }
+            ],
+            data: nodes,
+            links: links
+          }]
+        });
+
+        const workforceChart = echarts.init(document.getElementById('workforceChart'));
+        chartInstances.workforceChart = workforceChart;
+        workforceChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          xAxis: {
+            type: 'category',
+            data: ['Manufacturing', 'R&D', 'Sales', 'Admin', 'Other'],
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          series: [{
+            type: 'bar',
+            data: [
+              { value: 180000, itemStyle: { color: '#00d4aa' } },
+              { value: 45000, itemStyle: { color: '#3b82f6' } },
+              { value: 32000, itemStyle: { color: '#f59e0b' } },
+              { value: 28000, itemStyle: { color: '#8b5cf6' } },
+              { value: 90235, itemStyle: { color: '#64748b' } }
+            ],
+            barWidth: '50%',
+            itemStyle: { borderRadius: [4, 4, 0, 0] }
+          }]
+        });
+      },
+
+      salesEvolution: (firm) => {
+        const salesTimeSeries = echarts.init(document.getElementById('salesTimeSeries'));
+        chartInstances.salesTimeSeries = salesTimeSeries;
+        salesTimeSeries.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: {
+            ...chartTheme.legend,
+            data: ['Revenue', 'Profit'],
+            top: 0
+          },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: [
+            {
+              type: 'value',
+              name: 'Revenue',
+              axisLine: { show: false },
+              splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+              axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+            },
+            {
+              type: 'value',
+              name: 'Profit',
+              axisLine: { show: false },
+              splitLine: { show: false },
+              axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+            }
+          ],
+          series: [
+            {
+              name: 'Revenue',
+              type: 'bar',
+              data: firm.yearlyData.revenue,
+              itemStyle: {
+                color: 'rgba(0, 212, 170, 0.7)',
+                borderRadius: [4, 4, 0, 0]
+              },
+              barWidth: '40%'
+            },
+            {
+              name: 'Profit',
+              type: 'line',
+              yAxisIndex: 1,
+              data: firm.yearlyData.profit,
+              smooth: true,
+              lineStyle: { color: '#f59e0b', width: 3 },
+              itemStyle: { color: '#f59e0b' },
+              symbol: 'circle',
+              symbolSize: 8
+            }
+          ]
+        });
+
+        const regionalRevenueChart = echarts.init(document.getElementById('regionalRevenueChart'));
+        chartInstances.regionalRevenueChart = regionalRevenueChart;
+        regionalRevenueChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'item', formatter: '{b}: ${c}B' },
+          xAxis: {
+            type: 'category',
+            data: firm.regionalRevenue.map(r => r.region),
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3', fontSize: 10 }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+          },
+          series: [{
+            type: 'bar',
+            data: firm.regionalRevenue.map((r, i) => ({
+              value: r.value,
+              itemStyle: {
+                color: ['#00d4aa', '#3b82f6', '#f59e0b', '#8b5cf6', '#ec4899'][i % 5],
+                borderRadius: [4, 4, 0, 0]
+              }
+            })),
+            barWidth: '60%'
+          }]
+        });
+
+        const growthRateChart = echarts.init(document.getElementById('growthRateChart'));
+        chartInstances.growthRateChart = growthRateChart;
+        const growthRates = firm.yearlyData.revenue.map((r, i) => 
+          i === 0 ? 0 : ((r - firm.yearlyData.revenue[i-1]) / firm.yearlyData.revenue[i-1] * 100).toFixed(1)
+        );
+        growthRateChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis', formatter: '{b}: {c}%' },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [{
+            type: 'line',
+            data: growthRates,
+            smooth: true,
+            lineStyle: { color: '#00d4aa', width: 3 },
+            areaStyle: {
+              color: {
+                type: 'linear',
+                x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: 'rgba(0, 212, 170, 0.3)' },
+                  { offset: 1, color: 'rgba(0, 212, 170, 0.02)' }
+                ]
+              }
+            },
+            itemStyle: { color: '#00d4aa' },
+            symbol: 'circle',
+            symbolSize: 8
+          }]
+        });
+      },
+
+      competitivePosition: (firm) => {
+        const competitiveRadar = echarts.init(document.getElementById('competitiveRadar'));
+        chartInstances.competitiveRadar = competitiveRadar;
+        competitiveRadar.setOption({
+          ...chartTheme,
+          radar: {
+            indicator: [
+              { name: 'Market Share', max: 15 },
+              { name: 'Innovation', max: 100 },
+              { name: 'Quality', max: 100 },
+              { name: 'Cost Efficiency', max: 100 },
+              { name: 'Brand Strength', max: 100 },
+              { name: 'Global Reach', max: 100 }
+            ],
+            shape: 'polygon',
+            splitNumber: 4,
+            axisName: { color: '#8b9cb3', fontSize: 10 },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            splitArea: { areaStyle: { color: ['rgba(0, 212, 170, 0.02)', 'rgba(0, 212, 170, 0.05)'] } },
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } }
+          },
+          series: [{
+            type: 'radar',
+            data: [
+              {
+                value: [firm.marketShare, 85, 90, 82, 88, 78],
+                name: firm.name.split(' ')[0],
+                areaStyle: { color: 'rgba(0, 212, 170, 0.25)' },
+                lineStyle: { color: '#00d4aa', width: 2 },
+                itemStyle: { color: '#00d4aa' }
+              },
+              {
+                value: [10.8, 80, 85, 78, 82, 85],
+                name: 'Volkswagen',
+                areaStyle: { color: 'rgba(59, 130, 246, 0.15)' },
+                lineStyle: { color: '#3b82f6', width: 2 },
+                itemStyle: { color: '#3b82f6' }
+              }
+            ]
+          }]
+        });
+
+        const positioningChart = echarts.init(document.getElementById('positioningChart'));
+        chartInstances.positioningChart = positioningChart;
+        positioningChart.setOption({
+          ...chartTheme,
+          tooltip: {
+            ...chartTheme.tooltip,
+            formatter: (params) => `${params.data[2]}<br/>Revenue: $${params.data[0]}B<br/>Quality: ${params.data[1]}`
+          },
+          xAxis: {
+            type: 'value',
+            name: 'Revenue ($B)',
+            nameTextStyle: { color: '#8b9cb3' },
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            name: 'Quality Score',
+            nameTextStyle: { color: '#8b9cb3' },
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          series: [{
+            type: 'scatter',
+            symbolSize: (val) => Math.sqrt(val[0]) * 3,
+            data: [
+              [firm.revenue, 90, firm.name.split(' ')[0], '#00d4aa'],
+              [252.6, 85, 'Volkswagen', '#3b82f6'],
+              [176.2, 78, 'Ford', '#f59e0b'],
+              [142.5, 88, 'Hyundai', '#8b5cf6']
+            ].map(d => ({
+              value: [d[0], d[1], d[2]],
+              itemStyle: { color: d[3] }
+            }))
+          }]
+        });
+      },
+
+      marketEvolution: (firm) => {
+        const marketSizeChart = echarts.init(document.getElementById('marketSizeChart'));
+        chartInstances.marketSizeChart = marketSizeChart;
+        marketSizeChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis', formatter: '{b}: ${c}T' },
+          xAxis: {
+            type: 'category',
+            data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}T' }
+          },
+          series: [{
+            type: 'line',
+            data: [2.35, 2.42, 2.28, 2.48, 2.58, 2.68, 2.80],
+            smooth: true,
+            lineStyle: { color: '#00d4aa', width: 3 },
+            areaStyle: {
+              color: {
+                type: 'linear',
+                x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: 'rgba(0, 212, 170, 0.3)' },
+                  { offset: 1, color: 'rgba(0, 212, 170, 0.02)' }
+                ]
+              }
+            },
+            itemStyle: { color: '#00d4aa' },
+            symbol: 'circle',
+            symbolSize: 8
+          }]
+        });
+
+        const segmentGrowthChart = echarts.init(document.getElementById('segmentGrowthChart'));
+        chartInstances.segmentGrowthChart = segmentGrowthChart;
+        segmentGrowthChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: { ...chartTheme.legend, bottom: 0 },
+          xAxis: {
+            type: 'category',
+            data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [
+            {
+              name: 'ICE Vehicles',
+              type: 'line',
+              data: [2.5, 1.8, -8.2, 3.2, 1.5, 0.8, -0.5],
+              lineStyle: { color: '#64748b' },
+              itemStyle: { color: '#64748b' }
+            },
+            {
+              name: 'Hybrids',
+              type: 'line',
+              data: [12.5, 15.2, 8.4, 22.5, 18.2, 24.5, 21.8],
+              lineStyle: { color: '#f59e0b' },
+              itemStyle: { color: '#f59e0b' }
+            },
+            {
+              name: 'EVs',
+              type: 'line',
+              data: [45.2, 38.5, 42.8, 68.5, 55.2, 38.2, 28.4],
+              lineStyle: { color: '#00d4aa' },
+              itemStyle: { color: '#00d4aa' }
+            }
+          ]
+        });
+
+        const marketShareEvolution = echarts.init(document.getElementById('marketShareEvolution'));
+        chartInstances.marketShareEvolution = marketShareEvolution;
+        marketShareEvolution.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: { ...chartTheme.legend, bottom: 0 },
+          xAxis: {
+            type: 'category',
+            data: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [
+            {
+              name: 'Toyota',
+              type: 'line',
+              stack: 'Total',
+              areaStyle: { color: 'rgba(0, 212, 170, 0.5)' },
+              lineStyle: { color: '#00d4aa' },
+              data: [10.8, 10.9, 11.0, 10.8, 10.9, 11.0, 11.2]
+            },
+            {
+              name: 'Volkswagen',
+              type: 'line',
+              stack: 'Total',
+              areaStyle: { color: 'rgba(59, 130, 246, 0.5)' },
+              lineStyle: { color: '#3b82f6' },
+              data: [11.2, 11.0, 10.9, 10.7, 10.8, 10.9, 10.8]
+            },
+            {
+              name: 'Others',
+              type: 'line',
+              stack: 'Total',
+              areaStyle: { color: 'rgba(100, 116, 139, 0.3)' },
+              lineStyle: { color: '#64748b' },
+              data: [78.0, 78.1, 78.1, 78.5, 78.3, 78.1, 78.0]
+            }
+          ]
+        });
+      },
+
+      profitability: (firm) => {
+        const profitTrendChart = echarts.init(document.getElementById('profitTrendChart'));
+        chartInstances.profitTrendChart = profitTrendChart;
+        profitTrendChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: { ...chartTheme.legend, top: 0 },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '${value}B' }
+          },
+          series: [{
+            name: 'Operating Profit',
+            type: 'bar',
+            data: firm.yearlyData.profit.map(p => ({
+              value: p,
+              itemStyle: {
+                color: p > 20 ? '#00d4aa' : p > 15 ? '#3b82f6' : '#f59e0b',
+                borderRadius: [4, 4, 0, 0]
+              }
+            })),
+            barWidth: '50%'
+          }]
+        });
+
+        const marginEvolutionChart = echarts.init(document.getElementById('marginEvolutionChart'));
+        chartInstances.marginEvolutionChart = marginEvolutionChart;
+        marginEvolutionChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: { ...chartTheme.legend, bottom: 0 },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [
+            {
+              name: 'Gross Margin',
+              type: 'line',
+              data: [18.2, 18.5, 17.8, 18.4, 19.2, 19.8, 20.1],
+              lineStyle: { color: '#00d4aa' },
+              itemStyle: { color: '#00d4aa' }
+            },
+            {
+              name: 'Operating Margin',
+              type: 'line',
+              data: [7.3, 7.6, 7.9, 6.7, 7.7, 8.3, 9.0],
+              lineStyle: { color: '#3b82f6' },
+              itemStyle: { color: '#3b82f6' }
+            },
+            {
+              name: 'Net Margin',
+              type: 'line',
+              data: [7.3, 7.6, 7.9, 6.7, 7.7, 8.3, 9.0],
+              lineStyle: { color: '#f59e0b' },
+              itemStyle: { color: '#f59e0b' }
+            }
+          ]
+        });
+
+        const returnMetricsChart = echarts.init(document.getElementById('returnMetricsChart'));
+        chartInstances.returnMetricsChart = returnMetricsChart;
+        returnMetricsChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          legend: { ...chartTheme.legend, bottom: 0 },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [
+            {
+              name: 'ROIC',
+              type: 'line',
+              data: [10.2, 10.8, 11.2, 9.8, 11.0, 11.8, 12.4],
+              lineStyle: { color: '#00d4aa', width: 3 },
+              itemStyle: { color: '#00d4aa' },
+              symbol: 'circle',
+              symbolSize: 8
+            },
+            {
+              name: 'ROE',
+              type: 'line',
+              data: [12.5, 13.2, 13.8, 11.5, 13.0, 13.8, 14.2],
+              lineStyle: { color: '#8b5cf6', width: 3 },
+              itemStyle: { color: '#8b5cf6' },
+              symbol: 'circle',
+              symbolSize: 8
+            }
+          ]
+        });
+      },
+
+      marketShare: (firm) => {
+        const shareTrendChart = echarts.init(document.getElementById('shareTrendChart'));
+        chartInstances.shareTrendChart = shareTrendChart;
+        shareTrendChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'axis' },
+          xAxis: {
+            type: 'category',
+            data: firm.yearlyData.years,
+            axisLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.3)' } },
+            axisLabel: { color: '#8b9cb3' }
+          },
+          yAxis: {
+            type: 'value',
+            min: 9,
+            max: 13,
+            axisLine: { show: false },
+            splitLine: { lineStyle: { color: 'rgba(60, 80, 100, 0.15)' } },
+            axisLabel: { color: '#8b9cb3', formatter: '{value}%' }
+          },
+          series: [{
+            type: 'line',
+            data: firm.yearlyData.marketShare,
+            smooth: true,
+            lineStyle: { color: '#00d4aa', width: 3 },
+            areaStyle: {
+              color: {
+                type: 'linear',
+                x: 0, y: 0, x2: 0, y2: 1,
+                colorStops: [
+                  { offset: 0, color: 'rgba(0, 212, 170, 0.3)' },
+                  { offset: 1, color: 'rgba(0, 212, 170, 0.02)' }
+                ]
+              }
+            },
+            itemStyle: { color: '#00d4aa' },
+            symbol: 'circle',
+            symbolSize: 10,
+            markLine: {
+              data: [{ type: 'average', name: 'Avg' }],
+              lineStyle: { color: '#f59e0b' },
+              label: { color: '#f59e0b' }
+            }
+          }]
+        });
+
+        const shareDistributionChart = echarts.init(document.getElementById('shareDistributionChart'));
+        chartInstances.shareDistributionChart = shareDistributionChart;
+        shareDistributionChart.setOption({
+          ...chartTheme,
+          tooltip: { ...chartTheme.tooltip, trigger: 'item', formatter: '{b}: {c}%' },
+          series: [{
+            type: 'pie',
+            radius: ['40%', '70%'],
+            center: ['50%', '50%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 6,
+              borderColor: 'var(--bg-primary)',
+              borderWidth: 3
+            },
+            label: {
+              show: true,
+              formatter: '{b}\n{c}%',
+              color: '#8b9cb3',
+              fontSize: 11
+            },
+            data: [
+              { value: firm.marketShare, name: firm.name.split(' ')[0], itemStyle: { color: '#00d4aa' } },
+              { value: 10.8, name: 'Volkswagen', itemStyle: { color: '#3b82f6' } },
+              { value: 5.4, name: 'Ford', itemStyle: { color: '#f59e0b' } },
+              { value: 6.2, name: 'Hyundai', itemStyle: { color: '#8b5cf6' } },
+              { value: 66.4, name: 'Others', itemStyle: { color: '#64748b' } }
+            ]
+          }]
+        });
+      }
+    };
+
+    // Default renderers for modules without specific implementations
+    const defaultRenderer = (module) => `
+      <section class="analysis-module" style="animation-delay: 0s;">
+        <div class="glass-panel p-8 text-center">
+          <svg class="mx-auto mb-4 text-[var(--text-muted)]" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+          <h2 class="text-xl font-semibold mb-2">${module.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</h2>
+          <p class="text-[var(--text-secondary)]">This module is under development. Full implementation coming soon.</p>
+        </div>
+      </section>
+    `;
+
+    // ===============================
+    // RENDER FUNCTIONS
+    // ===============================
+    function renderModule(moduleName) {
+      disposeCharts();
+      currentModule = moduleName;
+      
+      const firm = firmData[currentFirm];
+      const renderer = moduleRenderers[moduleName] || (() => defaultRenderer(moduleName));
+      
+      workspace.innerHTML = renderer(firm);
+      
+      // Initialize charts after DOM is ready
+      requestAnimationFrame(() => {
+        if (chartInitializers[moduleName]) {
+          chartInitializers[moduleName](firm);
         }
+      });
+    }
 
-        // Sparkline
-        function initSparkline() {
-            const container = document.getElementById('revenueSparkline');
-            if (!container) return;
-            
-            const maxVal = Math.max(...sparklineData);
-            container.innerHTML = sparklineData.map(val => {
-                const height = Math.max(4, (val / maxVal) * 100);
-                return `<div class="flex-1 bg-[var(--accent-cyan)] rounded-t" style="height: ${height}%"></div>`;
-            }).join('');
+    // ===============================
+    // EVENT HANDLERS
+    // ===============================
+    // Firm selector
+    firmSelector.addEventListener('change', (e) => {
+      currentFirm = e.target.value;
+      renderModule(currentModule);
+    });
+
+    // Domain navigation
+    document.querySelectorAll('.domain-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.classList.contains('expanded');
+        
+        // Close all other expanded headers
+        document.querySelectorAll('.domain-header.expanded').forEach(h => {
+          if (h !== header) {
+            h.classList.remove('expanded');
+            h.nextElementSibling?.classList.remove('expanded');
+          }
+        });
+        
+        // Toggle current
+        header.classList.toggle('expanded');
+        header.nextElementSibling?.classList.toggle('expanded');
+      });
+    });
+
+    // Module navigation
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('.domain-children li')) {
+        // Update active states
+        document.querySelectorAll('.domain-children li').forEach(li => li.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        const moduleName = e.target.dataset.module;
+        if (moduleName) {
+          renderModule(moduleName);
         }
-
-        // Navigation
-        function initNavigation() {
-            // Domain tree expand/collapse
-            document.querySelectorAll('.domain-tree button[data-domain]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const domain = this.dataset.domain;
-                    const children = document.getElementById(`${domain}-children`);
-                    const chevron = this.querySelector('.domain-chevron');
-                    const expanded = this.getAttribute('aria-expanded') === 'true';
-                    
-                    if (children) {
-                        children.classList.toggle('hidden', expanded);
-                        chevron.style.transform = expanded ? 'rotate(-90deg)' : 'rotate(0)';
-                        this.setAttribute('aria-expanded', !expanded);
-                    }
-                });
-            });
-
-            // Module navigation
-            document.querySelectorAll('.domain-tree a[data-module]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const module = this.dataset.module;
-                    
-                    // Update active state
-                    document.querySelectorAll('.domain-tree a').forEach(a => a.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show/hide modules
-                    document.querySelectorAll('.module-content').forEach(m => m.classList.add('hidden'));
-                    
-                    // Map modules to content
-                    const moduleMap = {
-                        'overview': 'module-overview',
-                        'technical': 'module-technical',
-                        'interaction': 'module-interaction',
-                        'comparative': 'module-comparative'
-                    };
-                    
-                    const targetModule = moduleMap[module] || 'module-overview';
-                    const targetEl = document.getElementById(targetModule);
-                    if (targetEl) {
-                        targetEl.classList.remove('hidden');
-                    }
-                });
-            });
-
-            // Global nav
-            document.querySelectorAll('.global-navigation .nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelectorAll('.global-navigation .nav-link').forEach(l => {
-                        l.classList.remove('active');
-                        l.classList.add('text-[var(--text-secondary)]');
-                    });
-                    this.classList.add('active');
-                    this.classList.remove('text-[var(--text-secondary)]');
-                    
-                    // Show corresponding module
-                    const section = this.dataset.section;
-                    const moduleMap = {
-                        'firm': 'module-overview',
-                        'environment': 'module-overview',
-                        'interaction': 'module-interaction',
-                        'comparative': 'module-comparative'
-                    };
-                    
-                    document.querySelectorAll('.module-content').forEach(m => m.classList.add('hidden'));
-                    const targetEl = document.getElementById(moduleMap[section] || 'module-overview');
-                    if (targetEl) {
-                        targetEl.classList.remove('hidden');
-                    }
-                });
-            });
+        
+        // Close mobile sidebar
+        if (window.innerWidth < 1024) {
+          sidebar.classList.remove('open');
+          sidebarOverlay.classList.remove('open');
         }
+      }
+    });
 
-        // Timeline interactions
-        function initTimeline() {
-            document.querySelectorAll('.timeline-event').forEach(event => {
-                event.addEventListener('click', function() {
-                    document.querySelectorAll('.timeline-event').forEach(e => {
-                        e.classList.remove('active');
-                        e.querySelector('.mono').classList.remove('text-[var(--accent-cyan)]');
-                        e.querySelector('.mono').classList.add('text-[var(--text-muted)]');
-                    });
-                    this.classList.add('active');
-                    this.querySelector('.mono').classList.remove('text-[var(--text-muted)]');
-                    this.querySelector('.mono').classList.add('text-[var(--accent-cyan)]');
-                });
-            });
-        }
+    // Top domain navigation
+    document.querySelectorAll('.domain-nav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.domain-nav-btn').forEach(b => {
+          b.classList.remove('text-[var(--accent)]', 'bg-[var(--accent-dim)]');
+          b.classList.add('text-[var(--text-secondary)]');
+        });
+        btn.classList.add('text-[var(--accent)]', 'bg-[var(--accent-dim)]');
+        btn.classList.remove('text-[var(--text-secondary)]');
+        
+        // Navigate to corresponding module
+        const domain = btn.dataset.domain;
+        const moduleMap = {
+          'structure': 'overview',
+          'change': 'technical-evolution',
+          'outcomes': 'sales-evolution'
+        };
+        renderModule(moduleMap[domain] || 'overview');
+      });
+    });
 
-        // Scroll reveal
-        function initScrollReveal() {
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReducedMotion) return;
+    // Mobile menu
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    });
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
+    sidebarOverlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+    });
 
-            document.querySelectorAll('.animate-fade-in-up').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                observer.observe(el);
-            });
-        }
+    // Resize handler for charts
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        Object.values(chartInstances).forEach(chart => {
+          if (chart && typeof chart.resize === 'function') {
+            chart.resize();
+          }
+        });
+      }, 100);
+    });
 
-        // Animated counters
-        function initAnimatedCounters() {
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReducedMotion) return;
-
-            document.querySelectorAll('.mono.text-3xl').forEach(counter => {
-                const text = counter.textContent;
-                const match = text.match(/^[\$]?([\d.]+)([BKM%])?$/);
-                if (!match) return;
-                
-                const prefix = text.startsWith('$') ? '$' : '';
-                const target = parseFloat(match[1]);
-                const suffix = match[2] || '';
-                const duration = 1000;
-                const start = performance.now();
-                
-                counter.textContent = prefix + '0' + suffix;
-                
-                function update(currentTime) {
-                    const elapsed = currentTime - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easeOut = 1 - Math.pow(1 - progress, 3);
-                    const current = (target * easeOut).toFixed(target % 1 === 0 ? 0 : 1);
-                    counter.textContent = prefix + current + suffix;
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(update);
-                    }
-                }
-                
-                requestAnimationFrame(update);
-            });
-        }
-    </script>
+    // ===============================
+    // INITIALIZATION
+    // ===============================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderModule('overview');
+    });
+  </script>
 </body>
 </html>
