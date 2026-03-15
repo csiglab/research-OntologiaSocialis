@@ -23,7 +23,8 @@ The representation should support four analytical objectives:
 
 State:
 
-- Current Firm Characterization: Rendering the firm’s structure intelligible.
+- Initial Firm State  Characterization: Rendering the firm’s structure intelligible.
+- Current Firm State Characterization: Rendering the firm’s structure intelligible.
 - Current Environment Characterization: Rendering the environment in which the firm operates intelligible.
 
 - Firm Structure & Internal Structural Evolution
@@ -38,6 +39,18 @@ Firm–Environment Interaction:
     - Firm Interaction Analytical Report Set: Rendering the history of firm–environment interactions intelligible.
 
 ## Firm
+
+## Genesisis
+
+> How should the firm initial state be characterized?
+
+- Technical Profile
+- Produce Catalog Profile
+- Organizational Structure: Governance Profile,  ....
+- Capital Structure
+- Capability Profile
+
+### Present-Day
 
 > How should the firm be characterized?
 

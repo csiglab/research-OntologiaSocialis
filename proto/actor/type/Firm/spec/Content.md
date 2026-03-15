@@ -28,6 +28,49 @@ High-level description of the firm.
 * Industry Classification
 * Strategic Description
 
+### 1.1 Firm Genesis
+
+> Initial configuration of the firm at the time of formation.
+
+**Fields**
+
+* Founding year
+* Founders
+* Initial mission / strategy
+* Initial market focus
+
+**Structural Profiles**
+
+* **Technical Profile**
+
+  * Production technologies
+  * Core technical competencies
+  * R&D capabilities
+
+* **Product Catalog Profile**
+
+  * Initial products/services
+  * Product categories
+  * Target segments
+
+* **Organizational Structure**
+
+  * Governance structure
+  * Ownership structure
+  * Key organizational units
+
+* **Capital Structure**
+
+  * Initial capital sources
+  * Debt/equity composition
+  * Investors
+
+* **Capability Profile**
+
+  * Operational capabilities
+  * Managerial capabilities
+  * Technical talent base
+
 ### 1.2 Technical Profile
 
 Description of the firm’s technological base and production systems.
