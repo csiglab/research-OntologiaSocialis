@@ -25,14 +25,9 @@ Goals:
 - An Overview  of Actor Type plus link
 - An Overview  of Actor plus link
 
-## Actor Type Index
+## Index
 
-- An index with all of the actor types -> they must come from a json structure (do 15 for the prototype).
-- We need a search-based index with (...) next page - each page with 4 examples max, with 3 lines per page.
-
-## Actor Index
-
-- An index with all of the actor -> they must come from a json structure (do 15 for the prototype).
+- An index with all of the actor types, actors-> they must come from a json structure (do 15 for the prototype).
 - We need a search-based index with (...) next page - each page with 4 examples max, with 3 lines per page.
 
 ## Actor Type Page
