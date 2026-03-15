@@ -394,10 +394,16 @@
     }
     .search-dropdown.open { display: block; opacity: 1; transform: translateY(0); }
 
+    /* Enhanced Dropdown Metadata - COMPACT */
     .dropdown-metadata {
-      padding: 12px 16px;
+      padding: 8px 16px;
       background: var(--tag-bg);
       border-bottom: 1px solid var(--border);
+    }
+    .dropdown-metadata-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .dropdown-metadata-title {
       font-family: 'JetBrains Mono', monospace;
@@ -405,26 +411,59 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
-      margin-bottom: 8px;
     }
-    .dropdown-metadata-stats {
+    .dropdown-metadata-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid transparent;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 150ms, transform 150ms;
+    }
+    .dropdown-metadata-badge.visible {
+      opacity: 1;
+      transform: scale(1);
+      border-color: var(--accent);
+    }
+
+    /* Compact Stats Row */
+    .analysis-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
+      gap: 16px;
+      margin-top: 6px;
     }
-    .metadata-stat {
+    .analysis-item {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .metadata-stat-value {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--fg);
+    .analysis-icon {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      opacity: 0.8;
     }
-    .metadata-stat-label {
-      font-size: 12px;
+    .analysis-value {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--fg);
+      font-variant-numeric: tabular-nums;
+    }
+    .analysis-label {
+      font-size: 11px;
       color: var(--muted);
+    }
+    .analysis-divider {
+      width: 1px;
+      height: 12px;
+      background: var(--border);
     }
 
     .dropdown-results-header {
@@ -774,8 +813,13 @@
           <!-- Search Dropdown -->
           <div id="searchDropdown" class="search-dropdown" role="listbox" aria-label="Search suggestions">
             <div class="dropdown-metadata">
-              <div class="dropdown-metadata-title">Registry Summary</div>
-              <div class="dropdown-metadata-stats" id="metadataStats"></div>
+              <div class="dropdown-metadata-header">
+                <div class="dropdown-metadata-title" id="metadataTitle">Registry Summary</div>
+                <div class="dropdown-metadata-badge" id="analysisBadge">Analyzing</div>
+              </div>
+              
+              <!-- Dynamic Stats Container -->
+              <div id="metadataStats"></div>
             </div>
             
             <div class="dropdown-results-header" id="resultsHeader">Matching Entities</div>
@@ -902,6 +946,8 @@
     const searchInput = document.getElementById('searchInput');
     const searchDropdown = document.getElementById('searchDropdown');
     const metadataStats = document.getElementById('metadataStats');
+    const metadataTitle = document.getElementById('metadataTitle');
+    const analysisBadge = document.getElementById('analysisBadge');
     const dropdownResults = document.getElementById('dropdownResults');
     const resultsHeader = document.getElementById('resultsHeader');
     const scrollIndicator = document.getElementById('scrollIndicator');
@@ -1079,21 +1125,18 @@
       const clientWidth = el.clientWidth;
       const tolerance = 5;
 
-      // Check if scrolling is needed at all
       if (scrollWidth <= clientWidth + tolerance) {
         tagNavLeft.classList.remove('active');
         tagNavRight.classList.remove('active');
         return;
       }
 
-      // Left Button: Show if scrolled right
       if (scrollLeft > tolerance) {
         tagNavLeft.classList.add('active');
       } else {
         tagNavLeft.classList.remove('active');
       }
 
-      // Right Button: Show if can scroll right
       if (scrollLeft < (scrollWidth - clientWidth - tolerance)) {
         tagNavRight.classList.add('active');
       } else {
@@ -1132,7 +1175,6 @@
       });
 
       attachTagListeners();
-      // Check scroll position after tags are rendered
       setTimeout(checkTagScrollPosition, 50);
     }
 
@@ -1189,37 +1231,62 @@
       }
     }
 
-    function getCategoryCounts() {
-      const counts = {};
-      entities.forEach(entity => {
-        const cats = getCategories(entity);
-        cats.forEach(cat => {
-          counts[cat] = (counts[cat] || 0) + 1;
-        });
-      });
-      return counts;
-    }
-
-    function renderMetadata(matchCount) {
-      const catCounts = getCategoryCounts();
+    // =============================================
+    // ANALYSIS & STATISTICS RENDERING (COMPACT)
+    // =============================================
+    function renderGlobalStats() {
+      metadataTitle.textContent = "Registry Summary";
+      analysisBadge.classList.remove('visible');
+      
       const totalEntities = entities.length;
       
+      // Simple horizontal layout
       let statsHTML = `
-        <div class="metadata-stat">
-          <span class="metadata-stat-value">${totalEntities}</span>
-          <span class="metadata-stat-label">Total</span>
+        <div class="analysis-row">
+          <div class="analysis-item">
+            <svg class="analysis-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/>
+            </svg>
+            <span class="analysis-value">${totalEntities}</span>
+            <span class="analysis-label">Total Entities</span>
+          </div>
         </div>
       `;
       
-      const entries = Object.entries(catCounts).slice(0, 3);
-      entries.forEach(([cat, count]) => {
-        statsHTML += `
-          <div class="metadata-stat">
-            <span class="metadata-stat-value">${count}</span>
-            <span class="metadata-stat-label">${cat}</span>
+      metadataStats.innerHTML = statsHTML;
+      resultsHeader.textContent = 'Matching Entities';
+    }
+
+    function renderAnalysisStats(term) {
+      metadataTitle.textContent = "Result Analysis";
+      analysisBadge.classList.add('visible');
+      
+      const totalEntities = entities.length;
+      const matchCount = currentMatches.length;
+      const coverage = totalEntities > 0 ? ((matchCount / totalEntities) * 100).toFixed(1) : 0;
+      
+      // Compact horizontal layout
+      let statsHTML = `
+        <div class="analysis-row">
+          <div class="analysis-item">
+            <svg class="analysis-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+               <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+            </svg>
+            <span class="analysis-value">${matchCount}</span>
+            <span class="analysis-label">Matches</span>
           </div>
-        `;
-      });
+          <div class="analysis-divider"></div>
+          <div class="analysis-item">
+            <svg class="analysis-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+               <!-- Replaced with Pie Chart Icon -->
+               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6z" />
+               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5z" />
+            </svg>
+            <span class="analysis-value">${coverage}%</span>
+            <span class="analysis-label">Coverage</span>
+          </div>
+        </div>
+      `;
       
       metadataStats.innerHTML = statsHTML;
       
@@ -1233,7 +1300,7 @@
     function renderDropdown(term) {
       if (term.length < 2) {
         currentMatches = [];
-        renderMetadata(0);
+        renderGlobalStats();
         dropdownResults.innerHTML = `
           <div class="px-4 py-6 text-center text-sm text-muted">
             Type at least 2 characters to search
@@ -1252,7 +1319,7 @@
         return nameMatch || catMatch || tagMatch || descMatch;
       });
 
-      renderMetadata(currentMatches.length);
+      renderAnalysisStats(term);
 
       if (currentMatches.length === 0) {
         dropdownResults.innerHTML = `
