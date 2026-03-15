@@ -137,7 +137,7 @@ Representation of the firm’s operational capabilities.
 
 ## 2. Firm Evolution
 
-> Representation of how the internal structure of the firm changes over time.
+> Representation of how the internal structure of the firm **changes over time**.
 
 Each dimension of the firm includes an **evolution record**.
 
@@ -145,7 +145,7 @@ Each dimension of the firm includes an **evolution record**.
 
 Tracks changes in the firm’s technological base.
 
-**Examples**
+Type of Changes:
 
 * New technologies adopted
 * Process improvements
@@ -156,7 +156,7 @@ Tracks changes in the firm’s technological base.
 
 Tracks the evolution of the firm’s offerings.
 
-**Examples**
+Type of changes:
 
 * New products introduced
 * Product discontinuations
@@ -167,7 +167,7 @@ Tracks the evolution of the firm’s offerings.
 
 Tracks structural changes in the organization.
 
-**Examples**
+Type of changes:
 
 * Leadership changes
 * Organizational restructuring
@@ -178,7 +178,7 @@ Tracks structural changes in the organization.
 
 Tracks financial structural changes.
 
-**Examples**
+Type of changes:
 
 * Equity issuance
 * Debt restructuring
@@ -265,16 +265,16 @@ Infrastructure supporting the firm’s operations.
 
 ### 4.1 Market Evolution
 
-**Examples**
+Type of changes:
 
-* Market expansion
+* Market expansion: We need a graph by year.
 * Market contraction
 * Demand shifts
 * New market segments
 
 ### 4.2 Technological Evolution
 
-**Examples**
+Type of changes:
 
 * Technology breakthroughs
 * Industry technological transitions
@@ -282,15 +282,15 @@ Infrastructure supporting the firm’s operations.
 
 ### 4.3 Demand Evolution
 
-**Examples**
+Type of changes:
 
 * Changing consumer preferences
 * New demand drivers
-* Demand volatility
+* Demand volatility: We need a graph by year.
 
 ### 4.4 Regulatory Evolution
 
-**Examples**
+Type of changes:
 
 * Policy changes
 * Deregulation or new restrictions
@@ -298,7 +298,7 @@ Infrastructure supporting the firm’s operations.
 
 ### 4.5 Infrastructure Evolution
 
-**Examples**
+Type of changes:
 
 * New transport networks
 * Energy system expansion
@@ -313,6 +313,8 @@ These represent **observable results of the firm’s interaction with markets an
 ### 5.1 Sales Evolution
 
 Tracks the evolution of firm sales.
+
+Note: Every thing by year.
 
 **Metrics**
 

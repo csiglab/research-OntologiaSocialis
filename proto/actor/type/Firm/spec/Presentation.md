@@ -19,8 +19,6 @@ The platform follows a **four-layer analytical workspace**.
 │               │                               │
 │               │                               │
 │               │                               │
-├───────────────┴───────────────────────────────┤
-│ Temporal Navigation / Evolution Timeline      │
 └───────────────────────────────────────────────┘
 ```
 
