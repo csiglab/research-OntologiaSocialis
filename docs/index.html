@@ -721,7 +721,7 @@
           <h3 class="help-heading">Search & Filter</h3>
           <p class="help-text">Use the search bar to find actors by name, description, or tags. Use the category pills to filter the list. Click the link icon on cards to view external resources.</p>
         </div>
-        
+
         <div class="help-section">
           <h3 class="help-heading">Keyboard Shortcuts</h3>
           <ul class="help-list">
@@ -730,6 +730,16 @@
             <li><span>Open toolbox</span> <span><span class="kbd">Ctrl</span> + <span class="kbd">B</span></span></li>
             <li><span>Open help</span> <span><span class="kbd">F1</span></span></li>
             <li><span>Close modals</span> <span><span class="kbd">Esc</span></span></li>
+          </ul>
+        </div>
+
+        <div class="help-section">
+          <h3 class="help-heading">Search Query Language</h3>
+          <p class="help-text">Refine your search using logical operators:</p>
+          <ul class="help-list">
+            <li><span>Contain both terms</span> <span>term1 term2</span></li>
+            <li><span>Contain either term</span> <span>term1 OR term2</span></li>
+            <li><span>Exclude a term</span> <span>-term</span></li>
           </ul>
         </div>
         
@@ -923,7 +933,7 @@
     </div>
   </footer>
 
-  <script>
+    <script>
     // =============================================
     // DATA SOURCE
     // =============================================
@@ -977,34 +987,97 @@
     const getTags = (item) => item.tags || [];
 
     // =============================================
-    // RELEVANCE SCORING (NEW)
+    // QUERY LANGUAGE PARSER & SCORER
     // =============================================
-    function getRelevanceScore(entity, term) {
+    
+    // Helper: Check if text contains term (case-insensitive)
+    const textMatches = (text, term) => text && text.toLowerCase().includes(term);
+
+    // Calculate score for a single term against an entity
+    function getTermScore(entity, term) {
       if (!term) return 0;
       let score = 0;
-      const lowerTerm = term.toLowerCase();
       
-      // 1. Match Title (5 points)
-      if (entity.name && entity.name.toLowerCase().includes(lowerTerm)) {
-        score += 5;
-      }
-      
-      // 2. Match Categories (3 points)
-      if (getCategories(entity).some(c => c.toLowerCase().includes(lowerTerm))) {
-        score += 3;
-      }
-      
-      // 3. Match Tags (2 points)
-      if (getTags(entity).some(t => t.toLowerCase().includes(lowerTerm))) {
-        score += 2;
-      }
-      
-      // 4. Match Description (1 point)
-      if (entity.desc && entity.desc.toLowerCase().includes(lowerTerm)) {
-        score += 1;
-      }
+      if (textMatches(entity.name, term)) score += 5;
+      if (getCategories(entity).some(c => textMatches(c, term))) score += 3;
+      if (getTags(entity).some(t => textMatches(t, term))) score += 2;
+      if (textMatches(entity.desc, term)) score += 1;
       
       return score;
+    }
+
+    // Parse the search string into a structured query object
+    // Supports: "term1 term2" (AND), "term1 OR term2", "-term" (NOT)
+    function parseSearchQuery(queryStr) {
+      const result = {
+        positiveGroups: [], // Array of arrays: [ ['king'], ['queen'] ] means king OR queen
+        negativeTerms: [],  // Array of strings: ['system']
+        allPositiveTerms: [] // Flat list of all positive terms for scoring
+      };
+
+      if (!queryStr) return result;
+
+      // 1. Normalize and handle NOT (-) operators first
+      // We use regex to find words starting with -
+      const negativePattern = /(?:^|\s)-(\w+)/g;
+      let match;
+      while ((match = negativePattern.exec(queryStr)) !== null) {
+        result.negativeTerms.push(match[1].toLowerCase());
+      }
+      // Remove negative terms from the string for further processing
+      let cleanQuery = queryStr.replace(negativePattern, ' ').trim();
+
+      // 2. Handle OR groups
+      // Split by ' OR ' (case insensitive)
+      const orGroups = cleanQuery.split(/\s+or\s+/i);
+
+      orGroups.forEach(group => {
+        // 3. Handle AND (spaces) within the group
+        // Split by space, filtering empty strings
+        const terms = group.trim().split(/\s+/).filter(t => t.length > 0);
+        
+        if (terms.length > 0) {
+          result.positiveGroups.push(terms.map(t => t.toLowerCase()));
+          result.allPositiveTerms.push(...terms.map(t => t.toLowerCase()));
+        }
+      });
+
+      // Deduplicate positive terms for scoring
+      result.allPositiveTerms = [...new Set(result.allPositiveTerms)];
+
+      return result;
+    }
+
+    // Check if entity matches the parsed query logic
+    function entityMatchesQuery(entity, parsedQuery) {
+      const content = [
+        entity.name, 
+        ...getCategories(entity), 
+        ...getTags(entity), 
+        entity.desc
+      ].join(' ').toLowerCase();
+
+      // 1. Check Negative Terms (Exclusion)
+      // If ANY negative term matches, the entity is excluded.
+      const hasExclusion = parsedQuery.negativeTerms.some(term => content.includes(term));
+      if (hasExclusion) return false;
+
+      // 2. Check Positive Groups (Inclusion)
+      // If there are no positive terms/groups, and no exclusions happened, it's a match (empty query)
+      if (parsedQuery.positiveGroups.length === 0) return true;
+
+      // Logic: (Group1 AND Group1...) OR (Group2 AND Group2...)
+      // Inside a group, all terms must match (AND logic).
+      // Between groups, any group matching is enough (OR logic).
+      
+      return parsedQuery.positiveGroups.some(group => {
+        return group.every(term => content.includes(term));
+      });
+    }
+
+    // Calculate total relevance score based on all positive terms
+    function getRelevanceScore(entity, terms) {
+      return terms.reduce((acc, term) => acc + getTermScore(entity, term), 0);
     }
 
     // =============================================
@@ -1326,7 +1399,10 @@
     }
 
     function renderDropdown(term) {
-      if (term.length < 2) {
+      // Check minimum length for meaningful search
+      // We allow short terms if they are operators, but generally require 2 chars
+      const cleanCheck = term.replace(/(\s|-|or|and)/gi, '').trim();
+      if (cleanCheck.length < 2) {
         currentMatches = [];
         renderGlobalStats();
         dropdownResults.innerHTML = `
@@ -1339,13 +1415,19 @@
         return;
       }
 
-      // --- NEW SCORING LOGIC ---
-      // 1. Map entities to their scores
-      // 2. Filter out 0 scores
-      // 3. Sort by score descending (highest relevance first)
+      // --- NEW QUERY LOGIC ---
+      const query = parseSearchQuery(term);
+
       currentMatches = entities
-        .map(e => ({ entity: e, score: getRelevanceScore(e, term) }))
-        .filter(item => item.score > 0)
+        .map(e => ({ entity: e, score: getRelevanceScore(e, query.allPositiveTerms) }))
+        .filter(item => {
+            // Must pass the boolean logic
+            if (!entityMatchesQuery(item.entity, query)) return false;
+            // Must have at least some score if positive terms exist
+            // (If query was purely negative, e.g. "-test", score is 0, but logic passed, so keep it)
+            if (query.allPositiveTerms.length > 0 && item.score === 0) return false;
+            return true;
+        })
         .sort((a, b) => b.score - a.score)
         .map(item => item.entity);
       // -------------------------
@@ -1404,7 +1486,7 @@
     }
 
     searchInput.addEventListener('input', (e) => {
-      renderDropdown(e.target.value.toLowerCase());
+      renderDropdown(e.target.value);
       filterEntities();
     });
 
@@ -1589,11 +1671,17 @@
         return currentFilter === 'all' || cats.includes(currentFilter);
       });
 
-      // 2. Apply Search Scoring & Sorting
+      // 2. Apply Search Query Logic
       if (term.length > 0) {
-         filteredEntities = categoryFiltered
-          .map(e => ({ entity: e, score: getRelevanceScore(e, term) }))
-          .filter(item => item.score > 0)
+        const query = parseSearchQuery(term);
+         
+        filteredEntities = categoryFiltered
+          .map(e => ({ entity: e, score: getRelevanceScore(e, query.allPositiveTerms) }))
+          .filter(item => {
+             if (!entityMatchesQuery(item.entity, query)) return false;
+             if (query.allPositiveTerms.length > 0 && item.score === 0) return false;
+             return true;
+          })
           .sort((a, b) => b.score - a.score) // Sort descending by score
           .map(item => item.entity);
       } else {
@@ -1667,5 +1755,6 @@
     // =============================================
     loadData();
   </script>
+
 </body>
 </html>

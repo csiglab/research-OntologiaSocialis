@@ -1,10 +1,10 @@
-site_name: República Dominicana
+site_name: Ontologia Socialis
 
 docs_dir: ../docs
 
 theme:
   name: material
-  logo: logo.png
+  logo: img/logo.png
   favicon: favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
