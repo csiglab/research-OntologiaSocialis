@@ -974,7 +974,7 @@
 
             try {
                 // Attempt to fetch the external fragment
-                const response = await fetch(`fragments/${section}.html`);
+                const response = await fetch(`section/${section}.html`);
                 if (!response.ok) throw new Error('Fragment not found');
 
                 const html = await response.text();
@@ -984,7 +984,7 @@
                 initializeAnimations();
 
             } catch (error) {
-                console.warn(`Could not load fragments/${section}.html:`, error);
+                console.warn(`Could not load section/${section}.html:`, error);
 
                 // Fallback content if file is missing
                 container.innerHTML = `
