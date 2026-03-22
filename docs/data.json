@@ -16052,3888 +16052,4500 @@
       "link": null,
       "icon": "⚙️"
     },
-
-  {
-    "id": 1119,
-    "name": "Fraunhofer Institute for Manufacturing Technology and Advanced Materials",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A research institute within the Fraunhofer Society focused on manufacturing technologies and advanced materials research, supporting industrial innovation and applied engineering development.",
-    "link": null,
-    "icon": "🧪"
-  },
-  {
-    "id": 1120,
-    "name": "Prussian Academy of Sciences",
-    "categories": ["Scientific", "Historical"],
-    "tags": ["actor"],
-    "desc": "A historic learned society founded in Prussia that played a major role in advancing scientific research and scholarship in Europe.",
-    "link": null,
-    "icon": "📚"
-  },
-  {
-    "id": 1121,
-    "name": "Kaiser Wilhelm Society",
-    "categories": ["Scientific", "Historical"],
-    "tags": ["actor"],
-    "desc": "A German scientific organization established in 1911 to promote research across disciplines; it later evolved into the Max Planck Society.",
-    "link": null,
-    "icon": "🔬"
-  },
-  {
-    "id": 1122,
-    "name": "Fraunhofer Institute for Material and Beam Technology",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A Fraunhofer research institute specializing in materials engineering and beam-based technologies such as laser processing and surface modification.",
-    "link": null,
-    "icon": "⚙️"
-  },
-  {
-    "id": 1123,
-    "name": "Fraunhofer Institute for Systems and Innovation Research",
-    "categories": ["Scientific", "Economic"],
-    "tags": ["actor"],
-    "desc": "A research institute focused on innovation systems, technology policy, and socio-economic impacts of technological change.",
-    "link": null,
-    "icon": "📊"
-  },
-  {
-    "id": 1124,
-    "name": "National Institute for Nanotechnology",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A research institute dedicated to nanoscience and nanotechnology development, advancing materials and nanoscale engineering.",
-    "link": null,
-    "icon": "🧬"
-  },
-  {
-    "id": 1125,
-    "name": "National Graduate Institute for Policy Studies",
-    "categories": ["Educational", "Political"],
-    "tags": ["actor"],
-    "desc": "A graduate university specializing in policy analysis, public administration, and governance studies.",
-    "link": null,
-    "icon": "🎓"
-  },
-  {
-    "id": 1126,
-    "name": "Norman B. Keevil Institute of Mining Engineering",
-    "categories": ["Educational", "Scientific"],
-    "tags": ["actor"],
-    "desc": "A university institute focused on research and education in mining engineering and mineral resource development.",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1127,
-    "name": "Peterson Institute for International Economics",
-    "categories": ["Economic", "Scientific"],
-    "tags": ["actor"],
-    "desc": "An economic policy think tank conducting research on international trade, macroeconomics, and global economic policy.",
-    "link": null,
-    "icon": "🌍"
-  },
-  {
-    "id": 1128,
-    "name": "Centro Brasileiro de Relações Internacionais",
-    "categories": ["Political", "Scientific"],
-    "tags": ["actor"],
-    "desc": "A Brazilian think tank focused on international relations, foreign policy, and geopolitical analysis.",
-    "link": null,
-    "icon": "🌐"
-  },
-  {
-    "id": 1129,
-    "name": "Max Planck Institute for Sustainable Materials",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A research institute dedicated to developing sustainable materials and advanced materials science.",
-    "link": null,
-    "icon": "♻️"
-  },
-  {
-    "id": 1130,
-    "name": "Paul Scherrer Institute",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "Switzerland’s largest research institute for natural and engineering sciences, focusing on particle physics, materials science, and energy systems.",
-    "link": null,
-    "icon": "⚛️"
-  },
-  {
-    "id": 1131,
-    "name": "Pew Research Center",
-    "categories": ["Media", "Scientific"],
-    "tags": ["actor"],
-    "desc": "A nonpartisan research organization providing data and analysis on social trends, public opinion, and demographic changes.",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1132,
-    "name": "Max Planck Institute for Mathematics",
-    "categories": ["Scientific"],
-    "tags": ["actor"],
-    "desc": "A research institute specializing in advanced mathematical research across pure and applied mathematics.",
-    "link": null,
-    "icon": "➗"
-  },
-  {
-    "id": 1133,
-    "name": "Groningen Growth and Development Center",
-    "categories": ["Economic", "Scientific"],
-    "tags": ["actor"],
-    "desc": "A research center studying economic growth, productivity, and long-term economic development.",
-    "link": null,
-    "icon": "📊"
-  },
-  {
-    "id": 1134,
-    "name": "Santa Fe Institute",
-    "categories": ["Scientific"],
-    "tags": ["actor"],
-    "desc": "An interdisciplinary research institute dedicated to the study of complex systems and emergent phenomena.",
-    "link": null,
-    "icon": "🧠"
-  },
-  {
-    "id": 1135,
-    "name": "Institute of Photonic Sciences",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A research institute focused on photonics, quantum optics, and advanced optical technologies.",
-    "link": null,
-    "icon": "💡"
-  },
-  {
-    "id": 1136,
-    "name": "VTT Technical Research Centre of Finland",
-    "categories": ["Scientific", "Technological"],
-    "tags": ["actor"],
-    "desc": "A Finnish applied research organization supporting technological innovation and industrial development.",
-    "link": null,
-    "icon": "🔧"
-  },
-  {
-    "id": 1137,
-    "name": "Information Technology and Innovation Foundation",
-    "categories": ["Technological", "Economic"],
-    "tags": ["actor"],
-    "desc": "A public policy think tank focused on technological innovation, digital economy policy, and industrial competitiveness.",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1138,
-    "name": "Electronics and Telecommunications Research Institute",
-    "categories": ["Technological", "Scientific"],
-    "tags": ["actor"],
-    "desc": "A research institute specializing in information technology, telecommunications, and digital infrastructure technologies.",
-    "link": null,
-    "icon": "📡"
-  },
-  {
-"id":1139,
-"name":"Federal Reserve System",
-"categories":["Institutional","Economic","Financial"],
-"tags":["actor"],
-"desc":"Central banking system of the United States responsible for monetary policy, financial stability, and banking supervision.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1140,
-"name":"Department for Business and Trade (DBT)",
-"categories":["Institutional","Economic","Political"],
-"tags":["actor"],
-"desc":"United Kingdom government department responsible for trade policy, economic growth, and business regulation.",
-"link":null,
-"icon":"🏛️"
-},
-{
-"id":1141,
-"name":"Ernst & Young (EY)",
-"categories":["Economic","Professional Services"],
-"tags":["actor"],
-"desc":"Global professional services firm providing audit, consulting, tax, and advisory services.",
-"link":null,
-"icon":"📊"
-},
-{
-"id":1142,
-"name":"ByteDance Ltd.",
-"categories":["Technological","Digital","Media"],
-"tags":["actor"],
-"desc":"Chinese multinational technology company known for platforms such as TikTok and Douyin.",
-"link":null,
-"icon":"📱"
-},
-{
-"id":1143,
-"name":"GIC Private Limited",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Singapore sovereign wealth fund managing global investments on behalf of the Singaporean government.",
-"link":null,
-"icon":"💰"
-},
-{
-"id":1144,
-"name":"SpaceX",
-"categories":["Technological","Scientific","Infrastructure"],
-"tags":["actor"],
-"desc":"Aerospace manufacturer and space transportation company focused on reusable rockets and satellite systems.",
-"link":null,
-"icon":"🚀"
-},
-{
-"id":1145,
-"name":"Haas Automation",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"American manufacturer of CNC machine tools used in precision manufacturing.",
-"link":null,
-"icon":"🏭"
-},
-{
-"id":1146,
-"name":"Advanced Micro-Fabrication Equipment (AMEC)",
-"categories":["Technological","Industrial"],
-"tags":["actor"],
-"desc":"Chinese semiconductor equipment manufacturer specializing in plasma etching and deposition systems.",
-"link":null,
-"icon":"🧪"
-},
-{
-"id":1147,
-"name":"Rio Tinto Group",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Multinational mining corporation producing metals and minerals such as iron ore, copper, and aluminum.",
-"link":null,
-"icon":"⛏️"
-},
-{
-"id":1148,
-"name":"STMicroelectronics NV",
-"categories":["Technological","Industrial"],
-"tags":["actor"],
-"desc":"Global semiconductor manufacturer producing integrated circuits and microelectronics.",
-"link":null,
-"icon":"🔌"
-},
-{
-"id":1149,
-"name":"Sigma Alimentos",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"Mexican multinational food processing and distribution company.",
-"link":null,
-"icon":"🥫"
-},
-{
-"id":1150,
-"name":"Mitsubishi Group",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Japanese keiretsu conglomerate composed of multiple companies across industries such as finance, energy, and manufacturing.",
-"link":null,
-"icon":"🏢"
-},
-{
-"id":1151,
-"name":"Sany Heavy Industry Co., Ltd.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Chinese heavy machinery manufacturer specializing in construction equipment.",
-"link":null,
-"icon":"🚜"
-},
-{
-"id":1152,
-"name":"China Shenhua Energy Company Limited",
-"categories":["Economic","Energy","Industrial"],
-"tags":["actor"],
-"desc":"Major Chinese energy company involved in coal production, power generation, and transportation.",
-"link":null,
-"icon":"⚡"
-},
-{
-"id":1153,
-"name":"Ebro Foods",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"Spanish multinational food company specializing in rice and pasta production.",
-"link":null,
-"icon":"🌾"
-},
-{
-"id":1154,
-"name":"Siemens Financial Services (SFS)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Financing arm of Siemens providing capital solutions for industrial and infrastructure projects.",
-"link":null,
-"icon":"💳"
-},
-{
-"id":1155,
-"name":"Abbott Laboratories",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Global healthcare company producing pharmaceuticals, diagnostics, and medical devices.",
-"link":null,
-"icon":"🧬"
-},
-{
-"id":1156,
-"name":"Odoo SA",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Enterprise software company developing open-source ERP and business management applications.",
-"link":null,
-"icon":"💻"
-},
-{
-"id":1157,
-"name":"ZTE Corporation",
-"categories":["Technological","Infrastructure"],
-"tags":["actor"],
-"desc":"Chinese telecommunications equipment and network infrastructure company.",
-"link":null,
-"icon":"📡"
-},
-{
-"id":1158,
-"name":"Johannesburg Stock Exchange (JSE)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Major stock exchange in Africa facilitating securities trading and capital markets in South Africa.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1159,
-"name":"Terma",
-"categories":["Military","Technological"],
-"tags":["actor"],
-"desc":"Danish aerospace and defense technology company.",
-"link":null,
-"icon":"🛡️"
-},
-{
-"id":1160,
-"name":"NASDAQ",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Global electronic stock exchange known for technology listings and financial market infrastructure.",
-"link":null,
-"icon":"📊"
-},
-{
-"id":1161,
-"name":"Banco Nacional de Desenvolvimento Econômico e Social (BNDES)",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"Brazilian government development bank financing infrastructure and industrial development projects.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1162,
-"name":"Novartis AG",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Swiss multinational pharmaceutical company focused on innovative medicines and biotechnology.",
-"link":null,
-"icon":"💊"
-},
-{
-"id":1163,
-"name":"AB Motala Verkstad",
-"categories":["Industrial"],
-"tags":["actor"],
-"desc":"Swedish engineering and industrial manufacturing firm historically active in mechanical systems and energy infrastructure.",
-"link":null,
-"icon":"⚙️"
-},
-{
-"id":1164,
-"name":"XPO Inc.",
-"categories":["Economic","Infrastructure"],
-"tags":["actor"],
-"desc":"Logistics and freight transportation company providing supply chain services globally.",
-"link":null,
-"icon":"🚚"
-},
-{
-"id":1165,
-"name":"Novo Nordisk A/S",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Danish pharmaceutical company specializing in diabetes and metabolic disease treatments.",
-"link":null,
-"icon":"💉"
-},
-{
-"id":1166,
-"name":"Bajaj Group",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Indian conglomerate with major operations in automotive manufacturing, finance, and consumer goods.",
-"link":null,
-"icon":"🏭"
-},
-{
-"id":1167,
-"name":"Korea Export-Import Bank (KEXIM)",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"South Korean government-owned export credit agency supporting international trade and development projects.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1168,
-"name":"BYD Company Limited",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Chinese multinational manufacturer of electric vehicles, batteries, and renewable energy technologies.",
-"link":null,
-"icon":"🔋"
-},
-{
-"id":1169,
-"name":"Tencent Holdings Ltd.",
-"categories":["Digital","Technological"],
-"tags":["actor"],
-"desc":"Chinese multinational technology conglomerate known for digital platforms, gaming, and financial technology.",
-"link":null,
-"icon":"🌐"
-},
-{
-"id":1170,
-"name":"Steyr Mannlicher",
-"categories":["Industrial","Military"],
-"tags":["actor"],
-"desc":"Austrian manufacturer of firearms and military equipment.",
-"link":null,
-"icon":"🛡️"
-},
-{
-"id":1171,
-"name":"Swiss National Bank (SNB)",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"Central bank of Switzerland responsible for monetary policy and financial stability.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1172,
-"name":"Huntington Ingalls Industries (HII)",
-"categories":["Military","Industrial"],
-"tags":["actor"],
-"desc":"American defense contractor specializing in naval shipbuilding and military systems.",
-"link":null,
-"icon":"⚓"
-},
-{
-"id":1173,
-"name":"Bank of England",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"Central bank of the United Kingdom responsible for monetary policy and financial system stability.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1174,
-"name":"Pfizer Inc.",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Global pharmaceutical corporation focused on drug development, biotechnology, and vaccines.",
-"link":null,
-"icon":"💊"
-},
-{
-"id":1175,
-"name":"Mitsui",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Japanese multinational trading and investment conglomerate active across numerous industries.",
-"link":null,
-"icon":"🏢"
-},
-{
-"id":1176,
-"name":"Glencore plc",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Multinational commodity trading and mining corporation.",
-"link":null,
-"icon":"⛏️"
-},
-{
-"id":1177,
-"name":"Anduril Industries",
-"categories":["Military","Technological"],
-"tags":["actor"],
-"desc":"Defense technology company focused on autonomous systems and surveillance infrastructure.",
-"link":null,
-"icon":"🛰️"
-},
-{
-"id":1178,
-"name":"Tsingshan Holding Group",
-"categories":["Industrial","Economic"],
-"tags":["actor"],
-"desc":"Chinese multinational conglomerate specializing in stainless steel and nickel production.",
-"link":null,
-"icon":"🏭"
-},
-{
-"id":1179,
-"name":"Deere & Company",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Manufacturer of agricultural, construction, and forestry machinery.",
-"link":null,
-"icon":"🚜"
-},
-{
-"id":1180,
-"name":"Slack Technologies",
-"categories":["Digital","Technological"],
-"tags":["actor"],
-"desc":"Software company known for the Slack collaboration and messaging platform.",
-"link":null,
-"icon":"💬"
-},
-{
-"id":1181,
-"name":"Marel hf.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Icelandic food processing equipment manufacturer serving the global food industry.",
-"link":null,
-"icon":"⚙️"
-},
-{
-"id":1182,
-"name":"MicroPort Inc.",
-"categories":["Health","Technological"],
-"tags":["actor"],
-"desc":"Medical technology company producing cardiovascular and orthopedic medical devices.",
-"link":null,
-"icon":"🩺"
-},
-{
-"id":1183,
-"name":"Costco Wholesale Corporation",
-"categories":["Economic","Commercial"],
-"tags":["actor"],
-"desc":"Global retail corporation operating membership warehouse clubs.",
-"link":null,
-"icon":"🛒"
-},
-{
-"id":1184,
-"name":"Banco do Brasil",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Major Brazilian financial institution providing banking and financial services.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1185,
-"name":"Komatsu Ltd.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Japanese multinational manufacturer of construction, mining, and industrial equipment.",
-"link":null,
-"icon":"🚜"
-},
-{
-"id":1186,
-"name":"JBS S.A.",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"Brazilian multinational food processing company and one of the largest meat producers globally.",
-"link":null,
-"icon":"🥩"
-},
-{
-"id":1187,
-"name":"PepsiCo Inc.",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"Multinational food and beverage corporation producing snacks and drinks.",
-"link":null,
-"icon":"🥤"
-},
-{
-"id":1188,
-"name":"Temasek Holdings",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Singaporean sovereign investment company managing global strategic investments.",
-"link":null,
-"icon":"💰"
-},
-{
-"id":1189,
-"name":"Kuehne + Nagel International AG",
-"categories":["Economic","Infrastructure"],
-"tags":["actor"],
-"desc":"Swiss global logistics and supply chain management company.",
-"link":null,
-"icon":"🚚"
-},
-{
-"id":1190,
-"name":"RUAG",
-"categories":["Military","Industrial"],
-"tags":["actor"],
-"desc":"Swiss aerospace and defense technology company.",
-"link":null,
-"icon":"🛡️"
-},
-{
-"id":1191,
-"name":"Microsoft Corporation",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Global technology corporation producing software, cloud computing platforms, and digital infrastructure.",
-"link":null,
-"icon":"💻"
-},
-{
-"id":1192,
-"name":"Claro Cloud",
-"categories":["Digital","Infrastructure"],
-"tags":["actor"],
-"desc":"Cloud computing services division associated with the telecommunications company Claro.",
-"link":null,
-"icon":"☁️"
-},
-{
-"id":1193,
-"name":"Honda",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Japanese multinational manufacturer of automobiles, motorcycles, and power equipment.",
-"link":null,
-"icon":"🚗"
-},
-{
-"id":1194,
-"name":"Österreichische Beteiligungs AG",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Austrian state holding company managing government equity stakes in strategic enterprises.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1195,
-"name":"Vanguard Total Stock Market Index Fund",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Major investment fund tracking the performance of the U.S. total stock market.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1196,
-"name":"Alibaba Group",
-"categories":["Digital","Technological","Economic"],
-"tags":["actor"],
-"desc":"Chinese multinational technology company specializing in e-commerce, cloud computing, and digital services.",
-"link":null,
-"icon":"🛍️"
-},
-{
-"id":1197,
-"name":"Patria",
-"categories":["Military","Industrial"],
-"tags":["actor"],
-"desc":"Finnish defense and aerospace company producing armored vehicles and military systems.",
-"link":null,
-"icon":"🛡️"
-},
-{
-"id":1198,
-"name":"Campofrío Food Group",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"European multinational food company specializing in processed meats and food products.",
-"link":null,
-"icon":"🥓"
-},
-{
-"id":1199,
-"name":"Abu Dhabi Investment Authority (ADIA)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"One of the world's largest sovereign wealth funds managing Abu Dhabi's oil revenues.",
-"link":null,
-"icon":"💰"
-},
-{
-"id":1200,
-"name":"ABI Research",
-"categories":["Scientific","Technological","Media"],
-"tags":["actor"],
-"desc":"Technology market intelligence firm specializing in emerging technologies and industry research.",
-"link":null,
-"icon":"📊"
-},
-{
-"id":1201,
-"name":"Volvo Construction Equipment",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Division of Volvo Group manufacturing construction machinery and heavy equipment.",
-"link":null,
-"icon":"🚜"
-},
-{
-"id":1202,
-"name":"Shenzhen Stock Exchange (SZSE)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Major Chinese stock exchange supporting capital markets and securities trading.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1203,
-"name":"Bank of Japan",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"Central bank of Japan responsible for monetary policy and financial system stability.",
-"link":null,
-"icon":"🏦"
-},
-{
-"id":1204,
-"name":"BlackBerry Limited",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Canadian technology company focusing on cybersecurity, enterprise software, and embedded systems.",
-"link":null,
-"icon":"📱"
-},
-{
-"id":1205,
-"name":"Envision Energy",
-"categories":["Energy","Technological","Environmental"],
-"tags":["actor"],
-"desc":"Renewable energy technology company specializing in wind turbines and energy management systems.",
-"link":null,
-"icon":"🌬️"
-},
-{
-"id":1206,
-"name":"Qlik",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Software company providing data analytics and business intelligence platforms.",
-"link":null,
-"icon":"📊"
-},
-{
-"id":1207,
-"name":"Saudi Public Investment Fund (PIF)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Sovereign wealth fund of Saudi Arabia investing in global strategic industries.",
-"link":null,
-"icon":"💰"
-},
-{
-"id":1208,
-"name":"Skyworks Solutions Inc.",
-"categories":["Technological","Industrial"],
-"tags":["actor"],
-"desc":"Semiconductor company specializing in wireless communication chips and RF components.",
-"link":null,
-"icon":"📡"
-},
-{
-"id":1209,
-"name":"Abengoa",
-"categories":["Energy","Infrastructure"],
-"tags":["actor"],
-"desc":"Spanish engineering company focused on renewable energy and infrastructure projects.",
-"link":null,
-"icon":"⚡"
-},
-{
-"id":1210,
-"name":"Grupo Romero",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Peruvian business conglomerate operating in agriculture, logistics, finance, and consumer goods.",
-"link":null,
-"icon":"🏢"
-},
-{
-"id":1211,
-"name":"Corporación Mondragón",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Federation of worker cooperatives based in Spain operating across manufacturing, finance, and retail sectors.",
-"link":null,
-"icon":"🤝"
-},
-{
-"id":1212,
-"name":"Eli Lilly and Company",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Pharmaceutical corporation specializing in biotechnology and therapeutic drug development.",
-"link":null,
-"icon":"💊"
-},
-{
-"id":1213,
-"name":"Shopify",
-"categories":["Digital","Technological"],
-"tags":["actor"],
-"desc":"E-commerce technology company providing online store infrastructure and payment platforms.",
-"link":null,
-"icon":"🛍️"
-},
-{
-"id":1214,
-"name":"MTU Aero Engines",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"German aerospace company specializing in aircraft engine manufacturing and maintenance.",
-"link":null,
-"icon":"✈️"
-},
-{
-"id":1215,
-"name":"Infosys",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Indian multinational information technology services and consulting company.",
-"link":null,
-"icon":"💻"
-},
-{
-"id":1216,
-"name":"AstraZeneca plc",
-"categories":["Health","Scientific"],
-"tags":["actor"],
-"desc":"Global pharmaceutical and biotechnology company focused on innovative medicines.",
-"link":null,
-"icon":"💊"
-},
-{
-"id":1217,
-"name":"SMIC (Semiconductor Manufacturing International Corporation)",
-"categories":["Technological","Industrial"],
-"tags":["actor"],
-"desc":"Chinese semiconductor foundry manufacturing integrated circuits.",
-"link":null,
-"icon":"🔬"
-},
-{
-"id":1218,
-"name":"General Electric Company (GE)",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"American multinational industrial conglomerate with activities in aerospace, energy, and healthcare technology.",
-"link":null,
-"icon":"⚙️"
-},
-{
-"id":1219,
-"name":"Grupo Bimbo",
-"categories":["Economic","Food Industry"],
-"tags":["actor"],
-"desc":"Mexican multinational bakery and food company producing bread and packaged foods globally.",
-"link":null,
-"icon":"🍞"
-},
-{
-"id":1220,
-"name":"Xi'an Aircraft Company Limited (XAC)",
-"categories":["Industrial","Military","Technological"],
-"tags":["actor"],
-"desc":"Chinese aerospace manufacturer producing military and transport aircraft.",
-"link":null,
-"icon":"✈️"
-},
-{
-"id":1221,
-"name":"Infor",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Enterprise software company providing ERP and cloud-based business applications.",
-"link":null,
-"icon":"💻"
-},
-{
-"id":1222,
-"name":"Frappe Technologies Pvt Ltd",
-"categories":["Technological","Digital"],
-"tags":["actor"],
-"desc":"Software company known for developing the open-source ERP platform ERPNext.",
-"link":null,
-"icon":"🧾"
-},
-{
-"id":1223,
-"name":"Bunge Global SA",
-"categories":["Economic","Industrial"],
-"tags":["actor"],
-"desc":"Agribusiness and food company involved in grain trading, food processing, and agricultural supply chains.",
-"link":null,
-"icon":"🌾"
-},
-{
-"id":1224,
-"name":"BlackRock",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Global asset management corporation managing trillions in investment funds.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1225,
-"name":"Samsung Group",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"South Korean multinational conglomerate operating across electronics, semiconductors, finance, and construction.",
-"link":null,
-"icon":"📱"
-},
-{
-"id":1226,
-"name":"ACM Research Inc. (ACMR)",
-"categories":["Technological","Industrial"],
-"tags":["actor"],
-"desc":"Semiconductor equipment manufacturer specializing in wafer cleaning technology.",
-"link":null,
-"icon":"🔬"
-},
-{
-"id":1227,
-"name":"LG Corporation",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"South Korean multinational conglomerate active in electronics, chemicals, and telecommunications.",
-"link":null,
-"icon":"📺"
-},
-{
-"id":1228,
-"name":"McKinsey & Company",
-"categories":["Economic","Professional Services"],
-"tags":["actor"],
-"desc":"Global management consulting firm advising corporations and governments.",
-"link":null,
-"icon":"📊"
-},
-{
-"id":1229,
-"name":"New Zealand Trade and Enterprise (NZTE)",
-"categories":["Institutional","Economic"],
-"tags":["actor"],
-"desc":"New Zealand government agency supporting trade, exports, and international investment.",
-"link":null,
-"icon":"🏛️"
-},
-{
-"id":1230,
-"name":"SBA Group",
-"categories":["Infrastructure","Technological"],
-"tags":["actor"],
-"desc":"Company operating telecommunications tower infrastructure for wireless networks.",
-"link":null,
-"icon":"📡"
-},
-{
-"id":1231,
-"name":"FedEx Corporation",
-"categories":["Economic","Infrastructure"],
-"tags":["actor"],
-"desc":"Global logistics and delivery services corporation.",
-"link":null,
-"icon":"📦"
-},
-{
-"id":1232,
-"name":"Chery Automobile Co., Ltd.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Chinese automobile manufacturer producing passenger vehicles and electric cars.",
-"link":null,
-"icon":"🚗"
-},
-{
-"id":1233,
-"name":"New York Stock Exchange (NYSE)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"One of the world's largest stock exchanges facilitating global capital markets.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1234,
-"name":"Shenyang Machine Tool Co., Ltd.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"Chinese manufacturer of machine tools and industrial equipment.",
-"link":null,
-"icon":"⚙️"
-},
-{
-"id":1235,
-"name":"B3 (Brazilian Stock Exchange)",
-"categories":["Economic","Financial"],
-"tags":["actor"],
-"desc":"Major Brazilian exchange formed from the merger of stock and derivatives trading platforms.",
-"link":null,
-"icon":"📈"
-},
-{
-"id":1236,
-"name":"Caterpillar Inc.",
-"categories":["Industrial","Technological"],
-"tags":["actor"],
-"desc":"American manufacturer of construction, mining, and heavy machinery.",
-"link":null,
-"icon":"🚜"
-},
-{
-"id":1237,
-"name":"ST Engineering",
-"categories":["Industrial","Military","Technological"],
-"tags":["actor"],
-"desc":"Singaporean technology and defense engineering group.",
-"link":null,
-"icon":"🛡️"
-},
-{
-"id":1238,
-"name":"California Public Employees' Retirement System (CalPERS)",
-"categories":["Economic","Financial","Institutional"],
-"tags":["actor"],
-"desc":"Large public pension fund managing retirement assets for California public employees.",
-"link":null,
-"icon":"💰"
-}
-  ,{
-    "id": 1239,
-    "name": "Booz Allen Hamilton",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1240,
-    "name": "SIX Swiss Exchange",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1241,
-    "name": "Marubeni Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1242,
-    "name": "Zijin Mining Group Co. Limited",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1243,
-    "name": "Shanghai Micro Electronics Equipment Group Co.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔬"
-  },
-  {
-    "id": 1244,
-    "name": "Export-Import Bank of China",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1245,
-    "name": "Kuwait Investment Authority KIA",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1246,
-    "name": "Lockheed Martin Corporation",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1247,
-    "name": "Taiwan Stock Exchange TWSE",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1248,
-    "name": "Berkshire Hathaway",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1249,
-    "name": "Toronto Stock Exchange TSX",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1250,
-    "name": "Moscow Exchange MOEX",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1251,
-    "name": "BlackStone",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1252,
-    "name": "Johnson Johnson",
-    "categories": [
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1253,
-    "name": "National Stock Exchange NSE",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1254,
-    "name": "Fidelity Investments",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1255,
-    "name": "ABB Ltd",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚡"
-  },
-  {
-    "id": 1256,
-    "name": "ISS A S",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1257,
-    "name": "Snowflake Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "❄️"
-  },
-  {
-    "id": 1258,
-    "name": "Oracle Corporation",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🗄️"
-  },
-  {
-    "id": 1259,
-    "name": "Y Combinator",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🚀"
-  },
-  {
-    "id": 1260,
-    "name": "Sanofi S A",
-    "categories": [
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1261,
-    "name": "International Business Machines Corporation IBM",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1262,
-    "name": "Telegram",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1263,
-    "name": "Virgin Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1264,
-    "name": "Zoomlion Heavy Industry Science and Technology Co.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏗️"
-  },
-  {
-    "id": 1265,
-    "name": "London Stock Exchange LSE",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1266,
-    "name": "Tiny Capital",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💰"
-  },
-  {
-    "id": 1267,
-    "name": "Bolsa de Madrid",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1268,
-    "name": "Elbit Systems",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1269,
-    "name": "Epicor Software Corporation",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1270,
-    "name": "Fortinet Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔒"
-  },
-  {
-    "id": 1271,
-    "name": "JetBrains s r o",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1272,
-    "name": "Hitachi Ltd",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏭"
-  },
-  {
-    "id": 1273,
-    "name": "Fortescue",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1274,
-    "name": "Bell Labs",
-    "categories": [
-      "Scientific"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔔"
-  },
-  {
-    "id": 1275,
-    "name": "Kongsberg Gruppen",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1276,
-    "name": "Brookings Institution",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📚"
-  },
-  {
-    "id": 1277,
-    "name": "Tableau Software LLC",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📊"
-  },
-  {
-    "id": 1278,
-    "name": "Sinosure",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1279,
-    "name": "Shanghai Stock Exchange STAR Market",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🚀"
-  },
-  {
-    "id": 1280,
-    "name": "Euronext",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1281,
-    "name": "Goldwind Science Technology Co. Ltd",
-    "categories": [
-      "Environmental"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🌬️"
-  },
-  {
-    "id": 1282,
-    "name": "Globant",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1283,
-    "name": "Atlassian",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛠️"
-  },
-  {
-    "id": 1284,
-    "name": "Carl Zeiss AG",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔭"
-  },
-  {
-    "id": 1285,
-    "name": "NAURA Technology Group Co. Ltd",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔬"
-  },
-  {
-    "id": 1286,
-    "name": "BAE Systems",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1287,
-    "name": "Schwarz Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛒"
-  },
-  {
-    "id": 1288,
-    "name": "Xerox PARC",
-    "categories": [
-      "Scientific"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🖨️"
-  },
-  {
-    "id": 1289,
-    "name": "CNH Industrial N V",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🚜"
-  },
-  {
-    "id": 1290,
-    "name": "Zoom Video Communications Inc.",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🎥"
-  },
-  {
-    "id": 1291,
-    "name": "UBtech Robotics",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🤖"
-  },
-  {
-    "id": 1292,
-    "name": "DuPont de Nemours Inc.",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🧪"
-  },
-  {
-    "id": 1293,
-    "name": "Cisco Systems Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🌐"
-  },
-  {
-    "id": 1294,
-    "name": "Sumco Corporation",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": " 💎"
-  },
-  {
-    "id": 1295,
-    "name": "Automattic",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🌐"
-  },
-  {
-    "id": 1296,
-    "name": "Arbutus Biopharma Corporation",
-    "categories": [
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1297,
-    "name": "The Charles Schwab Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1298,
-    "name": "Robert Bosch GmbH",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔧"
-  },
-  {
-    "id": 1299,
-    "name": "Salesforce Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "☁️"
-  },
-  {
-    "id": 1300,
-    "name": "The Boeing Company",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1301,
-    "name": "Dow Chemical Company",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🧪"
-  },
-  {
-    "id": 1302,
-    "name": "Baidu",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔍"
-  },
-  {
-    "id": 1303,
-    "name": "ASML",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💡"
-  },
-  {
-    "id": 1304,
-    "name": "China Northern Rare Earth Group High tech Co L",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⛰️"
-  },
-  {
-    "id": 1305,
-    "name": "Korea Exchange KRX",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1306,
-    "name": "China National Nuclear Corporation CNNC",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚛️"
-  },
-  {
-    "id": 1307,
-    "name": "Central Provident Fund Board CPFB",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1308,
-    "name": "Bridgewater Associates",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💰"
-  },
-  {
-    "id": 1309,
-    "name": "Grupo M xico",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1310,
-    "name": "Amazon com Inc.",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📦"
-  },
-  {
-    "id": 1311,
-    "name": "Embrapii",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🔬"
-  },
-  {
-    "id": 1312,
-    "name": "Syngenta Global AG",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🌾"
-  },
-  {
-    "id": 1313,
-    "name": "Ningbo Haitian Precision",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏭"
-  },
-  {
-    "id": 1314,
-    "name": "Siemens AG",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚡"
-  },
-  {
-    "id": 1315,
-    "name": "Docusign Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "✍️"
-  },
-  {
-    "id": 1316,
-    "name": "CrowdStrike Holdings Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1317,
-    "name": "Okuma Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚙️"
-  },
-  {
-    "id": 1318,
-    "name": "Bank for International Settlements",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1319,
-    "name": "Borsa stanbul",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1320,
-    "name": "KPMG",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📋"
-  },
-  {
-    "id": 1321,
-    "name": "JPMorgan Chase Co",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1322,
-    "name": "Autodesk Instructables",
-    "categories": [
-      "Digital"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📐"
-  },
-  {
-    "id": 1323,
-    "name": "Enel S p A",
-    "categories": [
-      "Infrastructure"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚡"
-  },
-  {
-    "id": 1324,
-    "name": "Netflix Inc.",
-    "categories": [
-      "Media"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🎬"
-  },
-  {
-    "id": 1325,
-    "name": "Ford Motor Company",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🚗"
-  },
-  {
-    "id": 1326,
-    "name": "Yamazaki Mazak Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "⚙️"
-  },
-  {
-    "id": 1327,
-    "name": "Saab",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1328,
-    "name": "A P M ller M rsk A S",
-    "categories": [
-      "Infrastructure"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🚢"
-  },
-  {
-    "id": 1329,
-    "name": "Cadena Comercial OXXO S A de C V",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏪"
-  },
-  {
-    "id": 1330,
-    "name": "Accenture",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1331,
-    "name": "Gerdau",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏗️"
-  },
-  {
-    "id": 1332,
-    "name": "Shanghai Stock Exchange SSE",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1333,
-    "name": "Koch Industries",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🏭"
-  },
-  {
-    "id": 1334,
-    "name": "Bayer AG",
-    "categories": [
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1335,
-    "name": "Asana Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "✅"
-  },
-  {
-    "id": 1336,
-    "name": "Intuit Inc.",
-    "categories": [
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "💵"
-  },
-  {
-    "id": 1337,
-    "name": "RTX Corporation",
-    "categories": [
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "description",
-    "link": null,
-    "icon": "🛡️"
-  },
-
-  {
-    "id": 1338,
-    "name": "Zoho Corporation",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1339,
-    "name": "Micron Technology",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💾"
-  },
-  {
-    "id": 1340,
-    "name": "Axa S.A.",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1341,
-    "name": "Cargill Incorporated",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🌾"
-  },
-  {
-    "id": 1342,
-    "name": "Leidos Holdings Inc",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1343,
-    "name": "Alphabet Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🌐"
-  },
-  {
-    "id": 1344,
-    "name": "Meta Platforms Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📱"
-  },
-  {
-    "id": 1345,
-    "name": "Israel Aerospace Industries",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1346,
-    "name": "Andritz AG",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏭"
-  },
-  {
-    "id": 1347,
-    "name": "Valio Ltd",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🥛"
-  },
-  {
-    "id": 1348,
-    "name": "Nippon Steel Corporation",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏗️"
-  },
-  {
-    "id": 1349,
-    "name": "Daikin Industries Ltd",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "❄️"
-  },
-  {
-    "id": 1350,
-    "name": "Mexican Stock Exchange (BMV)",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1351,
-    "name": "Capgemini",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1352,
-    "name": "Nestlé S.A.",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🍫"
-  },
-  {
-    "id": 1353,
-    "name": "Sandvik AB",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1354,
-    "name": "Finnish Food Factory Oy",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🍽️"
-  },
-  {
-    "id": 1355,
-    "name": "BHP Group Limited",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "⛏️"
-  },
-  {
-    "id": 1356,
-    "name": "Reitan AS",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛒"
-  },
-  {
-    "id": 1357,
-    "name": "PwC",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1358,
-    "name": "Airbus SE",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1359,
-    "name": "Tyson Foods Inc",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🍗"
-  },
-  {
-    "id": 1360,
-    "name": "Sinochem Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🧪"
-  },
-  {
-    "id": 1361,
-    "name": "Axa Investment Managers",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📊"
-  },
-  {
-    "id": 1362,
-    "name": "Barrick Gold Corporation",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🥇"
-  },
-  {
-    "id": 1363,
-    "name": "Rockwell Automation Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🤖"
-  },
-  {
-    "id": 1364,
-    "name": "Boston Consulting Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1365,
-    "name": "Tokmanni Group Oyj",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛍️"
-  },
-  {
-    "id": 1366,
-    "name": "Louis Dreyfus Company B.V. (LDC)",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🚢"
-  },
-  {
-    "id": 1367,
-    "name": "ServiceNow Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "☁️"
-  },
-  {
-    "id": 1368,
-    "name": "Business Finland",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇫🇮"
-  },
-  {
-    "id": 1369,
-    "name": "Korea Trade-Investment Promotion Agency (KOTRA)",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇰🇷"
-  },
-  {
-    "id": 1370,
-    "name": "Grupo Carso",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1371,
-    "name": "Grupo Corripio",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1372,
-    "name": "Guangzhou Xiaopeng Motors Technology Co., Ltd - XPENG",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🚗"
-  },
-  {
-    "id": 1373,
-    "name": "Sage Group",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1374,
-    "name": "Rafael Advanced Defense Systems",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1375,
-    "name": "The Vanguard Group Inc",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1376,
-    "name": "Investor AB",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💰"
-  },
-  {
-    "id": 1377,
-    "name": "Quicken Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1378,
-    "name": "Roadget Business (SHEIN)",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛍️"
-  },
-  {
-    "id": 1379,
-    "name": "KTH Royal Institute of Technology",
-    "categories": [
-      "Educational",
-      "Scientific"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🎓"
-  },
-  {
-    "id": 1380,
-    "name": "Huawei Investment Holding Co Ltd",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📱"
-  },
-  {
-    "id": 1381,
-    "name": "Visa",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💳"
-  },
-  {
-    "id": 1382,
-    "name": "ADP",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "👥"
-  },
-  {
-    "id": 1383,
-    "name": "Banco de España",
-    "categories": [
-      "Economic",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1384,
-    "name": "BASF SE",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🧪"
-  },
-  {
-    "id": 1385,
-    "name": "HubSpot Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🧲"
-  },
-  {
-    "id": 1386,
-    "name": "Toyota Group",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🚗"
-  },
-  {
-    "id": 1387,
-    "name": "Yelp",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🌟"
-  },
-  {
-    "id": 1388,
-    "name": "Embraer S.A.",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "✈️"
-  },
-  {
-    "id": 1389,
-    "name": "Trumpf SE + Co. KG",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "⚙️"
-  },
-  {
-    "id": 1390,
-    "name": "DHL Group",
-    "categories": [
-      "Economic",
-      "Infrastructure"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📦"
-  },
-  {
-    "id": 1391,
-    "name": "Xero",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1392,
-    "name": "F. Hoffmann-La Roche AG",
-    "categories": [
-      "Economic",
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1393,
-    "name": "Deloitte",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💼"
-  },
-  {
-    "id": 1394,
-    "name": "Singapore Exchange (SGX)",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1395,
-    "name": "China Development Bank",
-    "categories": [
-      "Economic",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1396,
-    "name": "Sumitomo Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1397,
-    "name": "Korea Aerospace Research Institute",
-    "categories": [
-      "Scientific",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🚀"
-  },
-  {
-    "id": 1398,
-    "name": "Tata Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1399,
-    "name": "China State Shipbuilding Corporation (CSSC)",
-    "categories": [
-      "Economic",
-      "Military"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🚢"
-  },
-  {
-    "id": 1400,
-    "name": "Tokyo Electron",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💾"
-  },
-  {
-    "id": 1401,
-    "name": "Merck & Co., Inc.",
-    "categories": [
-      "Economic",
-      "Health"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💊"
-  },
-  {
-    "id": 1402,
-    "name": "Rhodium Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📊"
-  },
-  {
-    "id": 1403,
-    "name": "FreshBooks",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📒"
-  },
-  {
-    "id": 1404,
-    "name": "Morgan Stanley",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1405,
-    "name": "Liebherr-International AG",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏗️"
-  },
-  {
-    "id": 1406,
-    "name": "SAP SE",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1407,
-    "name": "Vingroup Joint Stock Company",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏢"
-  },
-  {
-    "id": 1408,
-    "name": "DMG Mori Co. Ltd",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "⚙️"
-  },
-  {
-    "id": 1409,
-    "name": "Australian Securities Exchange (ASX)",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1410,
-    "name": "PPG Industries Inc",
-    "categories": [
-      "Economic",
-      "Industrial"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🎨"
-  },
-  {
-    "id": 1411,
-    "name": "Check Point Software Technologies Ltd",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🛡️"
-  },
-  {
-    "id": 1412,
-    "name": "Workday Inc",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💻"
-  },
-  {
-    "id": 1413,
-    "name": "ChangXin Memory Technologies",
-    "categories": [
-      "Economic",
-      "Technological"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💾"
-  },
-  {
-    "id": 1414,
-    "name": "Executive Policy Unit",
-    "categories": [
-      "Political",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1415,
-    "name": "Taiwan External Trade Development Council",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1416,
-    "name": "Kuomintang",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1417,
-    "name": "La République En Marche!",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1418,
-    "name": "Swedish Social Democratic Party",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1419,
-    "name": "Christian Democratic Union",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1420,
-    "name": "Liberal Democratic Party",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1421,
-    "name": "People's Action Party",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1422,
-    "name": "Chinese Communist Party",
-    "categories": [
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1423,
-    "name": "Communist Party of the Soviet Union",
-    "categories": [
-      "Political",
-      "Historical"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🗳️"
-  },
-  {
-    "id": 1424,
-    "name": "Development Bank of Singapore",
-    "categories": [
-      "Economic",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1425,
-    "name": "ProChile",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇨🇱"
-  },
-  {
-    "id": 1426,
-    "name": "New Zealand Trade and Enterprise (NZTE)",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇳🇿"
-  },
-  {
-    "id": 1427,
-    "name": "Colegio Oficial de Ingenieros Industriales de Navarra",
-    "categories": [
-      "Institutional",
-      "Educational"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1428,
-    "name": "Istituto per la Ricostruzione Industriale",
-    "categories": [
-      "Institutional",
-      "Historical"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1429,
-    "name": "Instituto Nacional de Industria",
-    "categories": [
-      "Institutional",
-      "Historical"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1430,
-    "name": "Enterprise Singapore",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1431,
-    "name": "Industrial Development Bureau",
-    "categories": [
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1432,
-    "name": "European Central Bank",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1433,
-    "name": "Israel Innovation Authority",
-    "categories": [
-      "Institutional",
-      "Scientific"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💡"
-  },
-  {
-    "id": 1434,
-    "name": "IDA Ireland (Industrial Development Authority)",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇮🇪"
-  },
-  {
-    "id": 1435,
-    "name": "Export Development Canada",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇨🇦"
-  },
-  {
-    "id": 1436,
-    "name": "Finnish Innovation Fund",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "💡"
-  },
-  {
-    "id": 1437,
-    "name": "World Bank",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🌍"
-  },
-  {
-    "id": 1438,
-    "name": "SelectUSA (Department of Commerce)",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇺🇸"
-  },
-  {
-    "id": 1439,
-    "name": "Switzerland Global Enterprise (S-GE)",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇨🇭"
-  },
-  {
-    "id": 1440,
-    "name": "Hong Kong Stock Exchange",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1441,
-    "name": "Japan Exchange Group",
-    "categories": [
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "📈"
-  },
-  {
-    "id": 1442,
-    "name": "Korea Development Institute",
-    "categories": [
-      "Institutional",
-      "Scientific"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1443,
-    "name": "Suzhou Industrial Park",
-    "categories": [
-      "Infrastructure",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏭"
-  },
-  {
-    "id": 1444,
-    "name": "Export-Import Bank of the United States",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏦"
-  },
-  {
-    "id": 1445,
-    "name": "Enterprise Ireland",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇮🇪"
-  },
-  {
-    "id": 1446,
-    "name": "Ministry of International Trade and Industry",
-    "categories": [
-      "Institutional",
-      "Political"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏛️"
-  },
-  {
-    "id": 1447,
-    "name": "United States Small Business Administration",
-    "categories": [
-      "Institutional",
-      "Economic"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🇺🇸"
-  },
-  {
-    "id": 1448,
-    "name": "Federal Home Loan Mortgage Corporation",
-    "categories": [
-      "Economic",
-      "Institutional"
-    ],
-    "tags": [
-      "actor"
-    ],
-    "desc": "fill the description here",
-    "link": null,
-    "icon": "🏠"
-  }
+    {
+      "id": 1119,
+      "name": "Fraunhofer Institute for Manufacturing Technology and Advanced Materials",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute within the Fraunhofer Society focused on manufacturing technologies and advanced materials research, supporting industrial innovation and applied engineering development.",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1120,
+      "name": "Prussian Academy of Sciences",
+      "categories": [
+        "Scientific",
+        "Historical"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A historic learned society founded in Prussia that played a major role in advancing scientific research and scholarship in Europe.",
+      "link": null,
+      "icon": "📚"
+    },
+    {
+      "id": 1121,
+      "name": "Kaiser Wilhelm Society",
+      "categories": [
+        "Scientific",
+        "Historical"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A German scientific organization established in 1911 to promote research across disciplines; it later evolved into the Max Planck Society.",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1122,
+      "name": "Fraunhofer Institute for Material and Beam Technology",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A Fraunhofer research institute specializing in materials engineering and beam-based technologies such as laser processing and surface modification.",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1123,
+      "name": "Fraunhofer Institute for Systems and Innovation Research",
+      "categories": [
+        "Scientific",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute focused on innovation systems, technology policy, and socio-economic impacts of technological change.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1124,
+      "name": "National Institute for Nanotechnology",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute dedicated to nanoscience and nanotechnology development, advancing materials and nanoscale engineering.",
+      "link": null,
+      "icon": "🧬"
+    },
+    {
+      "id": 1125,
+      "name": "National Graduate Institute for Policy Studies",
+      "categories": [
+        "Educational",
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A graduate university specializing in policy analysis, public administration, and governance studies.",
+      "link": null,
+      "icon": "🎓"
+    },
+    {
+      "id": 1126,
+      "name": "Norman B. Keevil Institute of Mining Engineering",
+      "categories": [
+        "Educational",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A university institute focused on research and education in mining engineering and mineral resource development.",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1127,
+      "name": "Peterson Institute for International Economics",
+      "categories": [
+        "Economic",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "An economic policy think tank conducting research on international trade, macroeconomics, and global economic policy.",
+      "link": null,
+      "icon": "🌍"
+    },
+    {
+      "id": 1128,
+      "name": "Centro Brasileiro de Relações Internacionais",
+      "categories": [
+        "Political",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A Brazilian think tank focused on international relations, foreign policy, and geopolitical analysis.",
+      "link": null,
+      "icon": "🌐"
+    },
+    {
+      "id": 1129,
+      "name": "Max Planck Institute for Sustainable Materials",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute dedicated to developing sustainable materials and advanced materials science.",
+      "link": null,
+      "icon": "♻️"
+    },
+    {
+      "id": 1130,
+      "name": "Paul Scherrer Institute",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Switzerland’s largest research institute for natural and engineering sciences, focusing on particle physics, materials science, and energy systems.",
+      "link": null,
+      "icon": "⚛️"
+    },
+    {
+      "id": 1131,
+      "name": "Pew Research Center",
+      "categories": [
+        "Media",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A nonpartisan research organization providing data and analysis on social trends, public opinion, and demographic changes.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1132,
+      "name": "Max Planck Institute for Mathematics",
+      "categories": [
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute specializing in advanced mathematical research across pure and applied mathematics.",
+      "link": null,
+      "icon": "➗"
+    },
+    {
+      "id": 1133,
+      "name": "Groningen Growth and Development Center",
+      "categories": [
+        "Economic",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research center studying economic growth, productivity, and long-term economic development.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1134,
+      "name": "Santa Fe Institute",
+      "categories": [
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "An interdisciplinary research institute dedicated to the study of complex systems and emergent phenomena.",
+      "link": null,
+      "icon": "🧠"
+    },
+    {
+      "id": 1135,
+      "name": "Institute of Photonic Sciences",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute focused on photonics, quantum optics, and advanced optical technologies.",
+      "link": null,
+      "icon": "💡"
+    },
+    {
+      "id": 1136,
+      "name": "VTT Technical Research Centre of Finland",
+      "categories": [
+        "Scientific",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A Finnish applied research organization supporting technological innovation and industrial development.",
+      "link": null,
+      "icon": "🔧"
+    },
+    {
+      "id": 1137,
+      "name": "Information Technology and Innovation Foundation",
+      "categories": [
+        "Technological",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A public policy think tank focused on technological innovation, digital economy policy, and industrial competitiveness.",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1138,
+      "name": "Electronics and Telecommunications Research Institute",
+      "categories": [
+        "Technological",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "A research institute specializing in information technology, telecommunications, and digital infrastructure technologies.",
+      "link": null,
+      "icon": "📡"
+    },
+    {
+      "id": 1139,
+      "name": "Federal Reserve System",
+      "categories": [
+        "Institutional",
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Central banking system of the United States responsible for monetary policy, financial stability, and banking supervision.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1140,
+      "name": "Department for Business and Trade (DBT)",
+      "categories": [
+        "Institutional",
+        "Economic",
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "United Kingdom government department responsible for trade policy, economic growth, and business regulation.",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1141,
+      "name": "Ernst & Young (EY)",
+      "categories": [
+        "Economic",
+        "Professional Services"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global professional services firm providing audit, consulting, tax, and advisory services.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1142,
+      "name": "ByteDance Ltd.",
+      "categories": [
+        "Technological",
+        "Digital",
+        "Media"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese multinational technology company known for platforms such as TikTok and Douyin.",
+      "link": null,
+      "icon": "📱"
+    },
+    {
+      "id": 1143,
+      "name": "GIC Private Limited",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Singapore sovereign wealth fund managing global investments on behalf of the Singaporean government.",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1144,
+      "name": "SpaceX",
+      "categories": [
+        "Technological",
+        "Scientific",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Aerospace manufacturer and space transportation company focused on reusable rockets and satellite systems.",
+      "link": null,
+      "icon": "🚀"
+    },
+    {
+      "id": 1145,
+      "name": "Haas Automation",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "American manufacturer of CNC machine tools used in precision manufacturing.",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1146,
+      "name": "Advanced Micro-Fabrication Equipment (AMEC)",
+      "categories": [
+        "Technological",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese semiconductor equipment manufacturer specializing in plasma etching and deposition systems.",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1147,
+      "name": "Rio Tinto Group",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Multinational mining corporation producing metals and minerals such as iron ore, copper, and aluminum.",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1148,
+      "name": "STMicroelectronics NV",
+      "categories": [
+        "Technological",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global semiconductor manufacturer producing integrated circuits and microelectronics.",
+      "link": null,
+      "icon": "🔌"
+    },
+    {
+      "id": 1149,
+      "name": "Sigma Alimentos",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Mexican multinational food processing and distribution company.",
+      "link": null,
+      "icon": "🥫"
+    },
+    {
+      "id": 1150,
+      "name": "Mitsubishi Group",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Japanese keiretsu conglomerate composed of multiple companies across industries such as finance, energy, and manufacturing.",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1151,
+      "name": "Sany Heavy Industry Co., Ltd.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese heavy machinery manufacturer specializing in construction equipment.",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1152,
+      "name": "China Shenhua Energy Company Limited",
+      "categories": [
+        "Economic",
+        "Energy",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major Chinese energy company involved in coal production, power generation, and transportation.",
+      "link": null,
+      "icon": "⚡"
+    },
+    {
+      "id": 1153,
+      "name": "Ebro Foods",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Spanish multinational food company specializing in rice and pasta production.",
+      "link": null,
+      "icon": "🌾"
+    },
+    {
+      "id": 1154,
+      "name": "Siemens Financial Services (SFS)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Financing arm of Siemens providing capital solutions for industrial and infrastructure projects.",
+      "link": null,
+      "icon": "💳"
+    },
+    {
+      "id": 1155,
+      "name": "Abbott Laboratories",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global healthcare company producing pharmaceuticals, diagnostics, and medical devices.",
+      "link": null,
+      "icon": "🧬"
+    },
+    {
+      "id": 1156,
+      "name": "Odoo SA",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Enterprise software company developing open-source ERP and business management applications.",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1157,
+      "name": "ZTE Corporation",
+      "categories": [
+        "Technological",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese telecommunications equipment and network infrastructure company.",
+      "link": null,
+      "icon": "📡"
+    },
+    {
+      "id": 1158,
+      "name": "Johannesburg Stock Exchange (JSE)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major stock exchange in Africa facilitating securities trading and capital markets in South Africa.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1159,
+      "name": "Terma",
+      "categories": [
+        "Military",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Danish aerospace and defense technology company.",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1160,
+      "name": "NASDAQ",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global electronic stock exchange known for technology listings and financial market infrastructure.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1161,
+      "name": "Banco Nacional de Desenvolvimento Econômico e Social (BNDES)",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Brazilian government development bank financing infrastructure and industrial development projects.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1162,
+      "name": "Novartis AG",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Swiss multinational pharmaceutical company focused on innovative medicines and biotechnology.",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1163,
+      "name": "AB Motala Verkstad",
+      "categories": [
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Swedish engineering and industrial manufacturing firm historically active in mechanical systems and energy infrastructure.",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1164,
+      "name": "XPO Inc.",
+      "categories": [
+        "Economic",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Logistics and freight transportation company providing supply chain services globally.",
+      "link": null,
+      "icon": "🚚"
+    },
+    {
+      "id": 1165,
+      "name": "Novo Nordisk A/S",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Danish pharmaceutical company specializing in diabetes and metabolic disease treatments.",
+      "link": null,
+      "icon": "💉"
+    },
+    {
+      "id": 1166,
+      "name": "Bajaj Group",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Indian conglomerate with major operations in automotive manufacturing, finance, and consumer goods.",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1167,
+      "name": "Korea Export-Import Bank (KEXIM)",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "South Korean government-owned export credit agency supporting international trade and development projects.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1168,
+      "name": "BYD Company Limited",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese multinational manufacturer of electric vehicles, batteries, and renewable energy technologies.",
+      "link": null,
+      "icon": "🔋"
+    },
+    {
+      "id": 1169,
+      "name": "Tencent Holdings Ltd.",
+      "categories": [
+        "Digital",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese multinational technology conglomerate known for digital platforms, gaming, and financial technology.",
+      "link": null,
+      "icon": "🌐"
+    },
+    {
+      "id": 1170,
+      "name": "Steyr Mannlicher",
+      "categories": [
+        "Industrial",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Austrian manufacturer of firearms and military equipment.",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1171,
+      "name": "Swiss National Bank (SNB)",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Central bank of Switzerland responsible for monetary policy and financial stability.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1172,
+      "name": "Huntington Ingalls Industries (HII)",
+      "categories": [
+        "Military",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "American defense contractor specializing in naval shipbuilding and military systems.",
+      "link": null,
+      "icon": "⚓"
+    },
+    {
+      "id": 1173,
+      "name": "Bank of England",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Central bank of the United Kingdom responsible for monetary policy and financial system stability.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1174,
+      "name": "Pfizer Inc.",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global pharmaceutical corporation focused on drug development, biotechnology, and vaccines.",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1175,
+      "name": "Mitsui",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Japanese multinational trading and investment conglomerate active across numerous industries.",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1176,
+      "name": "Glencore plc",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Multinational commodity trading and mining corporation.",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1177,
+      "name": "Anduril Industries",
+      "categories": [
+        "Military",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Defense technology company focused on autonomous systems and surveillance infrastructure.",
+      "link": null,
+      "icon": "🛰️"
+    },
+    {
+      "id": 1178,
+      "name": "Tsingshan Holding Group",
+      "categories": [
+        "Industrial",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese multinational conglomerate specializing in stainless steel and nickel production.",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1179,
+      "name": "Deere & Company",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Manufacturer of agricultural, construction, and forestry machinery.",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1180,
+      "name": "Slack Technologies",
+      "categories": [
+        "Digital",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Software company known for the Slack collaboration and messaging platform.",
+      "link": null,
+      "icon": "💬"
+    },
+    {
+      "id": 1181,
+      "name": "Marel hf.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Icelandic food processing equipment manufacturer serving the global food industry.",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1182,
+      "name": "MicroPort Inc.",
+      "categories": [
+        "Health",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Medical technology company producing cardiovascular and orthopedic medical devices.",
+      "link": null,
+      "icon": "🩺"
+    },
+    {
+      "id": 1183,
+      "name": "Costco Wholesale Corporation",
+      "categories": [
+        "Economic",
+        "Commercial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global retail corporation operating membership warehouse clubs.",
+      "link": null,
+      "icon": "🛒"
+    },
+    {
+      "id": 1184,
+      "name": "Banco do Brasil",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major Brazilian financial institution providing banking and financial services.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1185,
+      "name": "Komatsu Ltd.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Japanese multinational manufacturer of construction, mining, and industrial equipment.",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1186,
+      "name": "JBS S.A.",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Brazilian multinational food processing company and one of the largest meat producers globally.",
+      "link": null,
+      "icon": "🥩"
+    },
+    {
+      "id": 1187,
+      "name": "PepsiCo Inc.",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Multinational food and beverage corporation producing snacks and drinks.",
+      "link": null,
+      "icon": "🥤"
+    },
+    {
+      "id": 1188,
+      "name": "Temasek Holdings",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Singaporean sovereign investment company managing global strategic investments.",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1189,
+      "name": "Kuehne + Nagel International AG",
+      "categories": [
+        "Economic",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Swiss global logistics and supply chain management company.",
+      "link": null,
+      "icon": "🚚"
+    },
+    {
+      "id": 1190,
+      "name": "RUAG",
+      "categories": [
+        "Military",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Swiss aerospace and defense technology company.",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1191,
+      "name": "Microsoft Corporation",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global technology corporation producing software, cloud computing platforms, and digital infrastructure.",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1192,
+      "name": "Claro Cloud",
+      "categories": [
+        "Digital",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Cloud computing services division associated with the telecommunications company Claro.",
+      "link": null,
+      "icon": "☁️"
+    },
+    {
+      "id": 1193,
+      "name": "Honda",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Japanese multinational manufacturer of automobiles, motorcycles, and power equipment.",
+      "link": null,
+      "icon": "🚗"
+    },
+    {
+      "id": 1194,
+      "name": "Österreichische Beteiligungs AG",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Austrian state holding company managing government equity stakes in strategic enterprises.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1195,
+      "name": "Vanguard Total Stock Market Index Fund",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major investment fund tracking the performance of the U.S. total stock market.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1196,
+      "name": "Alibaba Group",
+      "categories": [
+        "Digital",
+        "Technological",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese multinational technology company specializing in e-commerce, cloud computing, and digital services.",
+      "link": null,
+      "icon": "🛍️"
+    },
+    {
+      "id": 1197,
+      "name": "Patria",
+      "categories": [
+        "Military",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Finnish defense and aerospace company producing armored vehicles and military systems.",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1198,
+      "name": "Campofrío Food Group",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "European multinational food company specializing in processed meats and food products.",
+      "link": null,
+      "icon": "🥓"
+    },
+    {
+      "id": 1199,
+      "name": "Abu Dhabi Investment Authority (ADIA)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "One of the world's largest sovereign wealth funds managing Abu Dhabi's oil revenues.",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1200,
+      "name": "ABI Research",
+      "categories": [
+        "Scientific",
+        "Technological",
+        "Media"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Technology market intelligence firm specializing in emerging technologies and industry research.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1201,
+      "name": "Volvo Construction Equipment",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Division of Volvo Group manufacturing construction machinery and heavy equipment.",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1202,
+      "name": "Shenzhen Stock Exchange (SZSE)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major Chinese stock exchange supporting capital markets and securities trading.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1203,
+      "name": "Bank of Japan",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Central bank of Japan responsible for monetary policy and financial system stability.",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1204,
+      "name": "BlackBerry Limited",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Canadian technology company focusing on cybersecurity, enterprise software, and embedded systems.",
+      "link": null,
+      "icon": "📱"
+    },
+    {
+      "id": 1205,
+      "name": "Envision Energy",
+      "categories": [
+        "Energy",
+        "Technological",
+        "Environmental"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Renewable energy technology company specializing in wind turbines and energy management systems.",
+      "link": null,
+      "icon": "🌬️"
+    },
+    {
+      "id": 1206,
+      "name": "Qlik",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Software company providing data analytics and business intelligence platforms.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1207,
+      "name": "Saudi Public Investment Fund (PIF)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Sovereign wealth fund of Saudi Arabia investing in global strategic industries.",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1208,
+      "name": "Skyworks Solutions Inc.",
+      "categories": [
+        "Technological",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Semiconductor company specializing in wireless communication chips and RF components.",
+      "link": null,
+      "icon": "📡"
+    },
+    {
+      "id": 1209,
+      "name": "Abengoa",
+      "categories": [
+        "Energy",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Spanish engineering company focused on renewable energy and infrastructure projects.",
+      "link": null,
+      "icon": "⚡"
+    },
+    {
+      "id": 1210,
+      "name": "Grupo Romero",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Peruvian business conglomerate operating in agriculture, logistics, finance, and consumer goods.",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1211,
+      "name": "Corporación Mondragón",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Federation of worker cooperatives based in Spain operating across manufacturing, finance, and retail sectors.",
+      "link": null,
+      "icon": "🤝"
+    },
+    {
+      "id": 1212,
+      "name": "Eli Lilly and Company",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Pharmaceutical corporation specializing in biotechnology and therapeutic drug development.",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1213,
+      "name": "Shopify",
+      "categories": [
+        "Digital",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "E-commerce technology company providing online store infrastructure and payment platforms.",
+      "link": null,
+      "icon": "🛍️"
+    },
+    {
+      "id": 1214,
+      "name": "MTU Aero Engines",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "German aerospace company specializing in aircraft engine manufacturing and maintenance.",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1215,
+      "name": "Infosys",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Indian multinational information technology services and consulting company.",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1216,
+      "name": "AstraZeneca plc",
+      "categories": [
+        "Health",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global pharmaceutical and biotechnology company focused on innovative medicines.",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1217,
+      "name": "SMIC (Semiconductor Manufacturing International Corporation)",
+      "categories": [
+        "Technological",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese semiconductor foundry manufacturing integrated circuits.",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1218,
+      "name": "General Electric Company (GE)",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "American multinational industrial conglomerate with activities in aerospace, energy, and healthcare technology.",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1219,
+      "name": "Grupo Bimbo",
+      "categories": [
+        "Economic",
+        "Food Industry"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Mexican multinational bakery and food company producing bread and packaged foods globally.",
+      "link": null,
+      "icon": "🍞"
+    },
+    {
+      "id": 1220,
+      "name": "Xi'an Aircraft Company Limited (XAC)",
+      "categories": [
+        "Industrial",
+        "Military",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese aerospace manufacturer producing military and transport aircraft.",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1221,
+      "name": "Infor",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Enterprise software company providing ERP and cloud-based business applications.",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1222,
+      "name": "Frappe Technologies Pvt Ltd",
+      "categories": [
+        "Technological",
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Software company known for developing the open-source ERP platform ERPNext.",
+      "link": null,
+      "icon": "🧾"
+    },
+    {
+      "id": 1223,
+      "name": "Bunge Global SA",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Agribusiness and food company involved in grain trading, food processing, and agricultural supply chains.",
+      "link": null,
+      "icon": "🌾"
+    },
+    {
+      "id": 1224,
+      "name": "BlackRock",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global asset management corporation managing trillions in investment funds.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1225,
+      "name": "Samsung Group",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "South Korean multinational conglomerate operating across electronics, semiconductors, finance, and construction.",
+      "link": null,
+      "icon": "📱"
+    },
+    {
+      "id": 1226,
+      "name": "ACM Research Inc. (ACMR)",
+      "categories": [
+        "Technological",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Semiconductor equipment manufacturer specializing in wafer cleaning technology.",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1227,
+      "name": "LG Corporation",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "South Korean multinational conglomerate active in electronics, chemicals, and telecommunications.",
+      "link": null,
+      "icon": "📺"
+    },
+    {
+      "id": 1228,
+      "name": "McKinsey & Company",
+      "categories": [
+        "Economic",
+        "Professional Services"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global management consulting firm advising corporations and governments.",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1229,
+      "name": "New Zealand Trade and Enterprise (NZTE)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "New Zealand government agency supporting trade, exports, and international investment.",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1230,
+      "name": "SBA Group",
+      "categories": [
+        "Infrastructure",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Company operating telecommunications tower infrastructure for wireless networks.",
+      "link": null,
+      "icon": "📡"
+    },
+    {
+      "id": 1231,
+      "name": "FedEx Corporation",
+      "categories": [
+        "Economic",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Global logistics and delivery services corporation.",
+      "link": null,
+      "icon": "📦"
+    },
+    {
+      "id": 1232,
+      "name": "Chery Automobile Co., Ltd.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese automobile manufacturer producing passenger vehicles and electric cars.",
+      "link": null,
+      "icon": "🚗"
+    },
+    {
+      "id": 1233,
+      "name": "New York Stock Exchange (NYSE)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "One of the world's largest stock exchanges facilitating global capital markets.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1234,
+      "name": "Shenyang Machine Tool Co., Ltd.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Chinese manufacturer of machine tools and industrial equipment.",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1235,
+      "name": "B3 (Brazilian Stock Exchange)",
+      "categories": [
+        "Economic",
+        "Financial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Major Brazilian exchange formed from the merger of stock and derivatives trading platforms.",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1236,
+      "name": "Caterpillar Inc.",
+      "categories": [
+        "Industrial",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "American manufacturer of construction, mining, and heavy machinery.",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1237,
+      "name": "ST Engineering",
+      "categories": [
+        "Industrial",
+        "Military",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Singaporean technology and defense engineering group.",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1238,
+      "name": "California Public Employees' Retirement System (CalPERS)",
+      "categories": [
+        "Economic",
+        "Financial",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "Large public pension fund managing retirement assets for California public employees.",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1239,
+      "name": "Booz Allen Hamilton",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1240,
+      "name": "SIX Swiss Exchange",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1241,
+      "name": "Marubeni Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1242,
+      "name": "Zijin Mining Group Co. Limited",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1243,
+      "name": "Shanghai Micro Electronics Equipment Group Co.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1244,
+      "name": "Export-Import Bank of China",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1245,
+      "name": "Kuwait Investment Authority KIA",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1246,
+      "name": "Lockheed Martin Corporation",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1247,
+      "name": "Taiwan Stock Exchange TWSE",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1248,
+      "name": "Berkshire Hathaway",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1249,
+      "name": "Toronto Stock Exchange TSX",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1250,
+      "name": "Moscow Exchange MOEX",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1251,
+      "name": "BlackStone",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1252,
+      "name": "Johnson Johnson",
+      "categories": [
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1253,
+      "name": "National Stock Exchange NSE",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1254,
+      "name": "Fidelity Investments",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1255,
+      "name": "ABB Ltd",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚡"
+    },
+    {
+      "id": 1256,
+      "name": "ISS A S",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1257,
+      "name": "Snowflake Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "❄️"
+    },
+    {
+      "id": 1258,
+      "name": "Oracle Corporation",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🗄️"
+    },
+    {
+      "id": 1259,
+      "name": "Y Combinator",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🚀"
+    },
+    {
+      "id": 1260,
+      "name": "Sanofi S A",
+      "categories": [
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1261,
+      "name": "International Business Machines Corporation IBM",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1262,
+      "name": "Telegram",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1263,
+      "name": "Virgin Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1264,
+      "name": "Zoomlion Heavy Industry Science and Technology Co.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏗️"
+    },
+    {
+      "id": 1265,
+      "name": "London Stock Exchange LSE",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1266,
+      "name": "Tiny Capital",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1267,
+      "name": "Bolsa de Madrid",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1268,
+      "name": "Elbit Systems",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1269,
+      "name": "Epicor Software Corporation",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1270,
+      "name": "Fortinet Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔒"
+    },
+    {
+      "id": 1271,
+      "name": "JetBrains s r o",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1272,
+      "name": "Hitachi Ltd",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1273,
+      "name": "Fortescue",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1274,
+      "name": "Bell Labs",
+      "categories": [
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔔"
+    },
+    {
+      "id": 1275,
+      "name": "Kongsberg Gruppen",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1276,
+      "name": "Brookings Institution",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📚"
+    },
+    {
+      "id": 1277,
+      "name": "Tableau Software LLC",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1278,
+      "name": "Sinosure",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1279,
+      "name": "Shanghai Stock Exchange STAR Market",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🚀"
+    },
+    {
+      "id": 1280,
+      "name": "Euronext",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1281,
+      "name": "Goldwind Science Technology Co. Ltd",
+      "categories": [
+        "Environmental"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🌬️"
+    },
+    {
+      "id": 1282,
+      "name": "Globant",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1283,
+      "name": "Atlassian",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛠️"
+    },
+    {
+      "id": 1284,
+      "name": "Carl Zeiss AG",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔭"
+    },
+    {
+      "id": 1285,
+      "name": "NAURA Technology Group Co. Ltd",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1286,
+      "name": "BAE Systems",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1287,
+      "name": "Schwarz Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛒"
+    },
+    {
+      "id": 1288,
+      "name": "Xerox PARC",
+      "categories": [
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🖨️"
+    },
+    {
+      "id": 1289,
+      "name": "CNH Industrial N V",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🚜"
+    },
+    {
+      "id": 1290,
+      "name": "Zoom Video Communications Inc.",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🎥"
+    },
+    {
+      "id": 1291,
+      "name": "UBtech Robotics",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🤖"
+    },
+    {
+      "id": 1292,
+      "name": "DuPont de Nemours Inc.",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1293,
+      "name": "Cisco Systems Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🌐"
+    },
+    {
+      "id": 1294,
+      "name": "Sumco Corporation",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": " 💎"
+    },
+    {
+      "id": 1295,
+      "name": "Automattic",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🌐"
+    },
+    {
+      "id": 1296,
+      "name": "Arbutus Biopharma Corporation",
+      "categories": [
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1297,
+      "name": "The Charles Schwab Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1298,
+      "name": "Robert Bosch GmbH",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔧"
+    },
+    {
+      "id": 1299,
+      "name": "Salesforce Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "☁️"
+    },
+    {
+      "id": 1300,
+      "name": "The Boeing Company",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1301,
+      "name": "Dow Chemical Company",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1302,
+      "name": "Baidu",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔍"
+    },
+    {
+      "id": 1303,
+      "name": "ASML",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💡"
+    },
+    {
+      "id": 1304,
+      "name": "China Northern Rare Earth Group High tech Co L",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⛰️"
+    },
+    {
+      "id": 1305,
+      "name": "Korea Exchange KRX",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1306,
+      "name": "China National Nuclear Corporation CNNC",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚛️"
+    },
+    {
+      "id": 1307,
+      "name": "Central Provident Fund Board CPFB",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1308,
+      "name": "Bridgewater Associates",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1309,
+      "name": "Grupo M xico",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1310,
+      "name": "Amazon com Inc.",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📦"
+    },
+    {
+      "id": 1311,
+      "name": "Embrapii",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🔬"
+    },
+    {
+      "id": 1312,
+      "name": "Syngenta Global AG",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🌾"
+    },
+    {
+      "id": 1313,
+      "name": "Ningbo Haitian Precision",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1314,
+      "name": "Siemens AG",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚡"
+    },
+    {
+      "id": 1315,
+      "name": "Docusign Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "✍️"
+    },
+    {
+      "id": 1316,
+      "name": "CrowdStrike Holdings Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1317,
+      "name": "Okuma Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1318,
+      "name": "Bank for International Settlements",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1319,
+      "name": "Borsa stanbul",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1320,
+      "name": "KPMG",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📋"
+    },
+    {
+      "id": 1321,
+      "name": "JPMorgan Chase Co",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1322,
+      "name": "Autodesk Instructables",
+      "categories": [
+        "Digital"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📐"
+    },
+    {
+      "id": 1323,
+      "name": "Enel S p A",
+      "categories": [
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚡"
+    },
+    {
+      "id": 1324,
+      "name": "Netflix Inc.",
+      "categories": [
+        "Media"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🎬"
+    },
+    {
+      "id": 1325,
+      "name": "Ford Motor Company",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🚗"
+    },
+    {
+      "id": 1326,
+      "name": "Yamazaki Mazak Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1327,
+      "name": "Saab",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1328,
+      "name": "A P M ller M rsk A S",
+      "categories": [
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🚢"
+    },
+    {
+      "id": 1329,
+      "name": "Cadena Comercial OXXO S A de C V",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏪"
+    },
+    {
+      "id": 1330,
+      "name": "Accenture",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1331,
+      "name": "Gerdau",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏗️"
+    },
+    {
+      "id": 1332,
+      "name": "Shanghai Stock Exchange SSE",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1333,
+      "name": "Koch Industries",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1334,
+      "name": "Bayer AG",
+      "categories": [
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1335,
+      "name": "Asana Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "✅"
+    },
+    {
+      "id": 1336,
+      "name": "Intuit Inc.",
+      "categories": [
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "💵"
+    },
+    {
+      "id": 1337,
+      "name": "RTX Corporation",
+      "categories": [
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "description",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1338,
+      "name": "Zoho Corporation",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1339,
+      "name": "Micron Technology",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💾"
+    },
+    {
+      "id": 1340,
+      "name": "Axa S.A.",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1341,
+      "name": "Cargill Incorporated",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🌾"
+    },
+    {
+      "id": 1342,
+      "name": "Leidos Holdings Inc",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1343,
+      "name": "Alphabet Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🌐"
+    },
+    {
+      "id": 1344,
+      "name": "Meta Platforms Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📱"
+    },
+    {
+      "id": 1345,
+      "name": "Israel Aerospace Industries",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1346,
+      "name": "Andritz AG",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1347,
+      "name": "Valio Ltd",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🥛"
+    },
+    {
+      "id": 1348,
+      "name": "Nippon Steel Corporation",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏗️"
+    },
+    {
+      "id": 1349,
+      "name": "Daikin Industries Ltd",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "❄️"
+    },
+    {
+      "id": 1350,
+      "name": "Mexican Stock Exchange (BMV)",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1351,
+      "name": "Capgemini",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1352,
+      "name": "Nestlé S.A.",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🍫"
+    },
+    {
+      "id": 1353,
+      "name": "Sandvik AB",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1354,
+      "name": "Finnish Food Factory Oy",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🍽️"
+    },
+    {
+      "id": 1355,
+      "name": "BHP Group Limited",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "⛏️"
+    },
+    {
+      "id": 1356,
+      "name": "Reitan AS",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛒"
+    },
+    {
+      "id": 1357,
+      "name": "PwC",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1358,
+      "name": "Airbus SE",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1359,
+      "name": "Tyson Foods Inc",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🍗"
+    },
+    {
+      "id": 1360,
+      "name": "Sinochem Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1361,
+      "name": "Axa Investment Managers",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1362,
+      "name": "Barrick Gold Corporation",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🥇"
+    },
+    {
+      "id": 1363,
+      "name": "Rockwell Automation Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🤖"
+    },
+    {
+      "id": 1364,
+      "name": "Boston Consulting Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1365,
+      "name": "Tokmanni Group Oyj",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛍️"
+    },
+    {
+      "id": 1366,
+      "name": "Louis Dreyfus Company B.V. (LDC)",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🚢"
+    },
+    {
+      "id": 1367,
+      "name": "ServiceNow Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "☁️"
+    },
+    {
+      "id": 1368,
+      "name": "Business Finland",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇫🇮"
+    },
+    {
+      "id": 1369,
+      "name": "Korea Trade-Investment Promotion Agency (KOTRA)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇰🇷"
+    },
+    {
+      "id": 1370,
+      "name": "Grupo Carso",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1371,
+      "name": "Grupo Corripio",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1372,
+      "name": "Guangzhou Xiaopeng Motors Technology Co., Ltd - XPENG",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🚗"
+    },
+    {
+      "id": 1373,
+      "name": "Sage Group",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1374,
+      "name": "Rafael Advanced Defense Systems",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1375,
+      "name": "The Vanguard Group Inc",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1376,
+      "name": "Investor AB",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💰"
+    },
+    {
+      "id": 1377,
+      "name": "Quicken Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1378,
+      "name": "Roadget Business (SHEIN)",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛍️"
+    },
+    {
+      "id": 1379,
+      "name": "KTH Royal Institute of Technology",
+      "categories": [
+        "Educational",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🎓"
+    },
+    {
+      "id": 1380,
+      "name": "Huawei Investment Holding Co Ltd",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📱"
+    },
+    {
+      "id": 1381,
+      "name": "Visa",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💳"
+    },
+    {
+      "id": 1382,
+      "name": "ADP",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "👥"
+    },
+    {
+      "id": 1383,
+      "name": "Banco de España",
+      "categories": [
+        "Economic",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1384,
+      "name": "BASF SE",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🧪"
+    },
+    {
+      "id": 1385,
+      "name": "HubSpot Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🧲"
+    },
+    {
+      "id": 1386,
+      "name": "Toyota Group",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🚗"
+    },
+    {
+      "id": 1387,
+      "name": "Yelp",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🌟"
+    },
+    {
+      "id": 1388,
+      "name": "Embraer S.A.",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "✈️"
+    },
+    {
+      "id": 1389,
+      "name": "Trumpf SE + Co. KG",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1390,
+      "name": "DHL Group",
+      "categories": [
+        "Economic",
+        "Infrastructure"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📦"
+    },
+    {
+      "id": 1391,
+      "name": "Xero",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1392,
+      "name": "F. Hoffmann-La Roche AG",
+      "categories": [
+        "Economic",
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1393,
+      "name": "Deloitte",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💼"
+    },
+    {
+      "id": 1394,
+      "name": "Singapore Exchange (SGX)",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1395,
+      "name": "China Development Bank",
+      "categories": [
+        "Economic",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1396,
+      "name": "Sumitomo Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1397,
+      "name": "Korea Aerospace Research Institute",
+      "categories": [
+        "Scientific",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🚀"
+    },
+    {
+      "id": 1398,
+      "name": "Tata Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1399,
+      "name": "China State Shipbuilding Corporation (CSSC)",
+      "categories": [
+        "Economic",
+        "Military"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🚢"
+    },
+    {
+      "id": 1400,
+      "name": "Tokyo Electron",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💾"
+    },
+    {
+      "id": 1401,
+      "name": "Merck & Co., Inc.",
+      "categories": [
+        "Economic",
+        "Health"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💊"
+    },
+    {
+      "id": 1402,
+      "name": "Rhodium Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📊"
+    },
+    {
+      "id": 1403,
+      "name": "FreshBooks",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📒"
+    },
+    {
+      "id": 1404,
+      "name": "Morgan Stanley",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1405,
+      "name": "Liebherr-International AG",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏗️"
+    },
+    {
+      "id": 1406,
+      "name": "SAP SE",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1407,
+      "name": "Vingroup Joint Stock Company",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏢"
+    },
+    {
+      "id": 1408,
+      "name": "DMG Mori Co. Ltd",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "⚙️"
+    },
+    {
+      "id": 1409,
+      "name": "Australian Securities Exchange (ASX)",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1410,
+      "name": "PPG Industries Inc",
+      "categories": [
+        "Economic",
+        "Industrial"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🎨"
+    },
+    {
+      "id": 1411,
+      "name": "Check Point Software Technologies Ltd",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🛡️"
+    },
+    {
+      "id": 1412,
+      "name": "Workday Inc",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💻"
+    },
+    {
+      "id": 1413,
+      "name": "ChangXin Memory Technologies",
+      "categories": [
+        "Economic",
+        "Technological"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💾"
+    },
+    {
+      "id": 1414,
+      "name": "Executive Policy Unit",
+      "categories": [
+        "Political",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1415,
+      "name": "Taiwan External Trade Development Council",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1416,
+      "name": "Kuomintang",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1417,
+      "name": "La République En Marche!",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1418,
+      "name": "Swedish Social Democratic Party",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1419,
+      "name": "Christian Democratic Union",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1420,
+      "name": "Liberal Democratic Party",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1421,
+      "name": "People's Action Party",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1422,
+      "name": "Chinese Communist Party",
+      "categories": [
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1423,
+      "name": "Communist Party of the Soviet Union",
+      "categories": [
+        "Political",
+        "Historical"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🗳️"
+    },
+    {
+      "id": 1424,
+      "name": "Development Bank of Singapore",
+      "categories": [
+        "Economic",
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1425,
+      "name": "ProChile",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇨🇱"
+    },
+    {
+      "id": 1426,
+      "name": "New Zealand Trade and Enterprise (NZTE)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇳🇿"
+    },
+    {
+      "id": 1427,
+      "name": "Colegio Oficial de Ingenieros Industriales de Navarra",
+      "categories": [
+        "Institutional",
+        "Educational"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1428,
+      "name": "Istituto per la Ricostruzione Industriale",
+      "categories": [
+        "Institutional",
+        "Historical"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1429,
+      "name": "Instituto Nacional de Industria",
+      "categories": [
+        "Institutional",
+        "Historical"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1430,
+      "name": "Enterprise Singapore",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1431,
+      "name": "Industrial Development Bureau",
+      "categories": [
+        "Institutional"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1432,
+      "name": "European Central Bank",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1433,
+      "name": "Israel Innovation Authority",
+      "categories": [
+        "Institutional",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💡"
+    },
+    {
+      "id": 1434,
+      "name": "IDA Ireland (Industrial Development Authority)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇮🇪"
+    },
+    {
+      "id": 1435,
+      "name": "Export Development Canada",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇨🇦"
+    },
+    {
+      "id": 1436,
+      "name": "Finnish Innovation Fund",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "💡"
+    },
+    {
+      "id": 1437,
+      "name": "World Bank",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🌍"
+    },
+    {
+      "id": 1438,
+      "name": "SelectUSA (Department of Commerce)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇺🇸"
+    },
+    {
+      "id": 1439,
+      "name": "Switzerland Global Enterprise (S-GE)",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇨🇭"
+    },
+    {
+      "id": 1440,
+      "name": "Hong Kong Stock Exchange",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1441,
+      "name": "Japan Exchange Group",
+      "categories": [
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "📈"
+    },
+    {
+      "id": 1442,
+      "name": "Korea Development Institute",
+      "categories": [
+        "Institutional",
+        "Scientific"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏛️"
+    },
+    {
+      "id": 1443,
+      "name": "Suzhou Industrial Park",
+      "categories": [
+        "Infrastructure",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏭"
+    },
+    {
+      "id": 1444,
+      "name": "Export-Import Bank of the United States",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🏦"
+    },
+    {
+      "id": 1445,
+      "name": "Enterprise Ireland",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "fill the description here",
+      "link": null,
+      "icon": "🇮🇪"
+    },
+    {
+      "id": 1446,
+      "name": "Ministry of International Trade and Industry",
+      "categories": [
+        "Institutional",
+        "Political"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "The Ministry of International Trade and Industry (MITI) was a Japanese government agency responsible for industrial policy, trade promotion, and economic development, playing a key role in Japan's post-war economic growth.",
+      "link": "https://www.meti.go.jp/english/",
+      "icon": "🏛️"
+    },
+    {
+      "id": 1447,
+      "name": "United States Small Business Administration",
+      "categories": [
+        "Institutional",
+        "Economic"
+      ],
+      "tags": [
+        "actor"
+      ],
+      "desc": "The U.S. Small Business Administration (SBA) is a government agency that supports entrepreneurs and small businesses through loans, grants, counseling, and other programs to promote economic growth and job creation.",
+      "link": "https://www.sba.gov/",
+      "icon": "🇺🇸"
+    },
+    {
+      "id": 1449,
+      "name": "China Unicom",
+      "categories": [
+        "Economic",
+        "Telecommunications"
+      ],
+      "tags": [
+        "actor",
+        "operator"
+      ],
+      "desc": "China Unicom is one of the major state-owned telecommunications operators in China, providing mobile, broadband, and other network services nationwide.",
+      "link": "https://www.chinaunicom.com.cn/",
+      "icon": "📡"
+    }
   ]
 }
