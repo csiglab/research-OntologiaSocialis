@@ -20561,6 +20561,21 @@
       "desc": "A Policy Coordination Body is an organization, typically within the Executive Branch of the U.S. government, that brings together officials from multiple agencies to coordinate, develop, and advise on policy in a specific domain. These bodies are primarily advisory and focus on ensuring coherent and consistent policy implementation across departments. Examples include the National Security Council (NSC), Domestic Policy Council (DPC), and National Economic Council (NEC).",
       "link": "https://github.com/csiglab/research-OntologiaSocialis",
       "icon": "🗂️"
+    },
+    {
+      "id": 1451,
+      "name": "Review Board",
+      "categories": [
+        "Oversight Committee",
+        "Advisory Body",
+        "Decision-Making Panel"
+      ],
+      "tags": [
+        "type"
+      ],
+      "desc": "A Review Board is an organization or committee that evaluates proposals, research, policies, or projects and provides formal recommendations, approvals, or feedback. These boards are typically composed of experts or stakeholders and focus on ensuring quality, compliance, and alignment with organizational objectives. Examples include Institutional Review Boards (IRBs) for research, Ethics Review Boards, and Government Procurement Review Boards.",
+      "link": "https://github.com/csiglab/research-OntologiaSocialis",
+      "icon": "📋"
     }
   ]
 }
