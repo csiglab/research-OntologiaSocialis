@@ -20576,6 +20576,23 @@
       "desc": "A Review Board is an organization or committee that evaluates proposals, research, policies, or projects and provides formal recommendations, approvals, or feedback. These boards are typically composed of experts or stakeholders and focus on ensuring quality, compliance, and alignment with organizational objectives. Examples include Institutional Review Boards (IRBs) for research, Ethics Review Boards, and Government Procurement Review Boards.",
       "link": "https://github.com/csiglab/research-OntologiaSocialis",
       "icon": "📋"
+    },
+    {
+      "id": 1452,
+      "name": "Science Attaché",
+      "categories": [
+        "Political",
+        "Scientific",
+        "Diplomatic"
+      ],
+      "tags": [
+        "role",
+        "actor",
+        "role"
+      ],
+      "desc": "A diplomatic official responsible for representing and facilitating scientific and technological cooperation between a sovereign state and foreign entities, including governments, research institutions, and innovation systems.",
+      "link": "https://github.com/csiglab/research-OntologiaSocialis",
+      "icon": "🔬"
     }
   ]
 }
