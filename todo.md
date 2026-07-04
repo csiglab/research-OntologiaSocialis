@@ -34,6 +34,7 @@
 - Groupon, Inc.
 - Piamonte
 - Mancomunidad
+- KKR & Co. Inc.,
 
 ## Production 
 
