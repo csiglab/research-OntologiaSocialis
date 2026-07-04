@@ -1,3 +1,4 @@
+- Leo Nagano - https://www.leonagano.com/ (Human) (Socio Ontic)
 - https://es.wikipedia.org/wiki/Costum_de_Valencia
 - We should allow for deletions.
 - How it's revenew recogniized using accounting?
