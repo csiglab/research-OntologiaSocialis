@@ -34,8 +34,9 @@ The app is published as a Docker image on GHCR (`ghcr.io/csiglab/sociognosis:lat
 ### Prerequisites
 
 - Docker
-- A running CouchDB instance (default: `http://127.0.0.1:5984`)
-  - e.g. `docker run -d --name couchdb --restart unless-stopped --network host -e COUCHDB_USER=... -e COUCHDB_PASSWORD=... couchdb:latest`
+- A running CouchDB instance (default: `http://127.0.0.1:5984`, published via port mapping)
+  - e.g. `docker run -d --name couchdb --restart unless-stopped -p 5984:5984 -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=admin -v couchdb-data:/opt/couchdb/data couchdb:3.5`
+  - Use a **named volume** (`couchdb-data`) — never an anonymous one — so data survives container recreation.
 
 ### Setup
 
