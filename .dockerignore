@@ -3,11 +3,12 @@
 .vscode
 env
 .venv
-web/site
-data
-research
+web
+spec
 img
-operation
 scripts
 Makefile
 build.sh
+.env
+__pycache__/
+*.pyc

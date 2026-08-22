@@ -27,6 +27,47 @@ ga docs
 gc docs -m "feat: udpate data"
 ```
 
+## Deployment
+
+The app is published as a Docker image on GHCR (`ghcr.io/csiglab/sociognosis:latest`), built automatically by GitHub Actions on every push to `main`.
+
+### Prerequisites
+
+- Docker
+- A running CouchDB instance (default: `http://127.0.0.1:5984`)
+  - e.g. `docker run -d --name couchdb --restart unless-stopped --network host -e COUCHDB_USER=... -e COUCHDB_PASSWORD=... couchdb:latest`
+
+### Setup
+
+1. Create a `.env` file in the repo root (read by the sync server):
+
+   ```sh
+   COUCHDB_URL=http://127.0.0.1:5984
+   COUCHDB_DB=sociognosis
+   COUCHDB_USER=...
+   COUCHDB_PASSWORD=...
+   ```
+
+2. Load the dataset data (`docs/data/idx/data.json` and `docs/data/prd/data.json`) into CouchDB:
+
+   ```sh
+   python3 bin/seed_couchdb.py
+   ```
+
+3. Run `./deploy.sh` — it pulls the latest image from GHCR and starts the container with `--network host`, mounting `.env` into it.
+
+   The port defaults to **8011**; override with `SOCIOGNOSIS_PORT=<port> ./deploy.sh`.
+
+### Usage
+
+Once deployed, open <http://localhost:8011>.
+
+- App: `http://localhost:8011/index.html`
+- Editors: `http://localhost:8011/idx/edit.html`, `http://localhost:8011/prd/edit.html`
+- Health check: `GET http://localhost:8011/api/health`
+- Graph load endpoint: `GET http://localhost:8011/api/graph?dataset=idx|prd`
+- Graph save endpoint (set in editor Settings → "Backend Sync" → "Backend Save URL"): `POST http://localhost:8011/api/graph/save`
+
 ## Notes
 
  - **Sociognosis** Space will support market analysis — not the direct analysis of production processes or technology.

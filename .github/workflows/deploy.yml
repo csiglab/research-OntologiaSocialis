@@ -30,8 +30,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/csiglab/arbitriologia:${{ github.sha }}
-            ghcr.io/csiglab/arbitriologia:latest
+            ghcr.io/csiglab/sociognosis:${{ github.sha }}
+            ghcr.io/csiglab/sociognosis:latest
 
 #  deploy:
 #    name: Deploy to server
@@ -45,7 +45,5 @@ jobs:
 #          username: ${{ secrets.SERVER_USER }}
 #          key: ${{ secrets.SERVER_SSH_KEY }}
 #          script: |
-#            cd /opt/arbitriologia
-#            docker compose pull
-#            docker compose up -d
-#            docker image prune -f
+#            cd /opt/sociognosis
+#            ./deploy.sh

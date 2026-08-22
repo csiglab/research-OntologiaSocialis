@@ -46,6 +46,27 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
 SAVE_ENDPOINT = "/api/graph/save"
+
+
+def _load_env():
+    """Populate os.environ from <repo>/.env for keys not already set.
+
+    Real environment variables win. Keeps parity with the deployment setup
+    where deploy.sh mounts .env into the container.
+    """
+    env_file = Path(__file__).resolve().parent.parent / ".env"
+    if not env_file.exists():
+        return
+    with open(env_file, "r", encoding="utf-8") as fh:
+        for raw in fh:
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+
+
+_load_env()
 LOAD_ENDPOINT = "/api/graph"
 HEALTH_ENDPOINT = "/api/health"
 LAYOUT_RECOMPUTE_ENDPOINT = "/api/layout/recompute"
@@ -616,26 +637,29 @@ def main():
 
     parser.add_argument(
         "--couch-url",
-        default="http://localhost:5984",
-        help="CouchDB base URL (default: http://localhost:5984).",
+        default=os.environ.get("COUCHDB_URL", "http://localhost:5984"),
+        help=(
+            "CouchDB base URL (default: $COUCHDB_URL or "
+            "http://localhost:5984)."
+        ),
     )
 
     parser.add_argument(
         "--couch-db",
-        default="sociognosis",
-        help="CouchDB database name (default: sociognosis).",
+        default=os.environ.get("COUCHDB_DB", "sociognosis"),
+        help="CouchDB database name (default: $COUCHDB_DB or sociognosis).",
     )
 
     parser.add_argument(
         "--couch-user",
-        default=None,
-        help="CouchDB user (optional).",
+        default=os.environ.get("COUCHDB_USER"),
+        help="CouchDB user (optional; default: $COUCHDB_USER).",
     )
 
     parser.add_argument(
         "--couch-password",
-        default=None,
-        help="CouchDB password (optional).",
+        default=os.environ.get("COUCHDB_PASSWORD"),
+        help="CouchDB password (optional; default: $COUCHDB_PASSWORD).",
     )
 
     args = parser.parse_args()
